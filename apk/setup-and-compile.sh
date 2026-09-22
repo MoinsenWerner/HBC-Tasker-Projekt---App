@@ -33,7 +33,7 @@ sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
 
 cd "$ROOT"
 # Generate/update the native Gradle wrapper while preserving lib/ and pubspec.yaml.
-flutter create --platforms=android --org com.plsreloadtasker --project-name hbc_musik_client .
+flutter create --platforms=android --org com.hbcclient --project-name hbc_musik_client .
 # ``flutter create`` generates its sample test again when it is absent. It
 # references the template's MyApp class and must not be analyzed as part of HBC.
 rm -f test/widget_test.dart

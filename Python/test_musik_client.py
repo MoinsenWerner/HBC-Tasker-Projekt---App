@@ -29,7 +29,24 @@ class ApiTests(unittest.TestCase):
         api = module.HbcApi(module.Session())
         with patch.object(api, "_request", return_value={}) as request:
             api.action("repeat", "context mode")
-        request.assert_called_once_with("POST", "/player/repeat/context%20mode")
+        request.assert_called_once_with("PUT", "/player/repeat/context%20mode")
+
+    def test_login_uses_form_encoded_token_route(self):
+        api = module.HbcApi(module.Session())
+        with patch.object(api, "_request", return_value={"access_token": "abc"}) as request:
+            token = api.login_secret("felix", "secret")
+        self.assertEqual(token, "Bearer abc")
+        request.assert_called_once_with("POST", "/token", data={
+            "grant_type": "client_credentials",
+            "client_id": "felix",
+            "client_secret": "secret",
+        })
+
+    def test_missing_passkey_route_has_clear_error(self):
+        api = module.HbcApi(module.Session())
+        with patch.object(api, "_request", return_value="/player;/token"):
+            with self.assertRaisesRegex(module.ApiError, "keine Passkey-API"):
+                api.passkey_options("felix")
 
 
 class UiTests(unittest.TestCase):

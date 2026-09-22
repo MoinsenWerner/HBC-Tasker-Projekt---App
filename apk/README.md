@@ -1,5 +1,7 @@
 # Flutter-/Android-Client
 
+Android-Paketname: `com.hbcclient.plsreload`.
+
 Auf einem Debian-System mit Java 17:
 
 ```bash

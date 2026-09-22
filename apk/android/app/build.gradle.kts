@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.plsreloadtasker.hbcclient"
+    namespace = "com.hbcclient.plsreload"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -15,7 +15,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.plsreloadtasker.hbcclient"
+        applicationId = "com.hbcclient.plsreload"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = 28

@@ -67,7 +67,10 @@ class _LoginPageState extends State<LoginPage> {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('user_id', userController.text.trim());
       if (!mounted) return;
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomePage(api: api..token = token, userId: userController.text.trim())));
+      api
+        ..token = token
+        ..userId = userController.text.trim();
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomePage(api: api, userId: userController.text.trim())));
     } catch (error) {
       showError(error.toString());
     } finally {
@@ -144,7 +147,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> refreshPlayer() => run(() async { player = await widget.api.player(); if (mounted) setState(() {}); });
-  Future<void> action(String value) => run(() async { await widget.api.playerAction(value); player = await widget.api.player(); if (mounted) setState(() {}); });
+  Future<void> action(String value) => run(() async {
+    await widget.api.playerAction(value, value: value == 'repeat' ? 'context' : null);
+    player = await widget.api.player();
+    if (mounted) setState(() {});
+  });
 
   Widget playerPage() {
     final item = Map<String, dynamic>.from((player['item'] ?? player) as Map? ?? const {});

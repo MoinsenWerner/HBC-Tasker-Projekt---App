@@ -81,22 +81,20 @@ class HbcApi:
             return response.text
 
     def login_secret(self, user_id: str, secret: str) -> str:
-        # Tasker's HTTP Auth action returns its Authorization header from /authorize.
-        data = self._request("POST", "/authorize", json={"user_id": user_id, "user_secret": secret})
+        # /authorize is the browser-facing GET OAuth endpoint. Direct client
+        # credentials belong in a form-encoded POST to /token.
+        data = self._request("POST", "/token", data={
+            "grant_type": "client_credentials",
+            "client_id": user_id,
+            "client_secret": secret,
+        })
         token = data.get("token") or data.get("authorization") or data.get("access_token") if isinstance(data, dict) else ""
-        if not token:
-            # Compatibility with Basic-auth servers used by older HBC deployments.
-            response = requests.post(f"{self.session.api_url}/authorize", auth=(user_id, secret), timeout=self.timeout)
-            response.raise_for_status()
-            token = response.headers.get("Authorization", "")
-            if not token:
-                body = response.json()
-                token = body.get("token") or body.get("access_token", "")
         if not token:
             raise ApiError("Der Server hat kein Anmelde-Token geliefert.")
         return token if " " in token else f"Bearer {token}"
 
     def passkey_options(self, user_id: str) -> dict[str, Any]:
+        self._require_passkey_route("/passkeys/authentication/options")
         return self._request("POST", "/passkeys/authentication/options", json={"user_id": user_id})
 
     def verify_passkey(self, credential: dict[str, Any]) -> str:
@@ -106,18 +104,24 @@ class HbcApi:
             raise ApiError("Die Passkey-Antwort wurde nicht bestätigt.")
         return token if " " in token else f"Bearer {token}"
 
+    def _require_passkey_route(self, route: str) -> None:
+        routes = self._request("GET", "/routes?format=text")
+        if not isinstance(routes, str) or route not in routes.split(";"):
+            raise ApiError("Der HBC-Server bietet aktuell noch keine Passkey-API an. Die Anmeldung per User-Secret ist verfügbar.")
+
     def player(self) -> dict[str, Any]:
         data = self._request("GET", "/player")
         return data if isinstance(data, dict) else {}
 
     def action(self, name: str, value: str | None = None) -> Any:
         path = f"/player/{name}" + (f"/{quote(value)}" if value else "")
-        return self._request("POST", path)
+        method = {"play": "PUT", "pause": "PUT", "repeat": "PUT", "next": "POST", "previous": "POST"}.get(name, "GET")
+        return self._request(method, path)
 
     def playlists(self) -> list[dict[str, Any]]:
-        data = self._request("GET", "/playlists")
+        data = self._request("GET", f"/chat/share/playlists/{quote(self.session.user_id)}")
         if isinstance(data, dict):
-            return data.get("items", data.get("playlists", []))
+            return data.get("eigene_playlists", [])
         return []
 
     def server_playlists(self) -> list[str]:
@@ -228,6 +232,11 @@ class MusikClient(QMainWindow):
         if not self.user_id.text().strip():
             QMessageBox.warning(self, "Anmeldung", "Bitte zuerst die User-ID eingeben.")
             return
+        try:
+            self.api._require_passkey_route("/passkeys/authentication/options")
+        except ApiError as exc:
+            QMessageBox.information(self, "Passkey", str(exc))
+            return
         self.cm.launch("authenticate", self.user_id.text().strip())
         token, accepted = QInputDialog.getText(self, "Passkey", "Nach erfolgreicher Passkey-Anmeldung das Session-Token einfügen:", QLineEdit.EchoMode.Password)
         if accepted and token:
@@ -253,7 +262,10 @@ class MusikClient(QMainWindow):
         home_layout.addWidget(self.song)
         controls = QHBoxLayout()
         for label, action in (("⏮", "previous"), ("⏯", "play"), ("⏭", "next"), ("🔁", "repeat")):
-            controls.addWidget(self._button(label, lambda a=action: self._execute(lambda: self.api.action(a), lambda _: self.refresh_player())))
+            controls.addWidget(self._button(label, lambda a=action: self._execute(
+                lambda: self.api.action(a, "context" if a == "repeat" else None),
+                lambda _: self.refresh_player(),
+            )))
         home_layout.addLayout(controls)
         home_layout.addWidget(self._button("Aktualisieren", self.refresh_player))
         home.setLayout(home_layout)
@@ -270,7 +282,7 @@ class MusikClient(QMainWindow):
         settings_layout.addWidget(QLabel("API-Adresse"))
         settings_layout.addWidget(api_field)
         settings_layout.addWidget(self._button("API-Adresse speichern", lambda: self._set_api(api_field.text())))
-        settings_layout.addWidget(self._button("🔑 Passkey erstellen", lambda: self.cm.launch("register", self.session.user_id, self.session.token), True))
+        settings_layout.addWidget(self._button("🔑 Passkey erstellen", self.register_passkey, True))
         settings_layout.addWidget(self._button("Webchat öffnen", lambda: webbrowser.open(f"{self.session.api_url}/webchat?caller=python&client-id={quote(self.session.user_id)}")))
         settings_layout.addWidget(self._button("Abmelden", self.logout))
         settings_layout.addStretch()
@@ -289,6 +301,14 @@ class MusikClient(QMainWindow):
         self.cm = BrowserCredentialManager(self.session.api_url)
         self._save()
         self.status.setText("API-Adresse gespeichert")
+
+    def register_passkey(self) -> None:
+        try:
+            self.api._require_passkey_route("/passkeys/registration/options")
+        except ApiError as exc:
+            QMessageBox.information(self, "Passkey", str(exc))
+            return
+        self.cm.launch("register", self.session.user_id, self.session.token)
 
     def refresh_player(self) -> None:
         def show(data: dict[str, Any]) -> None:
