@@ -60,6 +60,17 @@ class UiTests(unittest.TestCase):
         self.assertIsNotNone(window.centralWidget())
         window.close()
 
+    def test_archive_contains_every_exported_scene(self):
+        import json
+        import xml.etree.ElementTree as ET
+
+        archive = json.loads(module.MANIFEST_FILE.read_text(encoding="utf-8"))
+        exported = {ET.parse(path).findtext(".//Scene/nme") for path in PATH.parents[1].joinpath("scenes").glob("*.scn.xml")}
+        included = {scene["name"] for scene in archive["scenes"]}
+        self.assertEqual(len(archive["scenes"]), 17)
+        self.assertEqual(included, exported)
+        self.assertEqual(archive["start_task"], "HBC Starttask")
+
 
 if __name__ == "__main__":
     unittest.main()

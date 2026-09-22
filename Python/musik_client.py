@@ -21,6 +21,7 @@ import requests
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QApplication,
+    QComboBox,
     QFormLayout,
     QHBoxLayout,
     QInputDialog,
@@ -40,6 +41,7 @@ DEFAULT_API_URL = "https://api.plsreload.de"
 FALLBACK_API_URL = "http://37.44.215.123:2050"
 CONFIG_DIR = Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config")) / "hbc-musik-client"
 CONFIG_FILE = CONFIG_DIR / "settings.json"
+MANIFEST_FILE = Path(__file__).with_name("assets") / "tasker_manifest.json"
 
 
 class ApiError(RuntimeError):
@@ -284,6 +286,7 @@ class MusikClient(QMainWindow):
         settings_layout.addWidget(self._button("API-Adresse speichern", lambda: self._set_api(api_field.text())))
         settings_layout.addWidget(self._button("🔑 Passkey erstellen", self.register_passkey, True))
         settings_layout.addWidget(self._button("Webchat öffnen", lambda: webbrowser.open(f"{self.session.api_url}/webchat?caller=python&client-id={quote(self.session.user_id)}")))
+        settings_layout.addWidget(self._button("Alle Tasker-Oberflächen & Funktionen", self.show_tasker_archive))
         settings_layout.addWidget(self._button("Abmelden", self.logout))
         settings_layout.addStretch()
         settings_layout.addWidget(QLabel(f"Version {APP_VERSION}"))
@@ -309,6 +312,59 @@ class MusikClient(QMainWindow):
             QMessageBox.information(self, "Passkey", str(exc))
             return
         self.cm.launch("register", self.session.user_id, self.session.token)
+
+    def show_tasker_archive(self) -> None:
+        archive = json.loads(MANIFEST_FILE.read_text(encoding="utf-8"))
+        window = QWidget(self, Qt.WindowType.Window)
+        window.setWindowTitle("Tasker-Projekt – vollständiger Export")
+        window.resize(650, 760)
+        tabs = QTabWidget(window)
+        outer = QVBoxLayout(window)
+        outer.addWidget(tabs)
+
+        scenes_page, scenes_layout = QWidget(), QVBoxLayout()
+        scene_picker, element_list = QComboBox(), QListWidget()
+        for scene in archive["scenes"]:
+            scene_picker.addItem(scene["name"], scene)
+        scenes_layout.addWidget(scene_picker)
+        scenes_layout.addWidget(element_list)
+
+        def render_scene() -> None:
+            element_list.clear()
+            scene = scene_picker.currentData()
+            for element in scene["elements"]:
+                label = element["text"] or element["name"] or element["type"]
+                element_list.addItem(f'{element["type"]}: {element["name"]} — {label}')
+
+        scene_picker.currentIndexChanged.connect(lambda _index: render_scene())
+        render_scene()
+        scenes_page.setLayout(scenes_layout)
+        tabs.addTab(scenes_page, "Szenen & UI")
+
+        tasks_page, tasks_layout = QWidget(), QVBoxLayout()
+        task_picker, action_list = QComboBox(), QListWidget()
+        for task in archive["tasks"]:
+            task_picker.addItem(task["name"], task)
+        tasks_layout.addWidget(task_picker)
+        tasks_layout.addWidget(action_list)
+
+        def render_task() -> None:
+            action_list.clear()
+            task = task_picker.currentData()
+            for number, action in enumerate(task["actions"], 1):
+                detail = action["label"] or " | ".join(action["arguments"][:3])
+                action_list.addItem(f'{number}. Code {action["code"]}: {detail}')
+
+        task_picker.currentIndexChanged.connect(lambda _index: render_task())
+        render_task()
+        tasks_page.setLayout(tasks_layout)
+        tabs.addTab(tasks_page, "Tasks & Aktionen")
+
+        profile_list = QListWidget()
+        profile_list.addItems(profile["name"] for profile in archive["profiles"])
+        tabs.addTab(profile_list, "Profile")
+        window.show()
+        self._archive_window = window
 
     def refresh_player(self) -> None:
         def show(data: dict[str, Any]) -> None:

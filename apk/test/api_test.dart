@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hbc_musik_client/api.dart';
 import 'package:http/http.dart' as http;
@@ -41,5 +44,12 @@ void main() {
   test('missing passkey endpoint is reported before posting', () async {
     final api = HbcApi(client: MockClient((request) async => http.Response('/player;/token', 200)));
     await expectLater(api.passkeyLoginOptions('felix'), throwsA(isA<ApiException>()));
+  });
+
+  test('archive contains all exported Tasker scenes', () async {
+    final raw = await File('assets/tasker_manifest.json').readAsString();
+    final archive = jsonDecode(raw) as Map<String, dynamic>;
+    expect(archive['scenes'], hasLength(17));
+    expect((archive['scenes'] as List).map((scene) => scene['name']), contains('HBC Startseite'));
   });
 }

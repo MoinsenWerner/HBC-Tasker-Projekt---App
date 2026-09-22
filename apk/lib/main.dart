@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'api.dart';
+import 'tasker_archive.dart';
 
 const rpId = 'api.plsreload.de';
 final credentialManager = CredentialManager();
@@ -197,6 +198,7 @@ class _HomePageState extends State<HomePage> {
       ListTile(leading: const Icon(Icons.key), title: const Text('Passkey erstellen'), subtitle: const Text('Im Credential Manager dieses Geräts speichern'), onTap: registerPasskey),
       ListTile(leading: const Icon(Icons.chat), title: const Text('Webchat öffnen'), onTap: () => launchUrl(Uri.parse('${widget.api.baseUrl}/webchat?caller=in-app&client-id=${Uri.encodeComponent(widget.userId)}'), mode: LaunchMode.externalApplication)),
       ListTile(leading: const Icon(Icons.info_outline), title: const Text('Version 4.0.7'), subtitle: Text(widget.api.baseUrl)),
+      ListTile(leading: const Icon(Icons.apps), title: const Text('Alle Tasker-Oberflächen & Funktionen'), onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const TaskerArchivePage()))),
     ])),
     OutlinedButton.icon(onPressed: () => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const LoginPage()), (_) => false), icon: const Icon(Icons.logout), label: const Text('Abmelden')),
   ]);
