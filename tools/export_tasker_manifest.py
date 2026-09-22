@@ -18,25 +18,37 @@ def build_manifest() -> dict:
         if name:
             manifest["project_variables"][name] = variable.findtext("pvv") or ""
     for source in sorted((ROOT / "scenes").glob("*.xml")):
-        scene = ET.parse(source).find(".//Scene")
+        root = ET.parse(source).getroot()
+        scene = root.find(".//Scene")
+        local_tasks = {task.findtext("id"): task for task in root.findall("./Task")}
         elements = []
         for element in list(scene):
             if not element.tag.endswith("Element") or element.tag in {"RectElement", "PropertiesElement"}:
                 continue
             strings = [item.text or "" for item in element.findall("Str")]
-            elements.append({"type": element.tag.removesuffix("Element"), "name": strings[0] if strings else "", "text": strings[1] if len(strings) > 1 else ""})
+            handlers = {}
+            for event in ("clickTask", "longclickTask", "itemselectedTask", "valueTask", "mapTask", "strokeTask"):
+                task_id = element.findtext(event)
+                task = local_tasks.get(task_id)
+                if task is not None:
+                    handlers[event] = serialize_actions(task)
+            elements.append({"type": element.tag.removesuffix("Element"), "name": strings[0] if strings else "", "text": strings[1] if len(strings) > 1 else "", "handlers": handlers})
         manifest["scenes"].append({"name": scene.findtext("nme"), "elements": elements})
     for source in sorted((ROOT / "tasks").glob("*.xml")):
         task = ET.parse(source).find(".//Task")
-        actions = []
-        for action in task.findall("Action"):
-            arguments = [item.text or "" for item in action.findall("Str") if item.text]
-            actions.append({"code": int(action.findtext("code") or 0), "label": action.findtext("label") or "", "arguments": arguments})
-        manifest["tasks"].append({"name": task.findtext("nme"), "actions": actions})
+        manifest["tasks"].append({"name": task.findtext("nme"), "actions": serialize_actions(task)})
     for source in sorted((ROOT / "profiles").glob("*.xml")):
         profile = ET.parse(source).find(".//Profile")
         manifest["profiles"].append({"name": profile.findtext("nme")})
     return manifest
+
+
+def serialize_actions(task: ET.Element) -> list[dict]:
+    actions = []
+    for action in task.findall("Action"):
+        arguments = [item.text or "" for item in action.findall("Str")]
+        actions.append({"code": int(action.findtext("code") or 0), "label": action.findtext("label") or "", "arguments": arguments})
+    return actions
 
 
 def main() -> None:

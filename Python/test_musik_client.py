@@ -70,6 +70,8 @@ class UiTests(unittest.TestCase):
         self.assertEqual(len(archive["scenes"]), 17)
         self.assertEqual(included, exported)
         self.assertEqual(archive["start_task"], "HBC Starttask")
+        handled = [element for scene in archive["scenes"] for element in scene["elements"] if element["handlers"]]
+        self.assertGreater(len(handled), 50)
 
 
 if __name__ == "__main__":

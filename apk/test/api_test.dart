@@ -51,5 +51,7 @@ void main() {
     final archive = jsonDecode(raw) as Map<String, dynamic>;
     expect(archive['scenes'], hasLength(17));
     expect((archive['scenes'] as List).map((scene) => scene['name']), contains('HBC Startseite'));
+    final handled = (archive['scenes'] as List).expand((scene) => scene['elements'] as List).where((element) => (element['handlers'] as Map).isNotEmpty);
+    expect(handled.length, greaterThan(50));
   });
 }

@@ -336,7 +336,12 @@ class MusikClient(QMainWindow):
                 label = element["text"] or element["name"] or element["type"]
                 element_list.addItem(f'{element["type"]}: {element["name"]} — {label}')
 
+        def activate_element(index) -> None:
+            scene = scene_picker.currentData()
+            self._run_tasker_element(scene["name"], scene["elements"][index.row()])
+
         scene_picker.currentIndexChanged.connect(lambda _index: render_scene())
+        element_list.doubleClicked.connect(activate_element)
         render_scene()
         scenes_page.setLayout(scenes_layout)
         tabs.addTab(scenes_page, "Szenen & UI")
@@ -365,6 +370,32 @@ class MusikClient(QMainWindow):
         tabs.addTab(profile_list, "Profile")
         window.show()
         self._archive_window = window
+
+    def _run_tasker_element(self, scene: str, element: dict[str, Any]) -> None:
+        name = element["name"]
+        lowered = name.lower()
+        if lowered == "previous":
+            self._execute(lambda: self.api.action("previous"), lambda _: self.refresh_player())
+        elif lowered == "next":
+            self._execute(lambda: self.api.action("next"), lambda _: self.refresh_player())
+        elif lowered == "playpause":
+            self._execute(lambda: self.api.action("play"), lambda _: self.refresh_player())
+        elif lowered == "repeatbtn":
+            self._execute(lambda: self.api.action("repeat", "context"), lambda _: self.refresh_player())
+        elif lowered in {"back", "knopf4"}:
+            self._archive_window.close()
+        elif "chat" in lowered:
+            webbrowser.open(f"{self.session.api_url}/webchat?caller=python&client-id={quote(self.session.user_id)}")
+        elif "update manuell herunterladen" in lowered or lowered == "install update":
+            webbrowser.open(f"{self.session.api_url}/apk/latest")
+        else:
+            handlers = element.get("handlers", {})
+            action_count = sum(len(actions) for actions in handlers.values())
+            QMessageBox.information(
+                self,
+                f"{scene} / {name}",
+                f"{action_count} exportierte Tasker-Aktionen. Diese Aktion benötigt die Android-Tasker-Laufzeit oder ein nicht verfügbares Plug-in.",
+            )
 
     def refresh_player(self) -> None:
         def show(data: dict[str, Any]) -> None:

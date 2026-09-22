@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class TaskerArchivePage extends StatefulWidget {
-  const TaskerArchivePage({super.key});
+  const TaskerArchivePage({super.key, required this.onElementAction});
+  final Future<void> Function(String scene, Map<String, dynamic> element) onElementAction;
 
   @override
   State<TaskerArchivePage> createState() => _TaskerArchivePageState();
@@ -33,7 +34,7 @@ class _TaskerArchivePageState extends State<TaskerArchivePage> {
           bottom: const TabBar(tabs: [Tab(text: 'Szenen'), Tab(text: 'Tasks'), Tab(text: 'Profile')]),
         ),
         body: TabBarView(children: [
-          _SceneList(scenes: List<Map<String, dynamic>>.from(data['scenes'] as List)),
+          _SceneList(scenes: List<Map<String, dynamic>>.from(data['scenes'] as List), onElementAction: widget.onElementAction),
           _TaskList(tasks: List<Map<String, dynamic>>.from(data['tasks'] as List)),
           ListView(children: [for (final profile in data['profiles'] as List) ListTile(leading: const Icon(Icons.bolt), title: Text(profile['name'] as String))]),
         ]),
@@ -43,8 +44,9 @@ class _TaskerArchivePageState extends State<TaskerArchivePage> {
 }
 
 class _SceneList extends StatelessWidget {
-  const _SceneList({required this.scenes});
+  const _SceneList({required this.scenes, required this.onElementAction});
   final List<Map<String, dynamic>> scenes;
+  final Future<void> Function(String scene, Map<String, dynamic> element) onElementAction;
 
   @override
   Widget build(BuildContext context) => ListView.builder(
@@ -54,25 +56,25 @@ class _SceneList extends StatelessWidget {
           return ExpansionTile(
             title: Text(scene['name'] as String),
             subtitle: Text('${(scene['elements'] as List).length} UI-Elemente'),
-            children: [for (final element in scene['elements'] as List) _element(context, Map<String, dynamic>.from(element as Map))],
+            children: [for (final element in scene['elements'] as List) _element(context, scene['name'] as String, Map<String, dynamic>.from(element as Map))],
           );
         },
       );
 
-  Widget _element(BuildContext context, Map<String, dynamic> element) {
+  Widget _element(BuildContext context, String scene, Map<String, dynamic> element) {
     final type = element['type'] as String;
     final name = element['name'] as String;
     final text = (element['text'] as String).isEmpty ? name : element['text'] as String;
     switch (type) {
       case 'Button':
-        return Padding(padding: const EdgeInsets.all(8), child: OutlinedButton(onPressed: () => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(name))), child: Text(text)));
+        return Padding(padding: const EdgeInsets.all(8), child: OutlinedButton(onPressed: () => onElementAction(scene, element), child: Text(text)));
       case 'EditText':
         return Padding(padding: const EdgeInsets.all(8), child: TextField(decoration: InputDecoration(labelText: name, hintText: text)));
       case 'CheckBox':
       case 'Switch':
-        return CheckboxListTile(value: false, onChanged: (_) {}, title: Text(text));
+        return CheckboxListTile(value: false, onChanged: (_) => onElementAction(scene, element), title: Text(text));
       case 'Slider':
-        return ListTile(title: Text(name), subtitle: Slider(value: 0, onChanged: (_) {}));
+        return ListTile(title: Text(name), subtitle: Slider(value: 0, onChanged: (_) => onElementAction(scene, element)));
       case 'Spinner':
       case 'Picker':
         return ListTile(leading: const Icon(Icons.arrow_drop_down_circle), title: Text(name), subtitle: Text(text));

@@ -198,10 +198,36 @@ class _HomePageState extends State<HomePage> {
       ListTile(leading: const Icon(Icons.key), title: const Text('Passkey erstellen'), subtitle: const Text('Im Credential Manager dieses Geräts speichern'), onTap: registerPasskey),
       ListTile(leading: const Icon(Icons.chat), title: const Text('Webchat öffnen'), onTap: () => launchUrl(Uri.parse('${widget.api.baseUrl}/webchat?caller=in-app&client-id=${Uri.encodeComponent(widget.userId)}'), mode: LaunchMode.externalApplication)),
       ListTile(leading: const Icon(Icons.info_outline), title: const Text('Version 4.0.7'), subtitle: Text(widget.api.baseUrl)),
-      ListTile(leading: const Icon(Icons.apps), title: const Text('Alle Tasker-Oberflächen & Funktionen'), onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const TaskerArchivePage()))),
+      ListTile(leading: const Icon(Icons.apps), title: const Text('Alle Tasker-Oberflächen & Funktionen'), onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => TaskerArchivePage(onElementAction: taskerElementAction)))),
     ])),
     OutlinedButton.icon(onPressed: () => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const LoginPage()), (_) => false), icon: const Icon(Icons.logout), label: const Text('Abmelden')),
   ]);
+
+  Future<void> taskerElementAction(String scene, Map<String, dynamic> element) async {
+    final name = element['name'] as String;
+    final lower = name.toLowerCase();
+    if (lower == 'previous') return action('previous');
+    if (lower == 'next') return action('next');
+    if (lower == 'playpause') return action(player['is_playing'] == true ? 'pause' : 'play');
+    if (lower == 'repeatbtn') return action('repeat');
+    if (lower == 'back' || lower == 'knopf4') {
+      if (mounted) Navigator.maybePop(context);
+      return;
+    }
+    if (lower.contains('chat')) {
+      await launchUrl(Uri.parse('${widget.api.baseUrl}/webchat?caller=in-app&client-id=${Uri.encodeComponent(widget.userId)}'), mode: LaunchMode.externalApplication);
+      return;
+    }
+    if (lower.contains('update manuell herunterladen') || lower == 'install update') {
+      await launchUrl(Uri.parse('${widget.api.baseUrl}/apk/latest'), mode: LaunchMode.externalApplication);
+      return;
+    }
+    final handlers = Map<String, dynamic>.from(element['handlers'] as Map? ?? const {});
+    final count = handlers.values.fold<int>(0, (sum, actions) => sum + (actions as List).length);
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$name: $count exportierte Tasker-Aktionen; diese Aktion benötigt die Android-Tasker-Laufzeit oder ein nicht verfügbares Plug-in.')));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
