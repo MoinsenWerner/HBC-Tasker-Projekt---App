@@ -74,6 +74,18 @@ class UiTests(unittest.TestCase):
         handled = [element for scene in archive["scenes"] for element in scene["elements"] if element["handlers"]]
         self.assertGreater(len(handled), 50)
 
+    def test_tasker_elements_are_embedded_in_main_ui(self):
+        window = module.MusikClient()
+        window.user_id.setText("felix")
+        with patch.object(window.api, "player", return_value={}):
+            window._logged_in("Bearer test")
+        first_scene = window.tasker_project["scenes"][0]
+        self.assertEqual(window.scene_picker.currentText(), first_scene["name"])
+        self.assertEqual(window.scene_content_layout.count() - 2, len(first_scene["elements"]))
+        button_texts = {button.text() for button in window.findChildren(module.QPushButton)}
+        self.assertNotIn("Alle Tasker-Oberflächen & Funktionen", button_texts)
+        window.close()
+
 
 class WindowsRuntimeTests(unittest.TestCase):
     def test_runtime_sets_variables_and_calls_subtask(self):

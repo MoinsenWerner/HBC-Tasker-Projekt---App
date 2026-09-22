@@ -21,6 +21,7 @@ import requests
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QApplication,
+    QCheckBox,
     QComboBox,
     QFormLayout,
     QHBoxLayout,
@@ -31,6 +32,8 @@ from PySide6.QtWidgets import (
     QMainWindow,
     QMessageBox,
     QPushButton,
+    QScrollArea,
+    QSlider,
     QTabWidget,
     QVBoxLayout,
     QWidget,
@@ -283,12 +286,15 @@ class MusikClient(QMainWindow):
         settings_layout.addWidget(self._button("API-Adresse speichern", lambda: self._set_api(api_field.text())))
         settings_layout.addWidget(self._button("🔑 Passkey erstellen", self.register_passkey, True))
         settings_layout.addWidget(self._button("Webchat öffnen", lambda: webbrowser.open(f"{self.session.api_url}/webchat?caller=python&client-id={quote(self.session.user_id)}")))
-        settings_layout.addWidget(self._button("Alle Tasker-Oberflächen & Funktionen", self.show_tasker_archive))
         settings_layout.addWidget(self._button("Abmelden", self.logout))
         settings_layout.addStretch()
         settings_layout.addWidget(QLabel(f"Version {APP_VERSION}"))
         settings.setLayout(settings_layout)
-        for page, title in zip((home, playlists, server, settings), ("Player", "Playlists", "Server", "Einstellungen")):
+        tasker_page = self._build_tasker_scenes_page()
+        for page, title in zip(
+            (home, playlists, server, tasker_page, settings),
+            ("Player", "Playlists", "Server", "Weitere Funktionen", "Einstellungen"),
+        ):
             notebook.addTab(page, title)
         root_layout.addWidget(notebook)
         root_layout.addWidget(self.status)
@@ -305,63 +311,78 @@ class MusikClient(QMainWindow):
     def register_passkey(self) -> None:
         self.cm.launch("register", self.session.user_id, self.session.token)
 
-    def show_tasker_archive(self) -> None:
-        archive = json.loads(MANIFEST_FILE.read_text(encoding="utf-8"))
-        window = QWidget(self, Qt.WindowType.Window)
-        window.setWindowTitle("Tasker-Projekt – vollständiger Export")
-        window.resize(650, 760)
-        tabs = QTabWidget(window)
-        outer = QVBoxLayout(window)
-        outer.addWidget(tabs)
+    def _build_tasker_scenes_page(self) -> QWidget:
+        page, layout = QWidget(), QVBoxLayout()
+        self.scene_picker = QComboBox()
+        for scene in self.tasker_project["scenes"]:
+            self.scene_picker.addItem(scene["name"], scene)
+        self.scene_content = QWidget()
+        self.scene_content_layout = QVBoxLayout(self.scene_content)
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setWidget(self.scene_content)
+        layout.addWidget(self.scene_picker)
+        layout.addWidget(scroll)
+        page.setLayout(layout)
+        self.scene_picker.currentIndexChanged.connect(lambda _index: self._render_native_scene())
+        self._render_native_scene()
+        return page
 
-        scenes_page, scenes_layout = QWidget(), QVBoxLayout()
-        scene_picker, element_list = QComboBox(), QListWidget()
-        for scene in archive["scenes"]:
-            scene_picker.addItem(scene["name"], scene)
-        scenes_layout.addWidget(scene_picker)
-        scenes_layout.addWidget(element_list)
+    def _render_native_scene(self) -> None:
+        while self.scene_content_layout.count():
+            item = self.scene_content_layout.takeAt(0)
+            if item.widget():
+                item.widget().deleteLater()
+        scene = self.scene_picker.currentData()
+        title = QLabel(scene["name"])
+        title.setStyleSheet("font-size: 20px; font-weight: bold; color: #1ed760")
+        self.scene_content_layout.addWidget(title)
+        for element in scene["elements"]:
+            self.scene_content_layout.addWidget(self._native_element(scene["name"], element))
+        self.scene_content_layout.addStretch()
 
-        def render_scene() -> None:
-            element_list.clear()
-            scene = scene_picker.currentData()
-            for element in scene["elements"]:
-                label = element["text"] or element["name"] or element["type"]
-                element_list.addItem(f'{element["type"]}: {element["name"]} — {label}')
+    def _native_element(self, scene: str, element: dict[str, Any]) -> QWidget:
+        element_type = element["type"]
+        name = element["name"]
+        text = element["text"] or name or element_type
+        def activate() -> None:
+            self._run_tasker_element(scene, element)
 
-        def activate_element(index) -> None:
-            scene = scene_picker.currentData()
-            self._run_tasker_element(scene["name"], scene["elements"][index.row()])
-
-        scene_picker.currentIndexChanged.connect(lambda _index: render_scene())
-        element_list.doubleClicked.connect(activate_element)
-        render_scene()
-        scenes_page.setLayout(scenes_layout)
-        tabs.addTab(scenes_page, "Szenen & UI")
-
-        tasks_page, tasks_layout = QWidget(), QVBoxLayout()
-        task_picker, action_list = QComboBox(), QListWidget()
-        for task in archive["tasks"]:
-            task_picker.addItem(task["name"], task)
-        tasks_layout.addWidget(task_picker)
-        tasks_layout.addWidget(action_list)
-
-        def render_task() -> None:
-            action_list.clear()
-            task = task_picker.currentData()
-            for number, action in enumerate(task["actions"], 1):
-                detail = action["label"] or " | ".join(action["arguments"][:3])
-                action_list.addItem(f'{number}. Code {action["code"]}: {detail}')
-
-        task_picker.currentIndexChanged.connect(lambda _index: render_task())
-        render_task()
-        tasks_page.setLayout(tasks_layout)
-        tabs.addTab(tasks_page, "Tasks & Aktionen")
-
-        profile_list = QListWidget()
-        profile_list.addItems(profile["name"] for profile in archive["profiles"])
-        tabs.addTab(profile_list, "Profile")
-        window.show()
-        self._archive_window = window
+        if element_type == "Button":
+            return self._button(text, activate)
+        if element_type == "EditText":
+            widget = QLineEdit()
+            widget.setPlaceholderText(text)
+            widget.setObjectName(name)
+            widget.editingFinished.connect(activate)
+            return widget
+        if element_type in {"CheckBox", "Switch"}:
+            widget = QCheckBox(text)
+            widget.setObjectName(name)
+            widget.toggled.connect(lambda _checked: activate())
+            return widget
+        if element_type == "Slider":
+            widget = QSlider(Qt.Orientation.Horizontal)
+            widget.setObjectName(name)
+            widget.sliderReleased.connect(activate)
+            return widget
+        if element_type in {"Spinner", "Picker"}:
+            widget = QComboBox()
+            widget.setObjectName(name)
+            widget.addItem(text)
+            widget.currentIndexChanged.connect(lambda _index: activate())
+            return widget
+        if element_type == "Image":
+            widget = QLabel(f"🖼  {name}")
+            widget.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            widget.setMinimumHeight(80)
+            return widget
+        if element_type == "Web":
+            return self._button(f"🌐  {name}", activate)
+        widget = QLabel(text)
+        widget.setObjectName(name)
+        widget.setWordWrap(True)
+        return widget
 
     def _run_tasker_element(self, scene: str, element: dict[str, Any]) -> None:
         name = element["name"]
@@ -375,7 +396,7 @@ class MusikClient(QMainWindow):
         elif lowered == "repeatbtn":
             self._execute(lambda: self.api.action("repeat", "context"), lambda _: self.refresh_player())
         elif lowered in {"back", "knopf4"}:
-            self._archive_window.close()
+            self.scene_picker.setCurrentIndex(0)
         elif "chat" in lowered:
             webbrowser.open(f"{self.session.api_url}/webchat?caller=python&client-id={quote(self.session.user_id)}")
         elif "update manuell herunterladen" in lowered or lowered == "install update":
@@ -400,8 +421,10 @@ class MusikClient(QMainWindow):
         QMessageBox.information(self, title, message)
 
     def _show_exported_scene(self, scene: str) -> None:
-        if hasattr(self, "_archive_window"):
-            self._archive_window.setWindowTitle(f"Tasker-Szene: {scene}")
+        if hasattr(self, "scene_picker"):
+            index = self.scene_picker.findText(scene)
+            if index >= 0:
+                self.scene_picker.setCurrentIndex(index)
 
     def _ask_value(self, title: str, prompt: str) -> str:
         value, accepted = QInputDialog.getText(self, title, prompt)
