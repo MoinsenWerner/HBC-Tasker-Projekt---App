@@ -17,3 +17,8 @@ dadurch bleiben privater Schlüssel und Biometrie im Credential Manager des
 Betriebssystems. Erwartet werden die Endpunkte unter `/passkeys/authenticate` und
 `/passkeys/register`. Das vom Authentifizierungs-Flow gelieferte kurzlebige Token
 wird nur im Arbeitsspeicher gehalten. Die Konfigurationsdatei enthält kein Secret.
+
+Windows-Ersatzimplementierungen und die unvermeidbaren Grenzen gegenüber der
+Android-/Tasker-Laufzeit sind in
+[`TASKER_WINDOWS_COMPATIBILITY.md`](TASKER_WINDOWS_COMPATIBILITY.md) vollständig
+aufgeführt.

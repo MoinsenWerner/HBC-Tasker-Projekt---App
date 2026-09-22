@@ -36,6 +36,8 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from windows_tasker import WindowsTaskerRuntime
+
 APP_VERSION = "4.0.7-python"
 DEFAULT_API_URL = "https://api.plsreload.de"
 FALLBACK_API_URL = "http://37.44.215.123:2050"
@@ -159,6 +161,14 @@ class MusikClient(QMainWindow):
         self.session = Session(api_url=self._load().get("api_url", DEFAULT_API_URL))
         self.api = HbcApi(self.session)
         self.cm = BrowserCredentialManager(self.session.api_url)
+        self.tasker_project = json.loads(MANIFEST_FILE.read_text(encoding="utf-8"))
+        self.tasker = WindowsTaskerRuntime(
+            self.tasker_project,
+            self.api,
+            self._windows_notify,
+            self._show_exported_scene,
+            self._ask_value,
+        )
         self.user_id = QLineEdit(self._load().get("user_id", ""))
         self.secret = QLineEdit()
         self.secret.setEchoMode(QLineEdit.EchoMode.Password)
@@ -390,12 +400,30 @@ class MusikClient(QMainWindow):
             webbrowser.open(f"{self.session.api_url}/apk/latest")
         else:
             handlers = element.get("handlers", {})
-            action_count = sum(len(actions) for actions in handlers.values())
-            QMessageBox.information(
-                self,
-                f"{scene} / {name}",
-                f"{action_count} exportierte Tasker-Aktionen. Diese Aktion benötigt die Android-Tasker-Laufzeit oder ein nicht verfügbares Plug-in.",
-            )
+            actions = handlers.get("clickTask") or handlers.get("itemselectedTask") or handlers.get("valueTask")
+            if actions:
+                self._execute(lambda: self.tasker.run_actions(actions))
+            else:
+                QMessageBox.information(self, f"{scene} / {name}", "Für dieses Element ist im Tasker-Export keine Aktion hinterlegt.")
+
+    def _windows_notify(self, title: str, message: str) -> None:
+        if os.name == "nt":
+            try:
+                from winotify import Notification
+
+                Notification(app_id="HBC Musik Client", title=title, msg=message).show()
+                return
+            except Exception:
+                pass
+        QMessageBox.information(self, title, message)
+
+    def _show_exported_scene(self, scene: str) -> None:
+        if hasattr(self, "_archive_window"):
+            self._archive_window.setWindowTitle(f"Tasker-Szene: {scene}")
+
+    def _ask_value(self, title: str, prompt: str) -> str:
+        value, accepted = QInputDialog.getText(self, title, prompt)
+        return value if accepted else ""
 
     def refresh_player(self) -> None:
         def show(data: dict[str, Any]) -> None:

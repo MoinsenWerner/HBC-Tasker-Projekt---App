@@ -74,5 +74,24 @@ class UiTests(unittest.TestCase):
         self.assertGreater(len(handled), 50)
 
 
+class WindowsRuntimeTests(unittest.TestCase):
+    def test_runtime_sets_variables_and_calls_subtask(self):
+        from windows_tasker import WindowsTaskerRuntime
+
+        project = {"tasks": [{"name": "Child", "actions": [{"code": 547, "arguments": ["%value", "ready"]}]}]}
+        api = Mock(session=module.Session())
+        runtime = WindowsTaskerRuntime(project, api, Mock(), Mock())
+        runtime.run_actions([{"code": 130, "arguments": ["Child"]}])
+        self.assertEqual(runtime.variables["%value"], "ready")
+
+    def test_android_intent_replacement_opens_uri_on_windows(self):
+        from windows_tasker import WindowsTaskerRuntime
+
+        runtime = WindowsTaskerRuntime({}, Mock(session=module.Session()), Mock(), Mock())
+        with patch("windows_tasker.webbrowser.open") as opened:
+            runtime.open_android_intent_replacement("spotify:track:123")
+        opened.assert_called_once_with("spotify:track:123")
+
+
 if __name__ == "__main__":
     unittest.main()
