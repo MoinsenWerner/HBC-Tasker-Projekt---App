@@ -11,16 +11,29 @@ from __future__ import annotations
 
 import json
 import os
-import threading
-import tkinter as tk
 import webbrowser
 from dataclasses import dataclass
 from pathlib import Path
-from tkinter import messagebox, simpledialog, ttk
 from typing import Any, Callable
 from urllib.parse import quote
 
 import requests
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import (
+    QApplication,
+    QFormLayout,
+    QHBoxLayout,
+    QInputDialog,
+    QLabel,
+    QLineEdit,
+    QListWidget,
+    QMainWindow,
+    QMessageBox,
+    QPushButton,
+    QTabWidget,
+    QVBoxLayout,
+    QWidget,
+)
 
 APP_VERSION = "4.0.7-python"
 DEFAULT_API_URL = "https://api.plsreload.de"
@@ -131,30 +144,27 @@ class BrowserCredentialManager:
         webbrowser.open(f"{self.api_url}/passkeys/{operation}?{query}")
 
 
-class MusikClient(tk.Tk):
+class MusikClient(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
-        self.title("HBC Musik Client")
-        self.geometry("430x760")
-        self.minsize(380, 620)
-        self.configure(bg="#101217")
+        self.setWindowTitle("HBC Musik Client")
+        self.resize(430, 760)
+        self.setMinimumSize(380, 620)
         self.session = Session(api_url=self._load().get("api_url", DEFAULT_API_URL))
         self.api = HbcApi(self.session)
         self.cm = BrowserCredentialManager(self.session.api_url)
-        self.status = tk.StringVar(value="Bereit")
-        self.user_id = tk.StringVar(value=self._load().get("user_id", ""))
-        self.secret = tk.StringVar()
-        self.song = tk.StringVar(value="Nicht verbunden")
-        self._style()
+        self.user_id = QLineEdit(self._load().get("user_id", ""))
+        self.secret = QLineEdit()
+        self.secret.setEchoMode(QLineEdit.EchoMode.Password)
+        self.status = QLabel("Bereit")
+        self.setStyleSheet("""
+            QMainWindow, QWidget { background: #101217; color: #f5f5f5; }
+            QLineEdit, QListWidget { background: #20242c; padding: 8px; border: 1px solid #343943; border-radius: 5px; }
+            QPushButton { background: #292e37; padding: 10px; border-radius: 5px; }
+            QPushButton:hover { background: #3a414d; }
+            QPushButton#accent { background: #1ed760; color: #07150c; font-weight: bold; }
+        """)
         self.show_login()
-
-    def _style(self) -> None:
-        style = ttk.Style(self)
-        style.theme_use("clam")
-        style.configure(".", background="#101217", foreground="#f5f5f5", fieldbackground="#20242c")
-        style.configure("Accent.TButton", background="#1ed760", foreground="#07150c", padding=10)
-        style.configure("TButton", padding=8)
-        style.configure("TNotebook.Tab", padding=(12, 8))
 
     @staticmethod
     def _load() -> dict[str, Any]:
@@ -165,116 +175,137 @@ class MusikClient(tk.Tk):
 
     def _save(self) -> None:
         CONFIG_DIR.mkdir(parents=True, exist_ok=True)
-        CONFIG_FILE.write_text(json.dumps({"user_id": self.user_id.get(), "api_url": self.session.api_url}), encoding="utf-8")
+        CONFIG_FILE.write_text(json.dumps({"user_id": self.user_id.text(), "api_url": self.session.api_url}), encoding="utf-8")
 
-    def _clear(self) -> ttk.Frame:
-        for widget in self.winfo_children():
-            widget.destroy()
-        frame = ttk.Frame(self, padding=24)
-        frame.pack(fill="both", expand=True)
-        return frame
+    @staticmethod
+    def _button(text: str, callback: Callable[[], None], accent: bool = False) -> QPushButton:
+        button = QPushButton(text)
+        button.clicked.connect(lambda _checked=False: callback())
+        if accent:
+            button.setObjectName("accent")
+        return button
 
-    def _async(self, work: Callable[[], Any], done: Callable[[Any], None] | None = None) -> None:
-        self.status.set("Lädt …")
-        def run() -> None:
-            try:
-                result = work()
-                self.after(0, lambda: (self.status.set("Bereit"), done and done(result)))
-            except Exception as exc:  # network errors are presented on the UI thread
-                error = str(exc)
-                self.after(0, lambda: (self.status.set("Fehler"), messagebox.showerror("HBC Musik Client", error)))
-        threading.Thread(target=run, daemon=True).start()
+    def _execute(self, work: Callable[[], Any], done: Callable[[Any], None] | None = None) -> None:
+        self.status.setText("Lädt …")
+        QApplication.processEvents()
+        try:
+            result = work()
+            self.status.setText("Bereit")
+            if done:
+                done(result)
+        except Exception as exc:
+            self.status.setText("Fehler")
+            QMessageBox.critical(self, "HBC Musik Client", str(exc))
 
     def show_login(self) -> None:
-        frame = self._clear()
-        ttk.Label(frame, text="♫", font=("TkDefaultFont", 48), foreground="#1ed760").pack(pady=(35, 4))
-        ttk.Label(frame, text="HBC Musik Client", font=("TkDefaultFont", 22, "bold")).pack(pady=(0, 28))
-        ttk.Label(frame, text="User-ID").pack(anchor="w")
-        ttk.Entry(frame, textvariable=self.user_id).pack(fill="x", pady=(4, 14), ipady=7)
-        ttk.Label(frame, text="User-Secret").pack(anchor="w")
-        ttk.Entry(frame, textvariable=self.secret, show="•").pack(fill="x", pady=(4, 20), ipady=7)
-        ttk.Button(frame, text="Mit User-Secret anmelden", style="Accent.TButton", command=self.login_secret).pack(fill="x")
-        ttk.Separator(frame).pack(fill="x", pady=20)
-        ttk.Button(frame, text="🔑  Mit Passkey anmelden", command=self.login_passkey).pack(fill="x")
-        ttk.Label(frame, text="Passkeys werden sicher vom Betriebssystem bzw. Browser verwaltet.", wraplength=340).pack(pady=18)
-        ttk.Label(frame, textvariable=self.status).pack(side="bottom")
+        page, layout = QWidget(), QVBoxLayout()
+        layout.setContentsMargins(28, 45, 28, 28)
+        logo = QLabel("♫\nHBC Musik Client")
+        logo.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        logo.setStyleSheet("font-size: 28px; font-weight: bold; color: #1ed760; margin-bottom: 25px")
+        form = QFormLayout()
+        form.addRow("User-ID", self.user_id)
+        form.addRow("User-Secret", self.secret)
+        layout.addWidget(logo)
+        layout.addLayout(form)
+        layout.addWidget(self._button("Mit User-Secret anmelden", self.login_secret, True))
+        layout.addWidget(self._button("🔑  Mit Passkey anmelden", self.login_passkey))
+        hint = QLabel("Passkeys werden sicher vom Betriebssystem bzw. Browser verwaltet.")
+        hint.setWordWrap(True)
+        layout.addWidget(hint)
+        layout.addStretch()
+        layout.addWidget(self.status)
+        page.setLayout(layout)
+        self.setCentralWidget(page)
 
     def login_secret(self) -> None:
-        if not self.user_id.get().strip() or not self.secret.get():
-            messagebox.showwarning("Anmeldung", "Bitte User-ID und User-Secret eingeben.")
+        if not self.user_id.text().strip() or not self.secret.text():
+            QMessageBox.warning(self, "Anmeldung", "Bitte User-ID und User-Secret eingeben.")
             return
-        self._async(lambda: self.api.login_secret(self.user_id.get().strip(), self.secret.get()), self._logged_in)
+        self._execute(lambda: self.api.login_secret(self.user_id.text().strip(), self.secret.text()), self._logged_in)
 
     def login_passkey(self) -> None:
-        if not self.user_id.get().strip():
-            messagebox.showwarning("Anmeldung", "Bitte zuerst die User-ID eingeben.")
+        if not self.user_id.text().strip():
+            QMessageBox.warning(self, "Anmeldung", "Bitte zuerst die User-ID eingeben.")
             return
-        self.cm.launch("authenticate", self.user_id.get().strip())
-        token = simpledialog.askstring("Passkey", "Nach erfolgreicher Passkey-Anmeldung das vom Server angezeigte Session-Token einfügen:", show="•")
-        if token:
+        self.cm.launch("authenticate", self.user_id.text().strip())
+        token, accepted = QInputDialog.getText(self, "Passkey", "Nach erfolgreicher Passkey-Anmeldung das Session-Token einfügen:", QLineEdit.EchoMode.Password)
+        if accepted and token:
             self._logged_in(token)
 
     def _logged_in(self, token: str) -> None:
-        self.session.user_id, self.session.token = self.user_id.get().strip(), token
-        self.secret.set("")
+        self.session.user_id, self.session.token = self.user_id.text().strip(), token
+        self.secret.clear()
         self._save()
         self.show_main()
 
     def show_main(self) -> None:
-        root = self._clear()
-        notebook = ttk.Notebook(root)
-        notebook.pack(fill="both", expand=True)
-        home, playlists, server, settings = (ttk.Frame(notebook, padding=16) for _ in range(4))
-        for page, title in zip((home, playlists, server, settings), ("Player", "Playlists", "Server", "Einstellungen")):
-            notebook.add(page, text=title)
-        ttk.Label(home, text="Aktuelle Wiedergabe", font=("TkDefaultFont", 15, "bold")).pack(pady=(16, 30))
-        ttk.Label(home, text="♫", font=("TkDefaultFont", 70), foreground="#1ed760").pack()
-        ttk.Label(home, textvariable=self.song, font=("TkDefaultFont", 14), wraplength=320).pack(pady=22)
-        controls = ttk.Frame(home)
-        controls.pack()
+        root, root_layout, notebook = QWidget(), QVBoxLayout(), QTabWidget()
+        home, playlists, server, settings = QWidget(), QWidget(), QWidget(), QWidget()
+        home_layout, playlist_layout, server_layout, settings_layout = QVBoxLayout(), QVBoxLayout(), QVBoxLayout(), QVBoxLayout()
+        self.song = QLabel("Nicht verbunden")
+        self.song.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        note = QLabel("♫")
+        note.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        note.setStyleSheet("font-size: 80px; color: #1ed760")
+        home_layout.addWidget(QLabel("Aktuelle Wiedergabe"))
+        home_layout.addWidget(note)
+        home_layout.addWidget(self.song)
+        controls = QHBoxLayout()
         for label, action in (("⏮", "previous"), ("⏯", "play"), ("⏭", "next"), ("🔁", "repeat")):
-            ttk.Button(controls, text=label, command=lambda a=action: self._async(lambda: self.api.action(a), lambda _: self.refresh_player())).pack(side="left", padx=4)
-        ttk.Button(home, text="Aktualisieren", command=self.refresh_player).pack(pady=20)
-        self.playlist_box = tk.Listbox(playlists, bg="#20242c", fg="white", selectbackground="#1ed760")
-        self.playlist_box.pack(fill="both", expand=True)
-        ttk.Button(playlists, text="Playlists laden", command=lambda: self._async(self.api.playlists, self._render_playlists)).pack(fill="x", pady=8)
-        self.server_box = tk.Listbox(server, bg="#20242c", fg="white", selectbackground="#1ed760")
-        self.server_box.pack(fill="both", expand=True)
-        ttk.Button(server, text="Server-Playlists laden", command=lambda: self._async(self.api.server_playlists, self._render_server)).pack(fill="x", pady=8)
-        ttk.Label(settings, text=f"Angemeldet als {self.session.user_id}", font=("TkDefaultFont", 14, "bold")).pack(anchor="w", pady=12)
-        ttk.Label(settings, text="API-Adresse").pack(anchor="w")
-        api_var = tk.StringVar(value=self.session.api_url)
-        ttk.Entry(settings, textvariable=api_var).pack(fill="x", pady=6)
-        ttk.Button(settings, text="API-Adresse speichern", command=lambda: self._set_api(api_var.get())).pack(fill="x", pady=6)
-        ttk.Button(settings, text="🔑 Passkey erstellen", style="Accent.TButton", command=lambda: self.cm.launch("register", self.session.user_id, self.session.token)).pack(fill="x", pady=(22, 8))
-        ttk.Button(settings, text="Webchat öffnen", command=lambda: webbrowser.open(f"{self.session.api_url}/webchat?caller=python&client-id={quote(self.session.user_id)}")).pack(fill="x", pady=8)
-        ttk.Button(settings, text="Abmelden", command=self.logout).pack(fill="x", pady=8)
-        ttk.Label(settings, text=f"Version {APP_VERSION}").pack(side="bottom")
-        ttk.Label(root, textvariable=self.status).pack(pady=(8, 0))
+            controls.addWidget(self._button(label, lambda a=action: self._execute(lambda: self.api.action(a), lambda _: self.refresh_player())))
+        home_layout.addLayout(controls)
+        home_layout.addWidget(self._button("Aktualisieren", self.refresh_player))
+        home.setLayout(home_layout)
+        self.playlist_box = QListWidget()
+        playlist_layout.addWidget(self.playlist_box)
+        playlist_layout.addWidget(self._button("Playlists laden", lambda: self._execute(self.api.playlists, self._render_playlists)))
+        playlists.setLayout(playlist_layout)
+        self.server_box = QListWidget()
+        server_layout.addWidget(self.server_box)
+        server_layout.addWidget(self._button("Server-Playlists laden", lambda: self._execute(self.api.server_playlists, self._render_server)))
+        server.setLayout(server_layout)
+        api_field = QLineEdit(self.session.api_url)
+        settings_layout.addWidget(QLabel(f"Angemeldet als {self.session.user_id}"))
+        settings_layout.addWidget(QLabel("API-Adresse"))
+        settings_layout.addWidget(api_field)
+        settings_layout.addWidget(self._button("API-Adresse speichern", lambda: self._set_api(api_field.text())))
+        settings_layout.addWidget(self._button("🔑 Passkey erstellen", lambda: self.cm.launch("register", self.session.user_id, self.session.token), True))
+        settings_layout.addWidget(self._button("Webchat öffnen", lambda: webbrowser.open(f"{self.session.api_url}/webchat?caller=python&client-id={quote(self.session.user_id)}")))
+        settings_layout.addWidget(self._button("Abmelden", self.logout))
+        settings_layout.addStretch()
+        settings_layout.addWidget(QLabel(f"Version {APP_VERSION}"))
+        settings.setLayout(settings_layout)
+        for page, title in zip((home, playlists, server, settings), ("Player", "Playlists", "Server", "Einstellungen")):
+            notebook.addTab(page, title)
+        root_layout.addWidget(notebook)
+        root_layout.addWidget(self.status)
+        root.setLayout(root_layout)
+        self.setCentralWidget(root)
         self.refresh_player()
 
     def _set_api(self, value: str) -> None:
         self.session.api_url = value.rstrip("/") or DEFAULT_API_URL
         self.cm = BrowserCredentialManager(self.session.api_url)
         self._save()
-        self.status.set("API-Adresse gespeichert")
+        self.status.setText("API-Adresse gespeichert")
 
     def refresh_player(self) -> None:
         def show(data: dict[str, Any]) -> None:
             item = data.get("item") or data
             artists = ", ".join(a.get("name", "") for a in item.get("artists", []))
-            self.song.set(f"{item.get('name', 'Keine Wiedergabe')}\n{artists}".strip())
-        self._async(self.api.player, show)
+            self.song.setText(f"{item.get('name', 'Keine Wiedergabe')}\n{artists}".strip())
+        self._execute(self.api.player, show)
 
     def _render_playlists(self, items: list[dict[str, Any]]) -> None:
-        self.playlist_box.delete(0, "end")
+        self.playlist_box.clear()
         for item in items:
-            self.playlist_box.insert("end", item.get("name", str(item)))
+            self.playlist_box.addItem(item.get("name", str(item)))
 
     def _render_server(self, items: list[Any]) -> None:
-        self.server_box.delete(0, "end")
+        self.server_box.clear()
         for item in items:
-            self.server_box.insert("end", item.get("name", str(item)) if isinstance(item, dict) else item)
+            self.server_box.addItem(item.get("name", str(item)) if isinstance(item, dict) else str(item))
 
     def logout(self) -> None:
         self.session.token = ""
@@ -282,4 +313,7 @@ class MusikClient(tk.Tk):
 
 
 if __name__ == "__main__":
-    MusikClient().mainloop()
+    app = QApplication([])
+    window = MusikClient()
+    window.show()
+    raise SystemExit(app.exec())

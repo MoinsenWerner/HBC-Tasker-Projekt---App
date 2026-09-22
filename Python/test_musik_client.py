@@ -1,4 +1,5 @@
 import importlib.util
+import os
 import pathlib
 import sys
 import unittest
@@ -10,6 +11,8 @@ module = importlib.util.module_from_spec(spec)
 assert spec.loader
 sys.modules[spec.name] = module
 spec.loader.exec_module(module)
+
+os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 
 class ApiTests(unittest.TestCase):
@@ -27,6 +30,18 @@ class ApiTests(unittest.TestCase):
         with patch.object(api, "_request", return_value={}) as request:
             api.action("repeat", "context mode")
         request.assert_called_once_with("POST", "/player/repeat/context%20mode")
+
+
+class UiTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.app = module.QApplication.instance() or module.QApplication([])
+
+    def test_login_window_starts_without_tcl(self):
+        window = module.MusikClient()
+        self.assertEqual(window.windowTitle(), "HBC Musik Client")
+        self.assertIsNotNone(window.centralWidget())
+        window.close()
 
 
 if __name__ == "__main__":

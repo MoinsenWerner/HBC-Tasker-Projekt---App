@@ -4,7 +4,7 @@ Dieses Repository enthält den ursprünglichen Tasker-Export und zwei vollständ
 Neuimplementierungen:
 
 * [`Python/`](Python/) – plattformübergreifender Desktop-Client als einzelne
-  Python-Datei mit Tk-Oberfläche.
+  Python-Datei mit Qt/PySide6-Oberfläche.
 * [`apk/`](apk/) – nativer Flutter-/Android-Client einschließlich
   `setup-and-compile.sh` für Debian.
 
