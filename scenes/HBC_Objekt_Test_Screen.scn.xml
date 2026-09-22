@@ -1,0 +1,242 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<dmetric>1080.0,2167.0</dmetric>
+	<Scene sr="sceneHBC Objekt Test Screen">
+		<cdate>1783667177034</cdate>
+		<edate>1788952672296</edate>
+		<heightLand>-1</heightLand>
+		<heightPort>2167</heightPort>
+		<nme>HBC Objekt Test Screen</nme>
+		<widthLand>-1</widthLand>
+		<widthPort>1080</widthPort>
+		<WebElement sr="elements0" ve="2">
+			<flags>4</flags>
+			<geom>0,254,1078,1914,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">WebAnsicht1</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="1"/>
+			<Str sr="arg8" ve="3"/>
+		</WebElement>
+		<ImageElement sr="elements1" ve="2">
+			<clickTask>251</clickTask>
+			<flags>4</flags>
+			<geom>0,0,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Loading Spinner</Str>
+			<Img sr="arg1" ve="2">
+				<fle>/storage/emulated/0/Tasker/HBC/.internal/resources/spinner_gif/spinner.gif</fle>
+			</Img>
+			<Int sr="arg2" val="255"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</ImageElement>
+		<ButtonElement sr="elements2" ve="3">
+			<clickTask>255</clickTask>
+			<flags>4</flags>
+			<geom>255,80,371,166,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Back</Str>
+			<Str sr="arg1" ve="3">Back</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<PropertiesElement sr="props">
+			<iconclickTask>253</iconclickTask>
+			<keyTask>252</keyTask>
+			<Int sr="arg0" val="2"/>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">#FF000000</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">HBC Launch Screen</Str>
+			<Str sr="arg5" ve="3"/>
+			<Img sr="arg6" ve="2">
+				<fle>/storage/emulated/0/Tasker/HBC/.img/appicon.png</fle>
+			</Img>
+			<Str sr="arg7" ve="3">Launch Screen</Str>
+			<LinkClickFilter sr="filter0">
+				<urlMatch>ALL_APPS/APP_SWITCH</urlMatch>
+			</LinkClickFilter>
+		</PropertiesElement>
+	</Scene>
+	<Task sr="task251">
+		<cdate>1784373582280</cdate>
+		<edate>1784373582280</edate>
+		<id>251</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Loading Spinner Frames</Str>
+			<Int sr="arg1">
+				<var>1</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">HBC Launch Screen</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task252">
+		<cdate>1783682033432</cdate>
+		<edate>1783682033432</edate>
+		<id>252</id>
+		<Action sr="act0" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%key_code;%key_name</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task253">
+		<cdate>1783682050138</cdate>
+		<edate>1783682050138</edate>
+		<id>253</id>
+		<Action sr="act0" ve="7">
+			<code>18</code>
+			<App sr="arg0">
+				<appClass>net.dinglisch.android.taskerm.Kid</appClass>
+				<appPkg>com.plsreloadtasker.hbcclient</appPkg>
+				<label>Musik Client</label>
+			</App>
+			<Int sr="arg1" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task255">
+		<cdate>1781005955180</cdate>
+		<edate>1781005955180</edate>
+		<id>255</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Bitte warte kurz...</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>46</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Loading_Spinner_Waiting_Time</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_Loading_Spinner_FPS</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>47</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Int sr="arg1" val="9"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>48</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Einstellungen</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>49</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Einstellungen</Str>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>37</code>
+			<on>false</on>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%hbc_client_id</lhs>
+					<op>0</op>
+					<rhs>felix</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">HBC Einstellungen</Str>
+			<Str sr="arg1" ve="3">Manueller Update-Check</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">HBC Einstellungen</Str>
+			<Str sr="arg1" ve="3">Manueller Update Reminder</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>50</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Send Userdaten Benachrichtigung Switch</Str>
+			<Int sr="arg2">
+				<var>%HBC_UserPosDaten_Benachrichtigung_onoff</var>
+			</Int>
+		</Action>
+	</Task>
+</TaskerData>

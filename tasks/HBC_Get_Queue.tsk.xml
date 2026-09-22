@@ -1,0 +1,25 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<Task sr="task320">
+		<cdate>1780470471205</cdate>
+		<edate>1788961859944</edate>
+		<id>320</id>
+		<nme>HBC Get Queue</nme>
+		<rty>2</rty>
+		<Action sr="act0" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Send Post Request</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">queue/get-list</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+</TaskerData>

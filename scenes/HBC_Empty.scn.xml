@@ -1,0 +1,12 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<dmetric>1080.0,2167.0</dmetric>
+	<Scene sr="sceneHBC Empty">
+		<cdate>1788950043534</cdate>
+		<edate>1788950047311</edate>
+		<heightLand>-1</heightLand>
+		<heightPort>2167</heightPort>
+		<nme>HBC Empty</nme>
+		<widthLand>-1</widthLand>
+		<widthPort>1080</widthPort>
+	</Scene>
+</TaskerData>

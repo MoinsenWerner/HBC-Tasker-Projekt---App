@@ -1,0 +1,133 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<Task sr="task285">
+		<cdate>1778061525989</cdate>
+		<edate>1787209152016</edate>
+		<id>285</id>
+		<nme>HBC Read Repeat State</nme>
+		<pri>100</pri>
+		<rty>2</rty>
+		<Action sr="act0" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Send Post Request</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">get_repeat_state</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>1</op>
+					<rhs>change</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Set Repeat State</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%HBC_SpotifyRepeatingStateTemp</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_SpotifyRepeatingStateTemp</lhs>
+					<op>0</op>
+					<rhs>context</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>547</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">%HBC_RepeatingSymbol</Str>
+			<Str sr="arg1" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_repeat</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_SpotifyRepeatingStateTemp</lhs>
+					<op>0</op>
+					<rhs>track</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>547</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">%HBC_RepeatingSymbol</Str>
+			<Str sr="arg1" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_repeat_one</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_SpotifyRepeatingStateTemp</lhs>
+					<op>0</op>
+					<rhs>off</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>547</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">%HBC_RepeatingSymbol</Str>
+			<Str sr="arg1" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_action_trending_flat</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">RepeatBtn</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_RepeatingSymbol</var>
+			</Img>
+		</Action>
+	</Task>
+</TaskerData>

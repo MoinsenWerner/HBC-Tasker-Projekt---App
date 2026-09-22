@@ -1,0 +1,50 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<Task sr="task353">
+		<cdate>1789006175854</cdate>
+		<edate>1790060686746</edate>
+		<id>353</id>
+		<nme>Passkey Result</nme>
+		<pri>6</pri>
+		<Action sr="act0" ve="7">
+			<code>105</code>
+			<Str sr="arg0" ve="3">Passkey Aktion: %HBC_Passkey_Action
+result: %evtprm1
+Error: %evtprm2
+Status: %evtprm3
+Schema: %evtprm4
+MIME-Type: %evtprm5
+Alle Daten:
+%evtprm()</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Taste
+Die Beschriftung der angeklickten Schaltfläche&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3">Passkey Aktion: %HBC_Passkey_Action
+result: %evtprm1
+Error: %evtprm2
+Status: %evtprm3
+Schema: %evtprm4
+MIME-Type: %evtprm5
+Alle Daten:
+%evtprm()</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+	</Task>
+</TaskerData>

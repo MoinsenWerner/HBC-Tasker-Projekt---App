@@ -1,0 +1,1433 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<Task sr="task300">
+		<cdate>1781599949783</cdate>
+		<edate>1788986158940</edate>
+		<id>300</id>
+		<nme>HBC List PL Songs</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>357</code>
+			<Str sr="arg0" ve="3">%HBC_songs_names</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>357</code>
+			<Str sr="arg0" ve="3">%HBC_songs_png</Str>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act100" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act101" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Songname_6</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act102" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PNG_6</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_png(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act103" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act104" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Songname_7</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act105" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PNG_7</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_png(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act106" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act107" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Songname_8</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act108" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PNG_8</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_png(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act109" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%par1</Str>
+			<Str sr="arg1" ve="3">https://api.spotify.com/v1/playlists/2VnLS4ANs2fZzUEnC22pE2/items?limit=50&amp; fields=items(added_by.id,item(name,href,album(name,href,images)))</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act110" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Songname_9</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act111" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PNG_9</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_png(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act112" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act113" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Songname_10</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act114" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PNG_10</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_png(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act115" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act116" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Bild1</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PL_PNG_1</var>
+			</Img>
+		</Action>
+		<Action sr="act117" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Bild2</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PL_PNG_2</var>
+			</Img>
+		</Action>
+		<Action sr="act118" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Bild3</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PL_PNG_3</var>
+			</Img>
+		</Action>
+		<Action sr="act119" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Bild4</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PL_PNG_4</var>
+			</Img>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%par2</Str>
+			<Str sr="arg1" ve="3">2VnLS4ANs2fZzUEnC22pE2</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act120" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Bild5</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PL_PNG_5</var>
+			</Img>
+		</Action>
+		<Action sr="act121" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Bild6</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PL_PNG_6</var>
+			</Img>
+		</Action>
+		<Action sr="act122" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Bild7</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PL_PNG_7</var>
+			</Img>
+		</Action>
+		<Action sr="act123" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Bild8</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PL_PNG_8</var>
+			</Img>
+		</Action>
+		<Action sr="act124" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Bild9</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PL_PNG_9</var>
+			</Img>
+		</Action>
+		<Action sr="act125" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Bild10</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PL_PNG_10</var>
+			</Img>
+		</Action>
+		<Action sr="act126" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Text1</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_PL_Songname_1</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act127" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Text2</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_PL_Songname_2</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act128" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Text3</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_PL_Songname_3</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act129" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Text4</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_PL_Songname_4</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Play_Playlist</Str>
+			<Str sr="arg1" ve="3">true</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act130" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Text5</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_PL_Songname_5</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act131" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Text6</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_PL_Songname_6</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act132" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Text7</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_PL_Songname_7</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act133" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Text8</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_PL_Songname_8</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act134" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Text9</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_PL_Songname_9</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act135" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Text10</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_PL_Songname_10</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act136" ve="7">
+			<code>65</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">Ladebalken Playlist</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act137" ve="7">
+			<code>65</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">Text2</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act138" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+		</Action>
+		<Action sr="act139" ve="7">
+			<code>47</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Int sr="arg1" val="9"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Play_Playlist_plname</Str>
+			<Str sr="arg1" ve="3">nice, aus dly. Playlists</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act140" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act141" ve="7">
+			<code>300</code>
+			<label>Ende</label>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Play_Playlist_plid</Str>
+			<Str sr="arg1" ve="3">2VnLS4ANs2fZzUEnC22pE2</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>409</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/PL</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>408</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/PL/%par2</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>409</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/PL/%par2/.img</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>357</code>
+			<Str sr="arg0" ve="3">%HBC_songs_id</Str>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>351</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_auth_headers
+Header
+Verwenden Sie dies in der Aktion HTTP-Anfrage im Feld 'Header', um die Anfrage zu authentifizieren&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg2" ve="3">b8f9f76a43e942dc8501097e12663dd5</Str>
+			<Str sr="arg3" ve="3">6df87f22ec934c94b95a53949ad65a6e</Str>
+			<Str sr="arg4" ve="3">https://accounts.spotify.com/authorize</Str>
+			<Str sr="arg5" ve="3">https://accounts.spotify.com/api/token</Str>
+			<Str sr="arg6" ve="3">user-read-currently-playing
+user-read-playback-state
+playlist-read-private
+playlist-read-collaborative
+user-modify-playback-state
+user-read-private
+user-read-email</Str>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="30"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%hbc_spotify_auth_header</Str>
+			<Str sr="arg1" ve="3">%http_auth_headers</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>339</code>
+			<label>get playlist name</label>
+			<Bundle sr="arg0">
+				<pref>0</pref>
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%http_data
+Daten
+Daten, die der Server von der HTTP-Anfrage zurückgegeben hat.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">https://api.spotify.com/v1/playlists/%par2</Str>
+			<Str sr="arg3" ve="3">%hbc_spotify_auth_header</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_pl_name_via_id</Str>
+			<Str sr="arg1" ve="3">%0_http_data.name</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act24" ve="7">
+			<code>339</code>
+			<label>Requests Songs</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%http_data
+Daten
+Daten, die der Server von der HTTP-Anfrage zurückgegeben hat.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">%par1</Str>
+			<Str sr="arg3" ve="3">%hbc_spotify_auth_header</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act25" ve="7">
+			<code>339</code>
+			<label>Requests Songs2</label>
+			<on>false</on>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%http_data
+Daten
+Daten, die der Server von der HTTP-Anfrage zurückgegeben hat.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">%link</Str>
+			<Str sr="arg3" ve="3">%hbc_spotify_auth_header</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act26" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Total</Str>
+			<Str sr="arg1" ve="3">%http_data.total</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act27" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%max</Str>
+			<Str sr="arg1" ve="3">%HBC_PL_Total+1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act28" ve="7">
+			<code>354</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_names_all</Str>
+			<Str sr="arg1" ve="3">%http_data.items.item.name()</Str>
+			<Str sr="arg2" ve="3">,</Str>
+		</Action>
+		<Action sr="act29" ve="7">
+			<code>354</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_png_link_all</Str>
+			<Str sr="arg1" ve="3">%http_data.items.item.album.images.url()</Str>
+			<Str sr="arg2" ve="3">,</Str>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>357</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_names_all</Str>
+		</Action>
+		<Action sr="act30" ve="7">
+			<code>354</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_songid_all</Str>
+			<Str sr="arg1" ve="3">%http_data.items.item.id()</Str>
+			<Str sr="arg2" ve="3">,</Str>
+		</Action>
+		<Action sr="act31" ve="7">
+			<code>354</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%Hbc_songs_songuri_all</Str>
+			<Str sr="arg1" ve="3">%http_data.items.item.uri()</Str>
+			<Str sr="arg2" ve="3">,</Str>
+		</Action>
+		<Action sr="act32" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>Alle Songnamen abrufen</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%Hbc_songs_names_all1</lhs>
+					<op>12</op>
+					<rhs>-1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act33" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%HBC_Playlist_Song_Num</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2">
+				<var>0</var>
+			</Int>
+		</Action>
+		<Action sr="act34" ve="7">
+			<code>399</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%HBC_PL_LB_Value
+Ergebnis der Map-Operation
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%HBC_Playlist_Song_Num</Str>
+			<Str sr="arg2" ve="3">0</Str>
+			<Str sr="arg3" ve="3">%HBC_PL_Total</Str>
+			<Str sr="arg4" ve="3">0</Str>
+			<Str sr="arg5" ve="3">50000</Str>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="3"/>
+			<Str sr="arg9" ve="3">%HBC_PL_LB_Value</Str>
+		</Action>
+		<Action sr="act35" ve="7">
+			<code>50</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">Ladebalken Playlist</Str>
+			<Int sr="arg2">
+				<var>%HBC_PL_LB_Value</var>
+			</Int>
+		</Action>
+		<Action sr="act36" ve="7">
+			<code>51</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">Song Counter</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">Gefundene Songs: %HBC_Playlist_Song_Num</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act37" ve="7">
+			<code>356</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_names_all</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">%songname</Str>
+		</Action>
+		<Action sr="act38" ve="7">
+			<code>356</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_png_link_all</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3"/>
+		</Action>
+		<Action sr="act39" ve="7">
+			<code>356</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_png_link_all</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">%songpng</Str>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>357</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_png_link_all</Str>
+		</Action>
+		<Action sr="act40" ve="7">
+			<code>356</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_png_link_all</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3"/>
+		</Action>
+		<Action sr="act41" ve="7">
+			<code>356</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_songid_all</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">%songid</Str>
+		</Action>
+		<Action sr="act42" ve="7">
+			<code>356</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%Hbc_songs_songuri_all</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">%songuri</Str>
+		</Action>
+		<Action sr="act43" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%speicherpfad</Str>
+			<Str sr="arg1" ve="3">Tasker/HBC/PL/%par2/.img</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act44" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%speicherpfad</Str>
+			<Str sr="arg1" ve="3">/img-%HBC_Playlist_Song_Num</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act45" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%speicherpfad</Str>
+			<Str sr="arg1" ve="3">.png</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act46" ve="7">
+			<code>339</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">%songpng</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%speicherpfad</Str>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act47" ve="7">
+			<code>355</code>
+			<Str sr="arg0" ve="3">%HBC_songs_names</Str>
+			<Int sr="arg1" val="999999"/>
+			<Str sr="arg2" ve="3">%songname</Str>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act48" ve="7">
+			<code>355</code>
+			<Str sr="arg0" ve="3">%HBC_songs_png</Str>
+			<Int sr="arg1" val="999999"/>
+			<Str sr="arg2" ve="3">%speicherpfad</Str>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act49" ve="7">
+			<code>355</code>
+			<Str sr="arg0" ve="3">%HBC_songs_id</Str>
+			<Int sr="arg1" val="999999"/>
+			<Str sr="arg2" ve="3">%songid</Str>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>357</code>
+			<Str sr="arg0" ve="3">%Hbc_songs_songid_all</Str>
+		</Action>
+		<Action sr="act50" ve="7">
+			<code>355</code>
+			<Str sr="arg0" ve="3">%HBC_songs_png_link</Str>
+			<Int sr="arg1" val="999999"/>
+			<Str sr="arg2" ve="3">%songpng</Str>
+			<Int sr="arg3" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Play_Playlist</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act51" ve="7">
+			<code>355</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%HBC_songs_uri</Str>
+			<Int sr="arg1" val="999999"/>
+			<Str sr="arg2" ve="3">%songuri</Str>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act52" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Alle Songnamen abrufen</Str>
+		</Action>
+		<Action sr="act53" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act54" ve="7">
+			<code>135</code>
+			<on>false</on>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">szene</Str>
+		</Action>
+		<Action sr="act55" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act56" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">1 batch beendet</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Show_Debug_Popups</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act57" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_PL_Total</lhs>
+					<op>7</op>
+					<rhs>%HBC_Playlist_Song_Num</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%HBC_PL_Total</lhs>
+					<op>7</op>
+					<rhs>50</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act58" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link</Str>
+			<Str sr="arg1" ve="3">https://api.spotify.com/v1/playlists/</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act59" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link</Str>
+			<Str sr="arg1" ve="3">%par2</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act60" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link</Str>
+			<Str sr="arg1" ve="3">/items?offset=</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act61" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link</Str>
+			<Str sr="arg1" ve="3">%HBC_Playlist_Song_Num</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act62" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link</Str>
+			<Str sr="arg1" ve="3">&amp;limit=50&amp; fields=items(added_by.id,item(name,href,album(name,href,images)))</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act63" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%par1</Str>
+			<Str sr="arg1" ve="3">%link</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act64" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Next batch</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Show_Popups</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act65" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Requests Songs</Str>
+		</Action>
+		<Action sr="act66" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act67" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">szene</Str>
+		</Action>
+		<Action sr="act68" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act69" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Playlist_Song_Num</Str>
+			<Str sr="arg1" ve="3">0</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act70" ve="7">
+			<code>406</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/.internal/playlistcontent.txt</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Play_Playlist</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act71" ve="7">
+			<code>410</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/.internal/playlistcontent.txt</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names()
+___
+%HBC_songs_png()
+___
+%HBC_songs_id()
+___
+%HBC_songs_png_link()
+___
+%HBC_Play_Playlist_plname
+___
+%HBC_Play_Playlist_plid</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Play_Playlist</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act72" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<label>szene</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>1</lhs>
+					<op>0</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act73" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Szene gestartet</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Show_Debug_Popups</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act74" ve="7">
+			<code>46</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+		</Action>
+		<Action sr="act75" ve="7">
+			<code>47</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Int sr="arg1" val="9"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act76" ve="7">
+			<code>65</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Upload Playlist To Server</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Play_Playlist</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act77" ve="7">
+			<code>67</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">Upload Playlist To Server</Str>
+			<Int sr="arg2" val="38"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Play_Playlist</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act78" ve="7">
+			<code>67</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Playlist</Str>
+			<Str sr="arg1" ve="3">HBC_Sel_PL_ID</Str>
+			<Int sr="arg2" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Play_Playlist</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act79" ve="7">
+			<code>130</code>
+			<on>false</on>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Upload Playlist</Str>
+			<Int sr="arg1">
+				<var>50</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Play_Playlist</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PageNum</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act80" ve="7">
+			<code>547</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%HBC_Play_Playlist</Str>
+			<Str sr="arg1" ve="3">false</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act81" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+		</Action>
+		<Action sr="act82" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Page_Counter</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act83" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PageNum</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act84" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%totalpages</Str>
+			<Str sr="arg1" ve="3">%HBC_PL_Total/10</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act85" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PageNum</Str>
+			<Str sr="arg1" ve="3">/%totalpages</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act86" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Songname_1</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act87" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PNG_1</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_png(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act88" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act89" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Songname_2</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%par1</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Show_Popups</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act90" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PNG_2</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_png(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act91" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act92" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Songname_3</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act93" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PNG_3</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_png(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act94" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act95" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Songname_4</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act96" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PNG_4</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_png(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act97" ve="7">
+			<code>888</code>
+			<Str sr="arg0" ve="3">%songnum_per_page</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act98" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_Songname_5</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_names(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act99" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PL_PNG_5</Str>
+			<Str sr="arg1" ve="3">%HBC_songs_png(%songnum_per_page)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+	</Task>
+</TaskerData>

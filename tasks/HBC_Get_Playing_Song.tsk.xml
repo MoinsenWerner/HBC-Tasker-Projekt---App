@@ -1,0 +1,2844 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<Task sr="task321">
+		<cdate>1775845437224</cdate>
+		<edate>1788953775192</edate>
+		<id>321</id>
+		<nme>HBC Get Playing Song</nme>
+		<pri>100</pri>
+		<rty>1</rty>
+		<Action sr="act0" ve="7">
+			<code>548</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">Bitte warte kurz...</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>0</op>
+					<rhs>start</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>339</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">%hbc_api_url/updates/%HBC_Installed_App_Version/%app_versionsname</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">Tasker/HBC/.internal/update-tracker.txt</Str>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act100" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">HBC Get Playing Song</Str>
+		</Action>
+		<Action sr="act101" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act102" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act103" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_DurationActive</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act104" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<label>start</label>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<bool1>Or</bool1>
+				<bool2>Or</bool2>
+				<bool3>Or</bool3>
+				<bool4>Or</bool4>
+				<bool5>Or</bool5>
+				<Condition sr="c0" ve="3">
+					<lhs>%hbc_client_id</lhs>
+					<op>0</op>
+					<rhs>testid</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%hbc_client_id</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c2" ve="3">
+					<lhs>%hbc_client_secret</lhs>
+					<op>0</op>
+					<rhs>testsecret</rhs>
+				</Condition>
+				<Condition sr="c3" ve="3">
+					<lhs>%hbc_client_secret</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c4" ve="3">
+					<lhs>%hbc_auth_header</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c5" ve="3">
+					<lhs>%HBC_Initial_User_Datas_Set</lhs>
+					<op>0</op>
+					<rhs>false</rhs>
+				</Condition>
+				<Condition sr="c6" ve="3">
+					<lhs>%HBC_Initial_User_Datas_Set</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act105" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Initial_User_Datas_Set</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act106" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Normal App Main Activity</Str>
+		</Action>
+		<Action sr="act107" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act108" ve="7">
+			<code>409</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/.img</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act109" ve="7">
+			<code>188</code>
+			<Img sr="arg0" ve="2">
+				<nme>hl_content_picture</nme>
+			</Img>
+			<Int sr="arg1"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act110" ve="7">
+			<code>187</code>
+			<Str sr="arg0" ve="3">Tasker/HBC/.img/img.png</Str>
+			<Int sr="arg1" val="85"/>
+			<Int sr="arg2" val="0"/>
+		</Action>
+		<Action sr="act111" ve="7">
+			<code>46</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Einstellungen</Str>
+		</Action>
+		<Action sr="act112" ve="7">
+			<code>47</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Einstellungen</Str>
+			<Int sr="arg1" val="10"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act113" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%hbc_client_id</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act114" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Einstellungen</Str>
+			<Str sr="arg1" ve="3">Client ID</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%hbc_client_id</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act115" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act116" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%hbc_client_secret</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act117" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Einstellungen</Str>
+			<Str sr="arg1" ve="3">Client Secret</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%hbc_client_secret</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act118" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act119" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%continue_task</Str>
+			<Str sr="arg1" ve="3">false</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>417</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/.internal/update-tracker.txt</Str>
+			<Str sr="arg1" ve="3">%HBC_Updates</Str>
+			<Int sr="arg2" val="1"/>
+		</Action>
+		<Action sr="act120" ve="7">
+			<code>410</code>
+			<Str sr="arg0" ve="3">Tasker/HBC/.internal/tests/initial_user_config.txt</Str>
+			<Str sr="arg1" ve="3">Client ID: %hbc_client_id
+Client Secret: %hbc_client_secret
+Client Auth Header: %hbc_auth_header
+
+------------</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act121" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Please restart the app.</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act122" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Initial_User_Datas_Set</Str>
+			<Str sr="arg1" ve="3">true</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act123" ve="7">
+			<code>18</code>
+			<App sr="arg0">
+				<appClass>net.dinglisch.android.taskerm.Kid</appClass>
+				<appPkg>com.plsreloadtasker.hbcclient</appPkg>
+				<label>Musik Client</label>
+			</App>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act124" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">HBC Get Playing Song</Str>
+		</Action>
+		<Action sr="act125" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act126" ve="7">
+			<code>300</code>
+			<label>Normal App Main Activity</label>
+		</Action>
+		<Action sr="act127" ve="7">
+			<code>46</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+		</Action>
+		<Action sr="act128" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%hbc_client_id</lhs>
+					<op>0</op>
+					<rhs>felix</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act129" ve="7">
+			<code>65</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">List Server Playlists</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Updates</lhs>
+					<op>13</op>
+					<rhs>%HBC_Installed_App_Version</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act130" ve="7">
+			<code>65</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">OpenPlayingPlaylistScreenBtn</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act131" ve="7">
+			<code>65</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">PlaySelectedPlaylistScreenBtn</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act132" ve="7">
+			<code>65</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">UploadSelectedPlaylistBtn</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act133" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act134" ve="7">
+			<code>65</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">Warnung Eingeschränkte Funktionalität</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Base_Link_Not_Default</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act135" ve="7">
+			<code>65</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">Warnung Eingeschränkte Funktionalität</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Base_Link_Not_Default</lhs>
+					<op>1</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act136" ve="7">
+			<code>351</code>
+			<label>repeat</label>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_auth_headers
+Header
+Verwenden Sie dies in der Aktion HTTP-Anfrage im Feld 'Header', um die Anfrage zu authentifizieren&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg2" ve="3">%hbc_client_id</Str>
+			<Str sr="arg3" ve="3">%hbc_client_secret</Str>
+			<Str sr="arg4" ve="3">%hbc_api_authorize_url</Str>
+			<Str sr="arg5" ve="3">%hbc_api_token_url</Str>
+			<Str sr="arg6" ve="3">client</Str>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="30"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act137" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%hbc_auth_header</Str>
+			<Str sr="arg1" ve="3">%http_auth_headers</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act138" ve="7">
+			<code>339</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%http_data
+Daten
+Daten, die der Server von der HTTP-Anfrage zurückgegeben hat.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">%hbc_api_url/player</Str>
+			<Str sr="arg3" ve="3">%hbc_auth_header</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act139" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_SpotifyPlayPauseVar</lhs>
+					<op>0</op>
+					<rhs>playing</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Updates</Str>
+			<Str sr="arg1" ve="3">Abrufen der Versionsinformationen fehlgeschlagen</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act140" ve="7">
+			<code>66</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">PlayPause</Str>
+			<Img sr="arg2" ve="2">
+				<nme>mw_av_play_arrow</nme>
+				<tint>-1</tint>
+			</Img>
+		</Action>
+		<Action sr="act141" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_SpotifyPlayPauseVar</lhs>
+					<op>0</op>
+					<rhs>paused</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act142" ve="7">
+			<code>66</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">PlayPause</Str>
+			<Img sr="arg2" ve="2">
+				<nme>mw_av_pause</nme>
+				<tint>-1</tint>
+			</Img>
+		</Action>
+		<Action sr="act143" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act144" ve="7">
+			<code>47</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Int sr="arg1" val="10"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act145" ve="7">
+			<code>49</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Launch Screen</Str>
+		</Action>
+		<Action sr="act146" ve="7">
+			<code>410</code>
+			<Str sr="arg0" ve="3">Tasker/HBC/.internal/tests/songdetails.txt</Str>
+			<Str sr="arg1" ve="3">http data: %http_data
+
+
+Time: %TIME
+----------------------------</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act147" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_CurrPlayingSongMaxDurationMS</Str>
+			<Str sr="arg1" ve="3">%http_data.duration_ms</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act148" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_CurrPlayingSongName</Str>
+			<Str sr="arg1" ve="3">%http_data.item.name</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act149" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PlayerCurrSongPng</Str>
+			<Str sr="arg1" ve="3">%http_data.item.album.images.url</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act150" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_SongDurationProgressMS</Str>
+			<Str sr="arg1" ve="3">%http_data.progress_ms</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act151" ve="7">
+			<code>339</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">%HBC_PlayerCurrSongPng</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">Tasker/HBC/.img/img.png</Str>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act152" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>1</lhs>
+					<op>0</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act153" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<on>false</on>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>1</op>
+					<rhs>back</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act154" ve="7">
+			<code>46</code>
+			<on>false</on>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+		</Action>
+		<Action sr="act155" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act156" ve="7">
+			<code>66</code>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">HBC Player Curr Song Png</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PlayerCurrSongPngPath</var>
+			</Img>
+		</Action>
+		<Action sr="act157" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%http_data.error</lhs>
+					<op>0</op>
+					<rhs>token_expired</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%http_data</lhs>
+					<op>4</op>
+					<rhs>token_expired</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act158" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">HBC Player Curr Song Name</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">Bitte melde dich erneut in den Einstellungen an.</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act159" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Updates_fail</Str>
+			<Str sr="arg1" ve="3">false</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act160" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%http_data.item.name</lhs>
+					<op>4</op>
+					<rhs>java.net</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act161" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">HBC Player Curr Song Name</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">Spotify läuft bei Felix aktuell nicht.</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act162" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act163" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">HBC Player Curr Song Name</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%http_data.item.name</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act164" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Get PlayPause</Str>
+			<Int sr="arg1">
+				<var>10</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act165" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act166" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act167" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act168" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Get PlayPause</Str>
+			<Int sr="arg1">
+				<var>10</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act169" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_SpotifyPlayPauseVar</lhs>
+					<op>0</op>
+					<rhs>playing</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act170" ve="7">
+			<code>66</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">PlayPause</Str>
+			<Img sr="arg2" ve="2">
+				<nme>mw_av_play_arrow</nme>
+				<tint>-1</tint>
+			</Img>
+		</Action>
+		<Action sr="act171" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act172" ve="7">
+			<code>66</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">PlayPause</Str>
+			<Img sr="arg2" ve="2">
+				<nme>mw_av_pause</nme>
+				<tint>-1</tint>
+			</Img>
+		</Action>
+		<Action sr="act173" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act174" ve="7">
+			<code>50</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">SongDurationPrrogress</Str>
+			<Int sr="arg2">
+				<var>%HBC_SongDurationProgressMS</var>
+			</Int>
+		</Action>
+		<Action sr="act175" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<on>false</on>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>1</op>
+					<rhs>back</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act176" ve="7">
+			<code>47</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Int sr="arg1" val="6"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act177" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act178" ve="7">
+			<code>166160670</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<ActionIconString1>&lt;null&gt;</ActionIconString1>
+					<ActionIconString1-type>java.lang.String</ActionIconString1-type>
+					<ActionIconString2>&lt;null&gt;</ActionIconString2>
+					<ActionIconString2-type>java.lang.String</ActionIconString2-type>
+					<ActionIconString3>&lt;null&gt;</ActionIconString3>
+					<ActionIconString3-type>java.lang.String</ActionIconString3-type>
+					<ActionIconString4>&lt;null&gt;</ActionIconString4>
+					<ActionIconString4-type>java.lang.String</ActionIconString4-type>
+					<ActionIconString5>&lt;null&gt;</ActionIconString5>
+					<ActionIconString5-type>java.lang.String</ActionIconString5-type>
+					<AppendTexts>false</AppendTexts>
+					<AppendTexts-type>java.lang.Boolean</AppendTexts-type>
+					<BackgroundColor>&lt;null&gt;</BackgroundColor>
+					<BackgroundColor-type>java.lang.String</BackgroundColor-type>
+					<BadgeType>&lt;null&gt;</BadgeType>
+					<BadgeType-type>java.lang.String</BadgeType-type>
+					<Button1UnlockScreen>false</Button1UnlockScreen>
+					<Button1UnlockScreen-type>java.lang.Boolean</Button1UnlockScreen-type>
+					<Button2UnlockScreen>false</Button2UnlockScreen>
+					<Button2UnlockScreen-type>java.lang.Boolean</Button2UnlockScreen-type>
+					<Button3UnlockScreen>false</Button3UnlockScreen>
+					<Button3UnlockScreen-type>java.lang.Boolean</Button3UnlockScreen-type>
+					<Button4UnlockScreen>false</Button4UnlockScreen>
+					<Button4UnlockScreen-type>java.lang.Boolean</Button4UnlockScreen-type>
+					<Button5UnlockScreen>false</Button5UnlockScreen>
+					<Button5UnlockScreen-type>java.lang.Boolean</Button5UnlockScreen-type>
+					<ChronometerCountDown>false</ChronometerCountDown>
+					<ChronometerCountDown-type>java.lang.Boolean</ChronometerCountDown-type>
+					<Colorize>false</Colorize>
+					<Colorize-type>java.lang.Boolean</Colorize-type>
+					<DismissOnTouchVariable>&lt;null&gt;</DismissOnTouchVariable>
+					<DismissOnTouchVariable-type>java.lang.String</DismissOnTouchVariable-type>
+					<ExtraInfo>&lt;null&gt;</ExtraInfo>
+					<ExtraInfo-type>java.lang.String</ExtraInfo-type>
+					<GroupAlertBehaviour>&lt;null&gt;</GroupAlertBehaviour>
+					<GroupAlertBehaviour-type>java.lang.String</GroupAlertBehaviour-type>
+					<GroupKey>&lt;null&gt;</GroupKey>
+					<GroupKey-type>java.lang.String</GroupKey-type>
+					<IconExpanded>&lt;null&gt;</IconExpanded>
+					<IconExpanded-type>java.lang.String</IconExpanded-type>
+					<IsGroupSummary>false</IsGroupSummary>
+					<IsGroupSummary-type>java.lang.Boolean</IsGroupSummary-type>
+					<IsGroupVariable>&lt;null&gt;</IsGroupVariable>
+					<IsGroupVariable-type>java.lang.String</IsGroupVariable-type>
+					<MediaAlbum>&lt;null&gt;</MediaAlbum>
+					<MediaAlbum-type>java.lang.String</MediaAlbum-type>
+					<MediaArtist>&lt;null&gt;</MediaArtist>
+					<MediaArtist-type>java.lang.String</MediaArtist-type>
+					<MediaDuration>%HBC_CurrPlayingSongMaxDurationMS</MediaDuration>
+					<MediaDuration-type>java.lang.String</MediaDuration-type>
+					<MediaIcon>%HBC_PlayerCurrSongPng</MediaIcon>
+					<MediaIcon-type>java.lang.String</MediaIcon-type>
+					<MediaLayout>true</MediaLayout>
+					<MediaLayout-type>java.lang.Boolean</MediaLayout-type>
+					<MediaNextCommand>hbc_autonotification_command=:=next</MediaNextCommand>
+					<MediaNextCommand-type>java.lang.String</MediaNextCommand-type>
+					<MediaPauseCommand>hbc_autonotification_command=:=pause</MediaPauseCommand>
+					<MediaPauseCommand-type>java.lang.String</MediaPauseCommand-type>
+					<MediaPlayCommand>hbc_autonotification_command=:=play</MediaPlayCommand>
+					<MediaPlayCommand-type>java.lang.String</MediaPlayCommand-type>
+					<MediaPlaybackState>%HBC_SpotifyPlayPauseVar</MediaPlaybackState>
+					<MediaPlaybackState-type>java.lang.String</MediaPlaybackState-type>
+					<MediaPosition>%HBC_SongDurationProgressMS</MediaPosition>
+					<MediaPosition-type>java.lang.String</MediaPosition-type>
+					<MediaPreviousCommand>hbc_autonotification_command=:=previous</MediaPreviousCommand>
+					<MediaPreviousCommand-type>java.lang.String</MediaPreviousCommand-type>
+					<MediaTrack>%HBC_CurrPlayingSongName</MediaTrack>
+					<MediaTrack-type>java.lang.String</MediaTrack-type>
+					<MessagingImages>&lt;null&gt;</MessagingImages>
+					<MessagingImages-type>java.lang.String</MessagingImages-type>
+					<MessagingOwnIcon>&lt;null&gt;</MessagingOwnIcon>
+					<MessagingOwnIcon-type>java.lang.String</MessagingOwnIcon-type>
+					<MessagingOwnName>&lt;null&gt;</MessagingOwnName>
+					<MessagingOwnName-type>java.lang.String</MessagingOwnName-type>
+					<MessagingPersonBot>&lt;null&gt;</MessagingPersonBot>
+					<MessagingPersonBot-type>java.lang.String</MessagingPersonBot-type>
+					<MessagingPersonIcons>&lt;null&gt;</MessagingPersonIcons>
+					<MessagingPersonIcons-type>java.lang.String</MessagingPersonIcons-type>
+					<MessagingPersonImportant>&lt;null&gt;</MessagingPersonImportant>
+					<MessagingPersonImportant-type>java.lang.String</MessagingPersonImportant-type>
+					<MessagingPersonNames>&lt;null&gt;</MessagingPersonNames>
+					<MessagingPersonNames-type>java.lang.String</MessagingPersonNames-type>
+					<MessagingPersonUri>&lt;null&gt;</MessagingPersonUri>
+					<MessagingPersonUri-type>java.lang.String</MessagingPersonUri-type>
+					<MessagingSeparator>&lt;null&gt;</MessagingSeparator>
+					<MessagingSeparator-type>java.lang.String</MessagingSeparator-type>
+					<MessagingTexts>&lt;null&gt;</MessagingTexts>
+					<MessagingTexts-type>java.lang.String</MessagingTexts-type>
+					<NotificationChannelBypassDnd>false</NotificationChannelBypassDnd>
+					<NotificationChannelBypassDnd-type>java.lang.Boolean</NotificationChannelBypassDnd-type>
+					<NotificationChannelDescription>&lt;null&gt;</NotificationChannelDescription>
+					<NotificationChannelDescription-type>java.lang.String</NotificationChannelDescription-type>
+					<NotificationChannelId>spotify_plugin_notification_player</NotificationChannelId>
+					<NotificationChannelId-type>java.lang.String</NotificationChannelId-type>
+					<NotificationChannelImportance>&lt;null&gt;</NotificationChannelImportance>
+					<NotificationChannelImportance-type>java.lang.String</NotificationChannelImportance-type>
+					<NotificationChannelName>&lt;null&gt;</NotificationChannelName>
+					<NotificationChannelName-type>java.lang.String</NotificationChannelName-type>
+					<NotificationChannelShowBadge>false</NotificationChannelShowBadge>
+					<NotificationChannelShowBadge-type>java.lang.Boolean</NotificationChannelShowBadge-type>
+					<PersistentVariable>&lt;null&gt;</PersistentVariable>
+					<PersistentVariable-type>java.lang.String</PersistentVariable-type>
+					<PhoneOnly>false</PhoneOnly>
+					<PhoneOnly-type>java.lang.Boolean</PhoneOnly-type>
+					<PriorityVariable>&lt;null&gt;</PriorityVariable>
+					<PriorityVariable-type>java.lang.String</PriorityVariable-type>
+					<PublicVersion>&lt;null&gt;</PublicVersion>
+					<PublicVersion-type>java.lang.String</PublicVersion-type>
+					<ReplyAction>&lt;null&gt;</ReplyAction>
+					<ReplyAction-type>java.lang.String</ReplyAction-type>
+					<ReplyChoices>&lt;null&gt;</ReplyChoices>
+					<ReplyChoices-type>java.lang.String</ReplyChoices-type>
+					<ReplyLabel>&lt;null&gt;</ReplyLabel>
+					<ReplyLabel-type>java.lang.String</ReplyLabel-type>
+					<ShareButtonsVariable>&lt;null&gt;</ShareButtonsVariable>
+					<ShareButtonsVariable-type>java.lang.String</ShareButtonsVariable-type>
+					<SkipPictureCache>false</SkipPictureCache>
+					<SkipPictureCache-type>java.lang.Boolean</SkipPictureCache-type>
+					<SoundPath>&lt;null&gt;</SoundPath>
+					<SoundPath-type>java.lang.String</SoundPath-type>
+					<StatusBarIconString>&lt;null&gt;</StatusBarIconString>
+					<StatusBarIconString-type>java.lang.String</StatusBarIconString-type>
+					<StatusBarTextSize>16</StatusBarTextSize>
+					<StatusBarTextSize-type>java.lang.String</StatusBarTextSize-type>
+					<TextExpanded>&lt;null&gt;</TextExpanded>
+					<TextExpanded-type>java.lang.String</TextExpanded-type>
+					<Time>&lt;null&gt;</Time>
+					<Time-type>java.lang.String</Time-type>
+					<TimeFormat>&lt;null&gt;</TimeFormat>
+					<TimeFormat-type>java.lang.String</TimeFormat-type>
+					<Timeout>20</Timeout>
+					<Timeout-type>java.lang.String</Timeout-type>
+					<TitleExpanded>&lt;null&gt;</TitleExpanded>
+					<TitleExpanded-type>java.lang.String</TitleExpanded-type>
+					<UpdateNotification>false</UpdateNotification>
+					<UpdateNotification-type>java.lang.Boolean</UpdateNotification-type>
+					<UseChronometer>false</UseChronometer>
+					<UseChronometer-type>java.lang.Boolean</UseChronometer-type>
+					<UseHTML>false</UseHTML>
+					<UseHTML-type>java.lang.Boolean</UseHTML-type>
+					<Visibility>&lt;null&gt;</Visibility>
+					<Visibility-type>java.lang.String</Visibility-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Status Bar Text Size: 16
+Id: AutoNotificationMediaPlayer
+Timeout: 20
+Category Id: spotify_plugin_notification_player
+Separator: ,
+Media Layout: true
+Track Name: %HBC_CurrPlayingSongName
+Icon: %HBC_PlayerCurrSongPng
+Playback State: %HBC_SpotifyPlayPauseVar
+Playback Position: %HBC_SongDurationProgressMS
+Playback Duration: %HBC_CurrPlayingSongMaxDurationMS
+Command Play: hbc_autonotification_command=:=play
+Command Pause: hbc_autonotification_command=:=pause
+Command Previous: hbc_autonotification_command=:=previous
+Command Next: hbc_autonotification_command=:=next</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<config_action_1_icon>&lt;null&gt;</config_action_1_icon>
+					<config_action_1_icon-type>java.lang.String</config_action_1_icon-type>
+					<config_action_2_icon>&lt;null&gt;</config_action_2_icon>
+					<config_action_2_icon-type>java.lang.String</config_action_2_icon-type>
+					<config_action_3_icon>&lt;null&gt;</config_action_3_icon>
+					<config_action_3_icon-type>java.lang.String</config_action_3_icon-type>
+					<config_action_4_icon>&lt;null&gt;</config_action_4_icon>
+					<config_action_4_icon-type>java.lang.String</config_action_4_icon-type>
+					<config_action_5_icon>&lt;null&gt;</config_action_5_icon>
+					<config_action_5_icon-type>java.lang.String</config_action_5_icon-type>
+					<config_notification_action>&lt;null&gt;</config_notification_action>
+					<config_notification_action-type>java.lang.String</config_notification_action-type>
+					<config_notification_action_button1>&lt;null&gt;</config_notification_action_button1>
+					<config_notification_action_button1-type>java.lang.String</config_notification_action_button1-type>
+					<config_notification_action_button2>&lt;null&gt;</config_notification_action_button2>
+					<config_notification_action_button2-type>java.lang.String</config_notification_action_button2-type>
+					<config_notification_action_button3>&lt;null&gt;</config_notification_action_button3>
+					<config_notification_action_button3-type>java.lang.String</config_notification_action_button3-type>
+					<config_notification_action_button4>&lt;null&gt;</config_notification_action_button4>
+					<config_notification_action_button4-type>java.lang.String</config_notification_action_button4-type>
+					<config_notification_action_button5>&lt;null&gt;</config_notification_action_button5>
+					<config_notification_action_button5-type>java.lang.String</config_notification_action_button5-type>
+					<config_notification_action_label1>&lt;null&gt;</config_notification_action_label1>
+					<config_notification_action_label1-type>java.lang.String</config_notification_action_label1-type>
+					<config_notification_action_label2>&lt;null&gt;</config_notification_action_label2>
+					<config_notification_action_label2-type>java.lang.String</config_notification_action_label2-type>
+					<config_notification_action_label3>&lt;null&gt;</config_notification_action_label3>
+					<config_notification_action_label3-type>java.lang.String</config_notification_action_label3-type>
+					<config_notification_action_on_dismiss>&lt;null&gt;</config_notification_action_on_dismiss>
+					<config_notification_action_on_dismiss-type>java.lang.String</config_notification_action_on_dismiss-type>
+					<config_notification_action_share>false</config_notification_action_share>
+					<config_notification_action_share-type>java.lang.Boolean</config_notification_action_share-type>
+					<config_notification_command>&lt;null&gt;</config_notification_command>
+					<config_notification_command-type>java.lang.String</config_notification_command-type>
+					<config_notification_content_info>&lt;null&gt;</config_notification_content_info>
+					<config_notification_content_info-type>java.lang.String</config_notification_content_info-type>
+					<config_notification_dismiss_on_touch>false</config_notification_dismiss_on_touch>
+					<config_notification_dismiss_on_touch-type>java.lang.Boolean</config_notification_dismiss_on_touch-type>
+					<config_notification_icon>&lt;null&gt;</config_notification_icon>
+					<config_notification_icon-type>java.lang.String</config_notification_icon-type>
+					<config_notification_indeterminate_progress>false</config_notification_indeterminate_progress>
+					<config_notification_indeterminate_progress-type>java.lang.Boolean</config_notification_indeterminate_progress-type>
+					<config_notification_led_color>&lt;null&gt;</config_notification_led_color>
+					<config_notification_led_color-type>java.lang.String</config_notification_led_color-type>
+					<config_notification_led_off>&lt;null&gt;</config_notification_led_off>
+					<config_notification_led_off-type>java.lang.String</config_notification_led_off-type>
+					<config_notification_led_on>&lt;null&gt;</config_notification_led_on>
+					<config_notification_led_on-type>java.lang.String</config_notification_led_on-type>
+					<config_notification_max_progress>&lt;null&gt;</config_notification_max_progress>
+					<config_notification_max_progress-type>java.lang.String</config_notification_max_progress-type>
+					<config_notification_number>&lt;null&gt;</config_notification_number>
+					<config_notification_number-type>java.lang.String</config_notification_number-type>
+					<config_notification_persistent>false</config_notification_persistent>
+					<config_notification_persistent-type>java.lang.Boolean</config_notification_persistent-type>
+					<config_notification_picture>&lt;null&gt;</config_notification_picture>
+					<config_notification_picture-type>java.lang.String</config_notification_picture-type>
+					<config_notification_priority>&lt;null&gt;</config_notification_priority>
+					<config_notification_priority-type>java.lang.String</config_notification_priority-type>
+					<config_notification_progress>&lt;null&gt;</config_notification_progress>
+					<config_notification_progress-type>java.lang.String</config_notification_progress-type>
+					<config_notification_subtext>&lt;null&gt;</config_notification_subtext>
+					<config_notification_subtext-type>java.lang.String</config_notification_subtext-type>
+					<config_notification_text>&lt;null&gt;</config_notification_text>
+					<config_notification_text-type>java.lang.String</config_notification_text-type>
+					<config_notification_ticker>&lt;null&gt;</config_notification_ticker>
+					<config_notification_ticker-type>java.lang.String</config_notification_ticker-type>
+					<config_notification_title>&lt;null&gt;</config_notification_title>
+					<config_notification_title-type>java.lang.String</config_notification_title-type>
+					<config_notification_url>&lt;null&gt;</config_notification_url>
+					<config_notification_url-type>java.lang.String</config_notification_url-type>
+					<config_notification_vibration>&lt;null&gt;</config_notification_vibration>
+					<config_notification_vibration-type>java.lang.String</config_notification_vibration-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>Timeout StatusBarTextSize NotificationChannelId notificaitionid MediaTrack MediaIcon MediaPlayCommand MediaPauseCommand MediaPreviousCommand MediaNextCommand MediaPlaybackState MediaPosition MediaDuration plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<notificaitionid>AutoNotificationMediaPlayer</notificaitionid>
+					<notificaitionid-type>java.lang.String</notificaitionid-type>
+					<notificaitionsound>&lt;null&gt;</notificaitionsound>
+					<notificaitionsound-type>java.lang.String</notificaitionsound-type>
+					<plugininstanceid>5b1e342a-acb8-4df5-9f62-e0907536bf8a</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autonotification.intent.IntentNotification</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+					<preferenceScreen>&lt;null&gt;</preferenceScreen>
+					<preferenceScreen-type>java.lang.String</preferenceScreen-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autonotification</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autonotification.activity.ActivityConfigNotify</Str>
+			<Int sr="arg3" val="20"/>
+			<Int sr="arg4" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Custom_Media_Panel</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act179" ve="7">
+			<code>47</code>
+			<on>false</on>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Int sr="arg1" val="10"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<on>false</on>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Updates_fail</lhs>
+					<op>1</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act180" ve="7">
+			<code>49</code>
+			<on>false</on>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Launch Screen</Str>
+		</Action>
+		<Action sr="act181" ve="7">
+			<code>50</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">SongDurationPrrogress</Str>
+			<Int sr="arg2">
+				<var>%HBC_SongDurationProgressMS</var>
+			</Int>
+		</Action>
+		<Action sr="act182" ve="7">
+			<code>66</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Startseite</Str>
+			<Str sr="arg1" ve="3">HBC Player Curr Song Png</Str>
+			<Img sr="arg2" ve="2">
+				<var>%HBC_PlayerCurrSongPngPath</var>
+			</Img>
+		</Action>
+		<Action sr="act183" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>0</op>
+					<rhs>start</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act184" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Taste
+Die Beschriftung der angeklickten Schaltfläche&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Update-Tracker</Str>
+			<Str sr="arg2" ve="3">Update %HBC_Installed_App_Version -&gt; %app_versionsname
+%HBC_Updates</Str>
+			<Str sr="arg3" ve="3">Ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="120"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%update_available</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act185" ve="7">
+			<code>166160670</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<ActionIconString1>&lt;null&gt;</ActionIconString1>
+					<ActionIconString1-type>java.lang.String</ActionIconString1-type>
+					<ActionIconString2>&lt;null&gt;</ActionIconString2>
+					<ActionIconString2-type>java.lang.String</ActionIconString2-type>
+					<ActionIconString3>&lt;null&gt;</ActionIconString3>
+					<ActionIconString3-type>java.lang.String</ActionIconString3-type>
+					<ActionIconString4>&lt;null&gt;</ActionIconString4>
+					<ActionIconString4-type>java.lang.String</ActionIconString4-type>
+					<ActionIconString5>&lt;null&gt;</ActionIconString5>
+					<ActionIconString5-type>java.lang.String</ActionIconString5-type>
+					<AppendTexts>false</AppendTexts>
+					<AppendTexts-type>java.lang.Boolean</AppendTexts-type>
+					<BackgroundColor>&lt;null&gt;</BackgroundColor>
+					<BackgroundColor-type>java.lang.String</BackgroundColor-type>
+					<BadgeType>&lt;null&gt;</BadgeType>
+					<BadgeType-type>java.lang.String</BadgeType-type>
+					<Button1UnlockScreen>false</Button1UnlockScreen>
+					<Button1UnlockScreen-type>java.lang.Boolean</Button1UnlockScreen-type>
+					<Button2UnlockScreen>false</Button2UnlockScreen>
+					<Button2UnlockScreen-type>java.lang.Boolean</Button2UnlockScreen-type>
+					<Button3UnlockScreen>false</Button3UnlockScreen>
+					<Button3UnlockScreen-type>java.lang.Boolean</Button3UnlockScreen-type>
+					<Button4UnlockScreen>false</Button4UnlockScreen>
+					<Button4UnlockScreen-type>java.lang.Boolean</Button4UnlockScreen-type>
+					<Button5UnlockScreen>false</Button5UnlockScreen>
+					<Button5UnlockScreen-type>java.lang.Boolean</Button5UnlockScreen-type>
+					<ChronometerCountDown>false</ChronometerCountDown>
+					<ChronometerCountDown-type>java.lang.Boolean</ChronometerCountDown-type>
+					<Colorize>false</Colorize>
+					<Colorize-type>java.lang.Boolean</Colorize-type>
+					<DismissOnTouchVariable>&lt;null&gt;</DismissOnTouchVariable>
+					<DismissOnTouchVariable-type>java.lang.String</DismissOnTouchVariable-type>
+					<ExtraInfo>&lt;null&gt;</ExtraInfo>
+					<ExtraInfo-type>java.lang.String</ExtraInfo-type>
+					<GroupAlertBehaviour>&lt;null&gt;</GroupAlertBehaviour>
+					<GroupAlertBehaviour-type>java.lang.String</GroupAlertBehaviour-type>
+					<GroupKey>&lt;null&gt;</GroupKey>
+					<GroupKey-type>java.lang.String</GroupKey-type>
+					<IconExpanded>&lt;null&gt;</IconExpanded>
+					<IconExpanded-type>java.lang.String</IconExpanded-type>
+					<IsGroupSummary>false</IsGroupSummary>
+					<IsGroupSummary-type>java.lang.Boolean</IsGroupSummary-type>
+					<IsGroupVariable>&lt;null&gt;</IsGroupVariable>
+					<IsGroupVariable-type>java.lang.String</IsGroupVariable-type>
+					<MediaAlbum>&lt;null&gt;</MediaAlbum>
+					<MediaAlbum-type>java.lang.String</MediaAlbum-type>
+					<MediaArtist>&lt;null&gt;</MediaArtist>
+					<MediaArtist-type>java.lang.String</MediaArtist-type>
+					<MediaDuration>%HBC_CurrPlayingSongMaxDurationMS</MediaDuration>
+					<MediaDuration-type>java.lang.String</MediaDuration-type>
+					<MediaIcon>%HBC_PlayerCurrSongPng</MediaIcon>
+					<MediaIcon-type>java.lang.String</MediaIcon-type>
+					<MediaLayout>true</MediaLayout>
+					<MediaLayout-type>java.lang.Boolean</MediaLayout-type>
+					<MediaNextCommand>hbc_autonotification_command=:=next</MediaNextCommand>
+					<MediaNextCommand-type>java.lang.String</MediaNextCommand-type>
+					<MediaPauseCommand>hbc_autonotification_command=:=pause</MediaPauseCommand>
+					<MediaPauseCommand-type>java.lang.String</MediaPauseCommand-type>
+					<MediaPlayCommand>hbc_autonotification_command=:=play</MediaPlayCommand>
+					<MediaPlayCommand-type>java.lang.String</MediaPlayCommand-type>
+					<MediaPlaybackState>%HBC_SpotifyPlayPauseVar</MediaPlaybackState>
+					<MediaPlaybackState-type>java.lang.String</MediaPlaybackState-type>
+					<MediaPosition>%HBC_SongDurationProgressMS</MediaPosition>
+					<MediaPosition-type>java.lang.String</MediaPosition-type>
+					<MediaPreviousCommand>hbc_autonotification_command=:=previous</MediaPreviousCommand>
+					<MediaPreviousCommand-type>java.lang.String</MediaPreviousCommand-type>
+					<MediaTrack>%HBC_CurrPlayingSongName</MediaTrack>
+					<MediaTrack-type>java.lang.String</MediaTrack-type>
+					<MessagingImages>&lt;null&gt;</MessagingImages>
+					<MessagingImages-type>java.lang.String</MessagingImages-type>
+					<MessagingOwnIcon>&lt;null&gt;</MessagingOwnIcon>
+					<MessagingOwnIcon-type>java.lang.String</MessagingOwnIcon-type>
+					<MessagingOwnName>&lt;null&gt;</MessagingOwnName>
+					<MessagingOwnName-type>java.lang.String</MessagingOwnName-type>
+					<MessagingPersonBot>&lt;null&gt;</MessagingPersonBot>
+					<MessagingPersonBot-type>java.lang.String</MessagingPersonBot-type>
+					<MessagingPersonIcons>&lt;null&gt;</MessagingPersonIcons>
+					<MessagingPersonIcons-type>java.lang.String</MessagingPersonIcons-type>
+					<MessagingPersonImportant>&lt;null&gt;</MessagingPersonImportant>
+					<MessagingPersonImportant-type>java.lang.String</MessagingPersonImportant-type>
+					<MessagingPersonNames>&lt;null&gt;</MessagingPersonNames>
+					<MessagingPersonNames-type>java.lang.String</MessagingPersonNames-type>
+					<MessagingPersonUri>&lt;null&gt;</MessagingPersonUri>
+					<MessagingPersonUri-type>java.lang.String</MessagingPersonUri-type>
+					<MessagingSeparator>&lt;null&gt;</MessagingSeparator>
+					<MessagingSeparator-type>java.lang.String</MessagingSeparator-type>
+					<MessagingTexts>&lt;null&gt;</MessagingTexts>
+					<MessagingTexts-type>java.lang.String</MessagingTexts-type>
+					<NotificationChannelBypassDnd>false</NotificationChannelBypassDnd>
+					<NotificationChannelBypassDnd-type>java.lang.Boolean</NotificationChannelBypassDnd-type>
+					<NotificationChannelDescription>&lt;null&gt;</NotificationChannelDescription>
+					<NotificationChannelDescription-type>java.lang.String</NotificationChannelDescription-type>
+					<NotificationChannelId>spotify_plugin_notification_player</NotificationChannelId>
+					<NotificationChannelId-type>java.lang.String</NotificationChannelId-type>
+					<NotificationChannelImportance>&lt;null&gt;</NotificationChannelImportance>
+					<NotificationChannelImportance-type>java.lang.String</NotificationChannelImportance-type>
+					<NotificationChannelName>&lt;null&gt;</NotificationChannelName>
+					<NotificationChannelName-type>java.lang.String</NotificationChannelName-type>
+					<NotificationChannelShowBadge>false</NotificationChannelShowBadge>
+					<NotificationChannelShowBadge-type>java.lang.Boolean</NotificationChannelShowBadge-type>
+					<PersistentVariable>&lt;null&gt;</PersistentVariable>
+					<PersistentVariable-type>java.lang.String</PersistentVariable-type>
+					<PhoneOnly>false</PhoneOnly>
+					<PhoneOnly-type>java.lang.Boolean</PhoneOnly-type>
+					<PriorityVariable>&lt;null&gt;</PriorityVariable>
+					<PriorityVariable-type>java.lang.String</PriorityVariable-type>
+					<PublicVersion>&lt;null&gt;</PublicVersion>
+					<PublicVersion-type>java.lang.String</PublicVersion-type>
+					<ReplyAction>&lt;null&gt;</ReplyAction>
+					<ReplyAction-type>java.lang.String</ReplyAction-type>
+					<ReplyChoices>&lt;null&gt;</ReplyChoices>
+					<ReplyChoices-type>java.lang.String</ReplyChoices-type>
+					<ReplyLabel>&lt;null&gt;</ReplyLabel>
+					<ReplyLabel-type>java.lang.String</ReplyLabel-type>
+					<ShareButtonsVariable>&lt;null&gt;</ShareButtonsVariable>
+					<ShareButtonsVariable-type>java.lang.String</ShareButtonsVariable-type>
+					<SkipPictureCache>false</SkipPictureCache>
+					<SkipPictureCache-type>java.lang.Boolean</SkipPictureCache-type>
+					<SoundPath>&lt;null&gt;</SoundPath>
+					<SoundPath-type>java.lang.String</SoundPath-type>
+					<StatusBarIconString>&lt;null&gt;</StatusBarIconString>
+					<StatusBarIconString-type>java.lang.String</StatusBarIconString-type>
+					<StatusBarTextSize>16</StatusBarTextSize>
+					<StatusBarTextSize-type>java.lang.String</StatusBarTextSize-type>
+					<TextExpanded>&lt;null&gt;</TextExpanded>
+					<TextExpanded-type>java.lang.String</TextExpanded-type>
+					<Time>&lt;null&gt;</Time>
+					<Time-type>java.lang.String</Time-type>
+					<TimeFormat>&lt;null&gt;</TimeFormat>
+					<TimeFormat-type>java.lang.String</TimeFormat-type>
+					<Timeout>10</Timeout>
+					<Timeout-type>java.lang.String</Timeout-type>
+					<TitleExpanded>&lt;null&gt;</TitleExpanded>
+					<TitleExpanded-type>java.lang.String</TitleExpanded-type>
+					<UpdateNotification>false</UpdateNotification>
+					<UpdateNotification-type>java.lang.Boolean</UpdateNotification-type>
+					<UseChronometer>false</UseChronometer>
+					<UseChronometer-type>java.lang.Boolean</UseChronometer-type>
+					<UseHTML>false</UseHTML>
+					<UseHTML-type>java.lang.Boolean</UseHTML-type>
+					<Visibility>&lt;null&gt;</Visibility>
+					<Visibility-type>java.lang.String</Visibility-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Status Bar Text Size: 16
+Id: AutoNotificationMediaPlayer
+Timeout: 10
+Category Id: spotify_plugin_notification_player
+Separator: ,
+Media Layout: true
+Track Name: %HBC_CurrPlayingSongName
+Icon: %HBC_PlayerCurrSongPng
+Playback State: %HBC_SpotifyPlayPauseVar
+Playback Position: %HBC_SongDurationProgressMS
+Playback Duration: %HBC_CurrPlayingSongMaxDurationMS
+Command Play: hbc_autonotification_command=:=play
+Command Pause: hbc_autonotification_command=:=pause
+Command Previous: hbc_autonotification_command=:=previous
+Command Next: hbc_autonotification_command=:=next</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<config_action_1_icon>&lt;null&gt;</config_action_1_icon>
+					<config_action_1_icon-type>java.lang.String</config_action_1_icon-type>
+					<config_action_2_icon>&lt;null&gt;</config_action_2_icon>
+					<config_action_2_icon-type>java.lang.String</config_action_2_icon-type>
+					<config_action_3_icon>&lt;null&gt;</config_action_3_icon>
+					<config_action_3_icon-type>java.lang.String</config_action_3_icon-type>
+					<config_action_4_icon>&lt;null&gt;</config_action_4_icon>
+					<config_action_4_icon-type>java.lang.String</config_action_4_icon-type>
+					<config_action_5_icon>&lt;null&gt;</config_action_5_icon>
+					<config_action_5_icon-type>java.lang.String</config_action_5_icon-type>
+					<config_notification_action>&lt;null&gt;</config_notification_action>
+					<config_notification_action-type>java.lang.String</config_notification_action-type>
+					<config_notification_action_button1>&lt;null&gt;</config_notification_action_button1>
+					<config_notification_action_button1-type>java.lang.String</config_notification_action_button1-type>
+					<config_notification_action_button2>&lt;null&gt;</config_notification_action_button2>
+					<config_notification_action_button2-type>java.lang.String</config_notification_action_button2-type>
+					<config_notification_action_button3>&lt;null&gt;</config_notification_action_button3>
+					<config_notification_action_button3-type>java.lang.String</config_notification_action_button3-type>
+					<config_notification_action_button4>&lt;null&gt;</config_notification_action_button4>
+					<config_notification_action_button4-type>java.lang.String</config_notification_action_button4-type>
+					<config_notification_action_button5>&lt;null&gt;</config_notification_action_button5>
+					<config_notification_action_button5-type>java.lang.String</config_notification_action_button5-type>
+					<config_notification_action_label1>&lt;null&gt;</config_notification_action_label1>
+					<config_notification_action_label1-type>java.lang.String</config_notification_action_label1-type>
+					<config_notification_action_label2>&lt;null&gt;</config_notification_action_label2>
+					<config_notification_action_label2-type>java.lang.String</config_notification_action_label2-type>
+					<config_notification_action_label3>&lt;null&gt;</config_notification_action_label3>
+					<config_notification_action_label3-type>java.lang.String</config_notification_action_label3-type>
+					<config_notification_action_on_dismiss>&lt;null&gt;</config_notification_action_on_dismiss>
+					<config_notification_action_on_dismiss-type>java.lang.String</config_notification_action_on_dismiss-type>
+					<config_notification_action_share>false</config_notification_action_share>
+					<config_notification_action_share-type>java.lang.Boolean</config_notification_action_share-type>
+					<config_notification_command>&lt;null&gt;</config_notification_command>
+					<config_notification_command-type>java.lang.String</config_notification_command-type>
+					<config_notification_content_info>&lt;null&gt;</config_notification_content_info>
+					<config_notification_content_info-type>java.lang.String</config_notification_content_info-type>
+					<config_notification_dismiss_on_touch>false</config_notification_dismiss_on_touch>
+					<config_notification_dismiss_on_touch-type>java.lang.Boolean</config_notification_dismiss_on_touch-type>
+					<config_notification_icon>&lt;null&gt;</config_notification_icon>
+					<config_notification_icon-type>java.lang.String</config_notification_icon-type>
+					<config_notification_indeterminate_progress>false</config_notification_indeterminate_progress>
+					<config_notification_indeterminate_progress-type>java.lang.Boolean</config_notification_indeterminate_progress-type>
+					<config_notification_led_color>&lt;null&gt;</config_notification_led_color>
+					<config_notification_led_color-type>java.lang.String</config_notification_led_color-type>
+					<config_notification_led_off>&lt;null&gt;</config_notification_led_off>
+					<config_notification_led_off-type>java.lang.String</config_notification_led_off-type>
+					<config_notification_led_on>&lt;null&gt;</config_notification_led_on>
+					<config_notification_led_on-type>java.lang.String</config_notification_led_on-type>
+					<config_notification_max_progress>&lt;null&gt;</config_notification_max_progress>
+					<config_notification_max_progress-type>java.lang.String</config_notification_max_progress-type>
+					<config_notification_number>&lt;null&gt;</config_notification_number>
+					<config_notification_number-type>java.lang.String</config_notification_number-type>
+					<config_notification_persistent>false</config_notification_persistent>
+					<config_notification_persistent-type>java.lang.Boolean</config_notification_persistent-type>
+					<config_notification_picture>&lt;null&gt;</config_notification_picture>
+					<config_notification_picture-type>java.lang.String</config_notification_picture-type>
+					<config_notification_priority>&lt;null&gt;</config_notification_priority>
+					<config_notification_priority-type>java.lang.String</config_notification_priority-type>
+					<config_notification_progress>&lt;null&gt;</config_notification_progress>
+					<config_notification_progress-type>java.lang.String</config_notification_progress-type>
+					<config_notification_subtext>&lt;null&gt;</config_notification_subtext>
+					<config_notification_subtext-type>java.lang.String</config_notification_subtext-type>
+					<config_notification_text>&lt;null&gt;</config_notification_text>
+					<config_notification_text-type>java.lang.String</config_notification_text-type>
+					<config_notification_ticker>&lt;null&gt;</config_notification_ticker>
+					<config_notification_ticker-type>java.lang.String</config_notification_ticker-type>
+					<config_notification_title>&lt;null&gt;</config_notification_title>
+					<config_notification_title-type>java.lang.String</config_notification_title-type>
+					<config_notification_url>&lt;null&gt;</config_notification_url>
+					<config_notification_url-type>java.lang.String</config_notification_url-type>
+					<config_notification_vibration>&lt;null&gt;</config_notification_vibration>
+					<config_notification_vibration-type>java.lang.String</config_notification_vibration-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>Timeout StatusBarTextSize NotificationChannelId notificaitionid MediaTrack MediaIcon MediaPlayCommand MediaPauseCommand MediaPreviousCommand MediaNextCommand MediaPlaybackState MediaPosition MediaDuration plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<notificaitionid>AutoNotificationMediaPlayer</notificaitionid>
+					<notificaitionid-type>java.lang.String</notificaitionid-type>
+					<notificaitionsound>&lt;null&gt;</notificaitionsound>
+					<notificaitionsound-type>java.lang.String</notificaitionsound-type>
+					<plugininstanceid>5b1e342a-acb8-4df5-9f62-e0907536bf8a</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autonotification.intent.IntentNotification</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+					<preferenceScreen>&lt;null&gt;</preferenceScreen>
+					<preferenceScreen-type>java.lang.String</preferenceScreen-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autonotification</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autonotification.activity.ActivityConfigNotify</Str>
+			<Int sr="arg3" val="20"/>
+			<Int sr="arg4" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Custom_Media_Panel</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act186" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Updates_fail</lhs>
+					<op>1</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act187" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Installed_App_Version</Str>
+			<Str sr="arg1" ve="3">%app_versionsname</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act188" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act189" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>547</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%HBC_Installed_App_Version</Str>
+			<Str sr="arg1" ve="3">%app_versionsname</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act190" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act191" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act192" ve="7">
+			<code>130</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Save Data To File</Str>
+			<Int sr="arg1">
+				<var>50</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act193" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%continue_task</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act194" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%continue_task</Str>
+			<Str sr="arg1" ve="3">false</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act195" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%http_data.item.name</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act196" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Read Repeat State</Str>
+			<Int sr="arg1">
+				<var>7</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act197" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Duration</Str>
+			<Int sr="arg1">
+				<var>5</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act198" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act199" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Get My Playlists</Str>
+			<Int sr="arg1">
+				<var>8</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%app_versionsname</lhs>
+					<op>1</op>
+					<rhs>%HBC_Installed_App_Version</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act200" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act201" ve="7">
+			<code>300</code>
+			<label>ende</label>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_PlayerCurrSongPngPath</Str>
+			<Str sr="arg1" ve="3">file:///storage/emulated/0/Tasker/HBC/.img/img.png</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act24" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par2</lhs>
+					<op>0</op>
+					<rhs>back</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act25" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%continue_task</Str>
+			<Str sr="arg1" ve="3">false</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act26" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act27" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%continue_task</Str>
+			<Str sr="arg1" ve="3">true</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act28" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act29" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<label>einstellen des Autoupdate-Prozess</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_UPDATE_INSTALL_TRACKER5</lhs>
+					<op>13</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<on>false</on>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%app_versionsname</lhs>
+					<op>1</op>
+					<rhs>%HBC_Installed_App_Version</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%HBC_Installed_App_Version</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act30" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Update_Process_Started</Str>
+			<Str sr="arg1" ve="3">false</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act31" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_UPDATE_INSTALL_TRACKER5</Str>
+			<Str sr="arg1" ve="3">installed</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act32" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Autoupdates enabled</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Show_Popups</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act33" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act34" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<label>App Einstellungen öffnen, um Benachrichtigungsrechte usw. zu bekommen; verwendet beim ersten starten nach erster Installation.</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_UPDATE_INSTALL_TRACKER3</lhs>
+					<op>13</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act35" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Taste
+Die Beschriftung der angeklickten Schaltfläche&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">WICHTIG!</Str>
+			<Str sr="arg2" ve="3">Bitte bei dem Bildschirm der sich gleich öffnet der App alle Berechtigungen außer Benachrichtigungen geben. Benachrichtigungen sind nicht wichtig, kann ich aber nicht weg lassen.
+
+Bitte bestätige mit "Weiter".</Str>
+			<Str sr="arg3" ve="3">Weiter</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="120"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act36" ve="7">
+			<code>216</code>
+			<Str sr="arg0" ve="3">com.plsreloadtasker.hbcclient</Str>
+		</Action>
+		<Action sr="act37" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%HBC_UPDATE_INSTALL_TRACKER</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act38" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_UPDATE_INSTALL_TRACKER3</Str>
+			<Str sr="arg1" ve="3">installed</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act39" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">HBC Get Playing Song</Str>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act40" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act41" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<label>Alle App Berechtigungen anfordern, verwendet beim ersten starten der App nach erster Installation der App</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_UPDATE_INSTALL_TRACKER4</lhs>
+					<op>13</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act42" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Taste
+Die Beschriftung der angeklickten Schaltfläche&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">WICHTIG!</Str>
+			<Str sr="arg2" ve="3">Es kann sein, dass die App nach mehreren Berechtigungen fragt, die sie benötigt.
+Es steht bei jeder dabei, weshalb sie die rechte braucht.
+
+Bitte bestätige mit "Weiter".</Str>
+			<Str sr="arg3" ve="3">Weiter</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="120"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act43" ve="7">
+			<code>319</code>
+			<label>MANAGE EXTERNAL STORAGE</label>
+			<Str sr="arg0" ve="3">android.permission.MANAGE_EXTERNAL_STORAGE</Str>
+			<Str sr="arg1" ve="3">Wird benötigt, um App-Daten (z.B. Anmeldedaten) speichern zu können.</Str>
+		</Action>
+		<Action sr="act44" ve="7">
+			<code>319</code>
+			<label>WRITE SYNC SETTINGS</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">android.permission.WRITE_SYNC_SETTINGS</Str>
+			<Str sr="arg1" ve="3">Wird benötigt, um sich mit der API synchronisieren zu können.</Str>
+		</Action>
+		<Action sr="act45" ve="7">
+			<code>319</code>
+			<label>DRAW OVERLAYS</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">android.permission.DRAW_OVERLAYS</Str>
+			<Str sr="arg1" ve="3">Wird benötigt, um bestimmte Sachen anzeigen zu können.</Str>
+		</Action>
+		<Action sr="act46" ve="7">
+			<code>319</code>
+			<label>SYSTEM ALERT WINDOW</label>
+			<Str sr="arg0" ve="3">android.permission.SYSTEM_ALERT_WINDOW</Str>
+			<Str sr="arg1" ve="3">Wird benötigt, um bestimmte Sachen anzeigen zu können.</Str>
+		</Action>
+		<Action sr="act47" ve="7">
+			<code>319</code>
+			<label>ACCESS NETWORK STATE</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">android.permission.ACCESS_NETWORK_STATE</Str>
+			<Str sr="arg1" ve="3">Wird benötigt, um Daten synchronisieren zu können.</Str>
+		</Action>
+		<Action sr="act48" ve="7">
+			<code>319</code>
+			<label>INTERNET</label>
+			<Str sr="arg0" ve="3">android.permission.INTERNET</Str>
+			<Str sr="arg1" ve="3">Wird benötigt, um Daten synchronisieren zu können.</Str>
+		</Action>
+		<Action sr="act49" ve="7">
+			<code>319</code>
+			<label>ACCESS BACKGROUND LOCATION
+ACCESS FINE LOCATION</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">android.permission.ACCESS_BACKGROUND_LOCATION
+android.permission.ACCESS_FINE_LOCATION</Str>
+			<Str sr="arg1" ve="3">ACHTUNG WICHTIG:
+
+Seit einem Tasker App Factory Update wird die Standort-Berechtigung leider standardgemäß benötigt, ich kann das leider nicht entfernen.</Str>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%update_available</Str>
+			<Str sr="arg1" ve="3">true</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act50" ve="7">
+			<code>319</code>
+			<label>BIND ACCESSIBILITY SERVICE</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">android.permission.BIND_ACCESSIBILITY_SERVICE</Str>
+			<Str sr="arg1" ve="3">INFO:
+
+ACCESSIBILITY SERVICE wird benötigt, um die Häufigkeit der Anmeldungen hoffentlich reduzieren zu können.
+Die Berechtigung ist erstmal nur testweise, sie wird eventuell später entfernt, falls es doch nicht funktionieren sollte.</Str>
+		</Action>
+		<Action sr="act51" ve="7">
+			<code>319</code>
+			<label>WAKE LOCK</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">android.permission.WAKE_LOCK</Str>
+			<Str sr="arg1" ve="3">INFO:
+
+WAKE LOCK wird ebenfalls benötigt, um die Häufigkeit der Anmeldungen hoffentlich reduzieren zu können.
+Die Berechtigung ist erstmal nur testweise, sie wird eventuell später entfernt, falls es doch nicht funktionieren sollte.</Str>
+		</Action>
+		<Action sr="act52" ve="7">
+			<code>319</code>
+			<label>PUBLISH CUSTOM TILE (cyanogenmod.permission)</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">cyanogenmod.permission.PUBLISH_CUSTOM_TILE</Str>
+			<Str sr="arg1" ve="3">WIVHTIGE INFORMATION:
+
+Die Berechtigung wird benötigt, um custom Tiles (tiles sind bei Android z.b. "WLAN an-/ausschalten", "Bluetooth an/aus", "Standort an/aus", "Flugmodus an/aus", "Taschenlampe an/aus", etc.) erstellen zu können, welche als Shortcuts für z.b. die Musiksteuerung genutzt werden können.
+Aktuell werden die custom Tiles noch keine/kaum Funktion haben, das wird sich aber mit späteren Updates ändern.</Str>
+		</Action>
+		<Action sr="act53" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%HBC_UPDATE_INSTALL_TRACKER2</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act54" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_UPDATE_INSTALL_TRACKER4</Str>
+			<Str sr="arg1" ve="3">installed</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act55" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act56" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<label>Berechtigungen
+MANAGE EXTERNAL STORAGE
+ACCESS BACKGROUND LOCATION
+ACCESS FINE LOCATION
+BIND ACCESSIBILITY SERVICE
+WAKE LOCK
+PUBLISH CUSTOM TILE (cyanogenmod.permission)
+anfordern</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_UPDATE_INSTALL_TRACKER7</lhs>
+					<op>13</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act57" ve="7">
+			<code>319</code>
+			<label>MANAGE EXTERNAL STORAGE</label>
+			<Str sr="arg0" ve="3">android.permission.MANAGE_EXTERNAL_STORAGE</Str>
+			<Str sr="arg1" ve="3">Wird benötigt, um App-Daten (z.B. Anmeldedaten) speichern zu können.</Str>
+		</Action>
+		<Action sr="act58" ve="7">
+			<code>319</code>
+			<label>ACCESS BACKGROUND LOCATION
+ACCESS FINE LOCATION</label>
+			<on>false</on>
+			<Str sr="arg0" ve="3">android.permission.ACCESS_BACKGROUND_LOCATION
+android.permission.ACCESS_FINE_LOCATION</Str>
+			<Str sr="arg1" ve="3">ACHTUNG WICHTIG:
+
+Seit einem Tasker App Factory Update wird die Standort-Berechtigung leider standardgemäß benötigt, ich kann das leider nicht entfernen.</Str>
+		</Action>
+		<Action sr="act59" ve="7">
+			<code>319</code>
+			<label>BIND ACCESSIBILITY SERVICE</label>
+			<on>false</on>
+			<Str sr="arg0" ve="3">android.permission.BIND_ACCESSIBILITY_SERVICE</Str>
+			<Str sr="arg1" ve="3">INFO:
+
+ACCESSIBILITY SERVICE wird benötigt, um die Häufigkeit der Anmeldungen hoffentlich reduzieren zu können.
+Die Berechtigung ist erstmal nur testweise, sie wird eventuell später entfernt, falls es doch nicht funktionieren sollte.</Str>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>406</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/.internal/update-tracker.txt</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act60" ve="7">
+			<code>319</code>
+			<label>WAKE LOCK</label>
+			<on>false</on>
+			<Str sr="arg0" ve="3">android.permission.WAKE_LOCK</Str>
+			<Str sr="arg1" ve="3">INFO:
+
+WAKE LOCK wird ebenfalls benötigt, um die Häufigkeit der Anmeldungen hoffentlich reduzieren zu können.
+Die Berechtigung ist erstmal nur testweise, sie wird eventuell später entfernt, falls es doch nicht funktionieren sollte.</Str>
+		</Action>
+		<Action sr="act61" ve="7">
+			<code>319</code>
+			<label>PUBLISH CUSTOM TILE (cyanogenmod.permission)</label>
+			<on>false</on>
+			<Str sr="arg0" ve="3">cyanogenmod.permission.PUBLISH_CUSTOM_TILE</Str>
+			<Str sr="arg1" ve="3">WIVHTIGE INFORMATION:
+
+Die Berechtigung wird benötigt, um custom Tiles (tiles sind bei Android z.b. "WLAN an-/ausschalten", "Bluetooth an/aus", "Standort an/aus", "Flugmodus an/aus", "Taschenlampe an/aus", etc.) erstellen zu können, welche als Shortcuts für z.b. die Musiksteuerung genutzt werden können.
+Aktuell werden die custom Tiles noch keine/kaum Funktion haben, das wird sich aber mit späteren Updates ändern.</Str>
+		</Action>
+		<Action sr="act62" ve="7">
+			<code>877</code>
+			<label>open "Allow install from this app" settings for specific app
+
+ie - replace com.plsreloadtasker.hbcclient in "Data" input field with package name of other apps</label>
+			<on>false</on>
+			<se>false</se>
+			<Str sr="arg0" ve="3">android.settings.MANAGE_UNKNOWN_APP_SOURCES</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">package:com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act63" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%HBC_UPDATE_INSTALL_TRACKER2</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act64" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_UPDATE_INSTALL_TRACKER7</Str>
+			<Str sr="arg1" ve="3">installed</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act65" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Berechtigungen ok, starte App</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Show_Popups</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act66" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act67" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<label>custom Tiles hinzufügen</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_UPDATE_INSTALL_TRACKER8</lhs>
+					<op>13</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act68" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="3"/>
+			<Str sr="arg1" ve="3">HBC Previous</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg13" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_skip_previous</Str>
+			<Str sr="arg8" ve="3">Previous</Str>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act69" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="4"/>
+			<Str sr="arg1" ve="3">HBC Set PlayPause</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg13" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_play_arrow</Str>
+			<Str sr="arg8" ve="3">Play</Str>
+			<Str sr="arg9" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_SpotifyPlayPauseVar</lhs>
+					<op>0</op>
+					<rhs>paused</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Installed_App_Version</lhs>
+					<op>13</op>
+					<rhs>%HBC_Installed_App_Version</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act70" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="4"/>
+			<Str sr="arg1" ve="3">HBC Set PlayPause</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg13" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_pause</Str>
+			<Str sr="arg8" ve="3">Pause</Str>
+			<Str sr="arg9" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_SpotifyPlayPauseVar</lhs>
+					<op>0</op>
+					<rhs>playing</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act71" ve="7">
+			<code>166160670</code>
+			<on>false</on>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<ActionIconString1>&lt;null&gt;</ActionIconString1>
+					<ActionIconString1-type>java.lang.String</ActionIconString1-type>
+					<ActionIconString2>&lt;null&gt;</ActionIconString2>
+					<ActionIconString2-type>java.lang.String</ActionIconString2-type>
+					<ActionIconString3>&lt;null&gt;</ActionIconString3>
+					<ActionIconString3-type>java.lang.String</ActionIconString3-type>
+					<ActionIconString4>&lt;null&gt;</ActionIconString4>
+					<ActionIconString4-type>java.lang.String</ActionIconString4-type>
+					<ActionIconString5>&lt;null&gt;</ActionIconString5>
+					<ActionIconString5-type>java.lang.String</ActionIconString5-type>
+					<AppendTexts>false</AppendTexts>
+					<AppendTexts-type>java.lang.Boolean</AppendTexts-type>
+					<BackgroundColor>&lt;null&gt;</BackgroundColor>
+					<BackgroundColor-type>java.lang.String</BackgroundColor-type>
+					<BadgeType>&lt;null&gt;</BadgeType>
+					<BadgeType-type>java.lang.String</BadgeType-type>
+					<Button1UnlockScreen>false</Button1UnlockScreen>
+					<Button1UnlockScreen-type>java.lang.Boolean</Button1UnlockScreen-type>
+					<Button2UnlockScreen>false</Button2UnlockScreen>
+					<Button2UnlockScreen-type>java.lang.Boolean</Button2UnlockScreen-type>
+					<Button3UnlockScreen>false</Button3UnlockScreen>
+					<Button3UnlockScreen-type>java.lang.Boolean</Button3UnlockScreen-type>
+					<Button4UnlockScreen>false</Button4UnlockScreen>
+					<Button4UnlockScreen-type>java.lang.Boolean</Button4UnlockScreen-type>
+					<Button5UnlockScreen>false</Button5UnlockScreen>
+					<Button5UnlockScreen-type>java.lang.Boolean</Button5UnlockScreen-type>
+					<ChronometerCountDown>false</ChronometerCountDown>
+					<ChronometerCountDown-type>java.lang.Boolean</ChronometerCountDown-type>
+					<Colorize>false</Colorize>
+					<Colorize-type>java.lang.Boolean</Colorize-type>
+					<DismissOnTouchVariable>&lt;null&gt;</DismissOnTouchVariable>
+					<DismissOnTouchVariable-type>java.lang.String</DismissOnTouchVariable-type>
+					<ExtraInfo>&lt;null&gt;</ExtraInfo>
+					<ExtraInfo-type>java.lang.String</ExtraInfo-type>
+					<GroupAlertBehaviour>&lt;null&gt;</GroupAlertBehaviour>
+					<GroupAlertBehaviour-type>java.lang.String</GroupAlertBehaviour-type>
+					<GroupKey>&lt;null&gt;</GroupKey>
+					<GroupKey-type>java.lang.String</GroupKey-type>
+					<IconExpanded>&lt;null&gt;</IconExpanded>
+					<IconExpanded-type>java.lang.String</IconExpanded-type>
+					<IsGroupSummary>false</IsGroupSummary>
+					<IsGroupSummary-type>java.lang.Boolean</IsGroupSummary-type>
+					<IsGroupVariable>&lt;null&gt;</IsGroupVariable>
+					<IsGroupVariable-type>java.lang.String</IsGroupVariable-type>
+					<MediaAlbum>&lt;null&gt;</MediaAlbum>
+					<MediaAlbum-type>java.lang.String</MediaAlbum-type>
+					<MediaArtist>&lt;null&gt;</MediaArtist>
+					<MediaArtist-type>java.lang.String</MediaArtist-type>
+					<MediaDuration>&lt;null&gt;</MediaDuration>
+					<MediaDuration-type>java.lang.String</MediaDuration-type>
+					<MediaIcon>&lt;null&gt;</MediaIcon>
+					<MediaIcon-type>java.lang.String</MediaIcon-type>
+					<MediaLayout>true</MediaLayout>
+					<MediaLayout-type>java.lang.Boolean</MediaLayout-type>
+					<MediaNextCommand>&lt;null&gt;</MediaNextCommand>
+					<MediaNextCommand-type>java.lang.String</MediaNextCommand-type>
+					<MediaPauseCommand>&lt;null&gt;</MediaPauseCommand>
+					<MediaPauseCommand-type>java.lang.String</MediaPauseCommand-type>
+					<MediaPlayCommand>&lt;null&gt;</MediaPlayCommand>
+					<MediaPlayCommand-type>java.lang.String</MediaPlayCommand-type>
+					<MediaPlaybackState>&lt;null&gt;</MediaPlaybackState>
+					<MediaPlaybackState-type>java.lang.String</MediaPlaybackState-type>
+					<MediaPosition>&lt;null&gt;</MediaPosition>
+					<MediaPosition-type>java.lang.String</MediaPosition-type>
+					<MediaPreviousCommand>&lt;null&gt;</MediaPreviousCommand>
+					<MediaPreviousCommand-type>java.lang.String</MediaPreviousCommand-type>
+					<MediaTrack>&lt;null&gt;</MediaTrack>
+					<MediaTrack-type>java.lang.String</MediaTrack-type>
+					<MessagingImages>&lt;null&gt;</MessagingImages>
+					<MessagingImages-type>java.lang.String</MessagingImages-type>
+					<MessagingOwnIcon>&lt;null&gt;</MessagingOwnIcon>
+					<MessagingOwnIcon-type>java.lang.String</MessagingOwnIcon-type>
+					<MessagingOwnName>&lt;null&gt;</MessagingOwnName>
+					<MessagingOwnName-type>java.lang.String</MessagingOwnName-type>
+					<MessagingPersonBot>&lt;null&gt;</MessagingPersonBot>
+					<MessagingPersonBot-type>java.lang.String</MessagingPersonBot-type>
+					<MessagingPersonIcons>&lt;null&gt;</MessagingPersonIcons>
+					<MessagingPersonIcons-type>java.lang.String</MessagingPersonIcons-type>
+					<MessagingPersonImportant>&lt;null&gt;</MessagingPersonImportant>
+					<MessagingPersonImportant-type>java.lang.String</MessagingPersonImportant-type>
+					<MessagingPersonNames>&lt;null&gt;</MessagingPersonNames>
+					<MessagingPersonNames-type>java.lang.String</MessagingPersonNames-type>
+					<MessagingPersonUri>&lt;null&gt;</MessagingPersonUri>
+					<MessagingPersonUri-type>java.lang.String</MessagingPersonUri-type>
+					<MessagingSeparator>&lt;null&gt;</MessagingSeparator>
+					<MessagingSeparator-type>java.lang.String</MessagingSeparator-type>
+					<MessagingTexts>&lt;null&gt;</MessagingTexts>
+					<MessagingTexts-type>java.lang.String</MessagingTexts-type>
+					<NotificationChannelBypassDnd>false</NotificationChannelBypassDnd>
+					<NotificationChannelBypassDnd-type>java.lang.Boolean</NotificationChannelBypassDnd-type>
+					<NotificationChannelDescription>&lt;null&gt;</NotificationChannelDescription>
+					<NotificationChannelDescription-type>java.lang.String</NotificationChannelDescription-type>
+					<NotificationChannelId>&lt;null&gt;</NotificationChannelId>
+					<NotificationChannelId-type>java.lang.String</NotificationChannelId-type>
+					<NotificationChannelImportance>&lt;null&gt;</NotificationChannelImportance>
+					<NotificationChannelImportance-type>java.lang.String</NotificationChannelImportance-type>
+					<NotificationChannelName>&lt;null&gt;</NotificationChannelName>
+					<NotificationChannelName-type>java.lang.String</NotificationChannelName-type>
+					<NotificationChannelShowBadge>false</NotificationChannelShowBadge>
+					<NotificationChannelShowBadge-type>java.lang.Boolean</NotificationChannelShowBadge-type>
+					<PersistentVariable>&lt;null&gt;</PersistentVariable>
+					<PersistentVariable-type>java.lang.String</PersistentVariable-type>
+					<PhoneOnly>false</PhoneOnly>
+					<PhoneOnly-type>java.lang.Boolean</PhoneOnly-type>
+					<PriorityVariable>&lt;null&gt;</PriorityVariable>
+					<PriorityVariable-type>java.lang.String</PriorityVariable-type>
+					<PublicVersion>&lt;null&gt;</PublicVersion>
+					<PublicVersion-type>java.lang.String</PublicVersion-type>
+					<ReplyAction>&lt;null&gt;</ReplyAction>
+					<ReplyAction-type>java.lang.String</ReplyAction-type>
+					<ReplyChoices>&lt;null&gt;</ReplyChoices>
+					<ReplyChoices-type>java.lang.String</ReplyChoices-type>
+					<ReplyLabel>&lt;null&gt;</ReplyLabel>
+					<ReplyLabel-type>java.lang.String</ReplyLabel-type>
+					<ShareButtonsVariable>&lt;null&gt;</ShareButtonsVariable>
+					<ShareButtonsVariable-type>java.lang.String</ShareButtonsVariable-type>
+					<SkipPictureCache>false</SkipPictureCache>
+					<SkipPictureCache-type>java.lang.Boolean</SkipPictureCache-type>
+					<SoundPath>&lt;null&gt;</SoundPath>
+					<SoundPath-type>java.lang.String</SoundPath-type>
+					<StatusBarIconString>&lt;null&gt;</StatusBarIconString>
+					<StatusBarIconString-type>java.lang.String</StatusBarIconString-type>
+					<StatusBarTextSize>16</StatusBarTextSize>
+					<StatusBarTextSize-type>java.lang.String</StatusBarTextSize-type>
+					<TextExpanded>&lt;null&gt;</TextExpanded>
+					<TextExpanded-type>java.lang.String</TextExpanded-type>
+					<Time>&lt;null&gt;</Time>
+					<Time-type>java.lang.String</Time-type>
+					<TimeFormat>&lt;null&gt;</TimeFormat>
+					<TimeFormat-type>java.lang.String</TimeFormat-type>
+					<Timeout>&lt;null&gt;</Timeout>
+					<Timeout-type>java.lang.String</Timeout-type>
+					<TitleExpanded>&lt;null&gt;</TitleExpanded>
+					<TitleExpanded-type>java.lang.String</TitleExpanded-type>
+					<UpdateNotification>false</UpdateNotification>
+					<UpdateNotification-type>java.lang.Boolean</UpdateNotification-type>
+					<UseChronometer>false</UseChronometer>
+					<UseChronometer-type>java.lang.Boolean</UseChronometer-type>
+					<UseHTML>false</UseHTML>
+					<UseHTML-type>java.lang.Boolean</UseHTML-type>
+					<Visibility>&lt;null&gt;</Visibility>
+					<Visibility-type>java.lang.String</Visibility-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Status Bar Text Size: 16
+Separator: ,
+Media Layout: true</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<config_action_1_icon>&lt;null&gt;</config_action_1_icon>
+					<config_action_1_icon-type>java.lang.String</config_action_1_icon-type>
+					<config_action_2_icon>&lt;null&gt;</config_action_2_icon>
+					<config_action_2_icon-type>java.lang.String</config_action_2_icon-type>
+					<config_action_3_icon>&lt;null&gt;</config_action_3_icon>
+					<config_action_3_icon-type>java.lang.String</config_action_3_icon-type>
+					<config_action_4_icon>&lt;null&gt;</config_action_4_icon>
+					<config_action_4_icon-type>java.lang.String</config_action_4_icon-type>
+					<config_action_5_icon>&lt;null&gt;</config_action_5_icon>
+					<config_action_5_icon-type>java.lang.String</config_action_5_icon-type>
+					<config_notification_action>&lt;null&gt;</config_notification_action>
+					<config_notification_action-type>java.lang.String</config_notification_action-type>
+					<config_notification_action_button1>&lt;null&gt;</config_notification_action_button1>
+					<config_notification_action_button1-type>java.lang.String</config_notification_action_button1-type>
+					<config_notification_action_button2>&lt;null&gt;</config_notification_action_button2>
+					<config_notification_action_button2-type>java.lang.String</config_notification_action_button2-type>
+					<config_notification_action_button3>&lt;null&gt;</config_notification_action_button3>
+					<config_notification_action_button3-type>java.lang.String</config_notification_action_button3-type>
+					<config_notification_action_button4>&lt;null&gt;</config_notification_action_button4>
+					<config_notification_action_button4-type>java.lang.String</config_notification_action_button4-type>
+					<config_notification_action_button5>&lt;null&gt;</config_notification_action_button5>
+					<config_notification_action_button5-type>java.lang.String</config_notification_action_button5-type>
+					<config_notification_action_label1>&lt;null&gt;</config_notification_action_label1>
+					<config_notification_action_label1-type>java.lang.String</config_notification_action_label1-type>
+					<config_notification_action_label2>&lt;null&gt;</config_notification_action_label2>
+					<config_notification_action_label2-type>java.lang.String</config_notification_action_label2-type>
+					<config_notification_action_label3>&lt;null&gt;</config_notification_action_label3>
+					<config_notification_action_label3-type>java.lang.String</config_notification_action_label3-type>
+					<config_notification_action_on_dismiss>&lt;null&gt;</config_notification_action_on_dismiss>
+					<config_notification_action_on_dismiss-type>java.lang.String</config_notification_action_on_dismiss-type>
+					<config_notification_action_share>false</config_notification_action_share>
+					<config_notification_action_share-type>java.lang.Boolean</config_notification_action_share-type>
+					<config_notification_command>&lt;null&gt;</config_notification_command>
+					<config_notification_command-type>java.lang.String</config_notification_command-type>
+					<config_notification_content_info>&lt;null&gt;</config_notification_content_info>
+					<config_notification_content_info-type>java.lang.String</config_notification_content_info-type>
+					<config_notification_dismiss_on_touch>false</config_notification_dismiss_on_touch>
+					<config_notification_dismiss_on_touch-type>java.lang.Boolean</config_notification_dismiss_on_touch-type>
+					<config_notification_icon>&lt;null&gt;</config_notification_icon>
+					<config_notification_icon-type>java.lang.String</config_notification_icon-type>
+					<config_notification_indeterminate_progress>false</config_notification_indeterminate_progress>
+					<config_notification_indeterminate_progress-type>java.lang.Boolean</config_notification_indeterminate_progress-type>
+					<config_notification_led_color>&lt;null&gt;</config_notification_led_color>
+					<config_notification_led_color-type>java.lang.String</config_notification_led_color-type>
+					<config_notification_led_off>&lt;null&gt;</config_notification_led_off>
+					<config_notification_led_off-type>java.lang.String</config_notification_led_off-type>
+					<config_notification_led_on>&lt;null&gt;</config_notification_led_on>
+					<config_notification_led_on-type>java.lang.String</config_notification_led_on-type>
+					<config_notification_max_progress>&lt;null&gt;</config_notification_max_progress>
+					<config_notification_max_progress-type>java.lang.String</config_notification_max_progress-type>
+					<config_notification_number>&lt;null&gt;</config_notification_number>
+					<config_notification_number-type>java.lang.String</config_notification_number-type>
+					<config_notification_persistent>false</config_notification_persistent>
+					<config_notification_persistent-type>java.lang.Boolean</config_notification_persistent-type>
+					<config_notification_picture>&lt;null&gt;</config_notification_picture>
+					<config_notification_picture-type>java.lang.String</config_notification_picture-type>
+					<config_notification_priority>&lt;null&gt;</config_notification_priority>
+					<config_notification_priority-type>java.lang.String</config_notification_priority-type>
+					<config_notification_progress>&lt;null&gt;</config_notification_progress>
+					<config_notification_progress-type>java.lang.String</config_notification_progress-type>
+					<config_notification_subtext>&lt;null&gt;</config_notification_subtext>
+					<config_notification_subtext-type>java.lang.String</config_notification_subtext-type>
+					<config_notification_text>&lt;null&gt;</config_notification_text>
+					<config_notification_text-type>java.lang.String</config_notification_text-type>
+					<config_notification_ticker>&lt;null&gt;</config_notification_ticker>
+					<config_notification_ticker-type>java.lang.String</config_notification_ticker-type>
+					<config_notification_title>&lt;null&gt;</config_notification_title>
+					<config_notification_title-type>java.lang.String</config_notification_title-type>
+					<config_notification_url>&lt;null&gt;</config_notification_url>
+					<config_notification_url-type>java.lang.String</config_notification_url-type>
+					<config_notification_vibration>&lt;null&gt;</config_notification_vibration>
+					<config_notification_vibration-type>java.lang.String</config_notification_vibration-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>StatusBarTextSize plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<notificaitionid>&lt;null&gt;</notificaitionid>
+					<notificaitionid-type>java.lang.String</notificaitionid-type>
+					<notificaitionsound>&lt;null&gt;</notificaitionsound>
+					<notificaitionsound-type>java.lang.String</notificaitionsound-type>
+					<plugininstanceid>5b1e342a-acb8-4df5-9f62-e0907536bf8a</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autonotification.intent.IntentNotification</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+					<preferenceScreen>&lt;null&gt;</preferenceScreen>
+					<preferenceScreen-type>java.lang.String</preferenceScreen-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autonotification</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autonotification.activity.ActivityConfigNotify</Str>
+			<Int sr="arg3" val="20"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act72" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="5"/>
+			<Str sr="arg1" ve="3">HBC Next</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg13" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_av_skip_next</Str>
+			<Str sr="arg8" ve="3">Next</Str>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act73" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_UPDATE_INSTALL_TRACKER8</Str>
+			<Str sr="arg1" ve="3">installed</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act74" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act75" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<label>HBC Ext. Notify Listener on</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_UPDATE_INSTALL_TRACKER9</lhs>
+					<op>13</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act76" ve="7">
+			<code>159</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Ext. Notify Listener</Str>
+			<Int sr="arg1" val="1"/>
+		</Action>
+		<Action sr="act77" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_UPDATE_INSTALL_TRACKER9</Str>
+			<Str sr="arg1" ve="3">installed</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act78" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act79" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par2</lhs>
+					<op>0</op>
+					<rhs>-r-ds-</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>339</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">%hbc_api_url/updates</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">Tasker/HBC/.internal/update-tracker.txt</Str>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act80" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%ressources_and_data_structure_ready</Str>
+			<Str sr="arg1" ve="3">true</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act81" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par2</lhs>
+					<op>0</op>
+					<rhs>-r-</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act82" ve="7">
+			<code>130</code>
+			<label>Laden der externen Ressourcen, die für ein fehlerfreies starten der App zwingend nötig sind.</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Get External Resources</Str>
+			<Int sr="arg1">
+				<var>51</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">priority=1</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act83" ve="7">
+			<code>130</code>
+			<label>erstellen &amp; vorbereiten interner Daten, Ordnerstrukturen, Dateien, usw.</label>
+			<on>false</on>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC prep Data Structure</Str>
+			<Int sr="arg1">
+				<var>51</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act84" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%ressources_and_data_structure_ready</Str>
+			<Str sr="arg1" ve="3">true</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act85" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par2</lhs>
+					<op>0</op>
+					<rhs>-ds-</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act86" ve="7">
+			<code>130</code>
+			<label>Laden der externen Ressourcen, die für ein fehlerfreies starten der App zwingend nötig sind.</label>
+			<on>false</on>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Get External Resources</Str>
+			<Int sr="arg1">
+				<var>51</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">priority=1</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act87" ve="7">
+			<code>130</code>
+			<label>erstellen &amp; vorbereiten interner Daten, Ordnerstrukturen, Dateien, usw.</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC prep Data Structure</Str>
+			<Int sr="arg1">
+				<var>51</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act88" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%ressources_and_data_structure_ready</Str>
+			<Str sr="arg1" ve="3">true</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act89" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act90" ve="7">
+			<code>130</code>
+			<label>Laden der externen Ressourcen, die für ein fehlerfreies starten der App zwingend nötig sind.</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Get External Resources</Str>
+			<Int sr="arg1">
+				<var>51</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">priority=1</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act91" ve="7">
+			<code>130</code>
+			<label>erstellen &amp; vorbereiten interner Daten, Ordnerstrukturen, Dateien, usw.</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC prep Data Structure</Str>
+			<Int sr="arg1">
+				<var>51</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act92" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%ressources_and_data_structure_ready</Str>
+			<Str sr="arg1" ve="3">true</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act93" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act94" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ressources_and_data_structure_ready</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act95" ve="7">
+			<code>135</code>
+			<on>false</on>
+			<Int sr="arg0" val="0"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3"/>
+		</Action>
+		<Action sr="act96" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act97" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<pref>app_start_error</pref>
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Taste
+Die Beschriftung der angeklickten Schaltfläche&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Achtung, Fehler:</Str>
+			<Str sr="arg2" ve="3">Notwendige App Ressourcen könnten nicht bereitgestellt werden.
+Dies liegt nicht am Server, sondern daran, dass der App notwendige Berechtigungen fehlen.
+
+Bitte starte die App neu, und gewähre der App die Berechtigung, auf den gesamten Speicher, Bilder und Musik zugreifen, bzw. managen zu dürfen, da die App andernfalls nicht funktionieren kann.</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act98" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%app_start_error_td_button</lhs>
+					<op>0</op>
+					<rhs>ok</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act99" ve="7">
+			<code>18</code>
+			<App sr="arg0">
+				<appClass>net.dinglisch.android.taskerm.Kid</appClass>
+				<appPkg>com.plsreloadtasker.hbcclient</appPkg>
+				<label>Musik Client</label>
+			</App>
+			<Int sr="arg1" val="0"/>
+		</Action>
+	</Task>
+</TaskerData>

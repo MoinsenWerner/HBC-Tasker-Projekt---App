@@ -1,0 +1,86 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<Task sr="task217">
+		<cdate>1783579502090</cdate>
+		<edate>1787209750384</edate>
+		<id>217</id>
+		<nme>HBC Intents</nme>
+		<Action sr="act0" ve="7">
+			<code>877</code>
+			<label>open "Allow install from this app" settings for specific app</label>
+			<Str sr="arg0" ve="3">android.settings.MANAGE_UNKNOWN_APP_SOURCES</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">package:com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>877</code>
+			<label>open "Display over other apps" permission granting settings for specific app</label>
+			<Str sr="arg0" ve="3">android.settings.action.MANAGE_OVERLAY_PERMISSION</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">package:com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>877</code>
+			<label>open notification settings for specific app</label>
+			<Str sr="arg0" ve="3">android.settings.APP_NOTIFICATION_SETTINGS</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">android.provider.extra.APP_PACKAGE:com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>877</code>
+			<label>open notification settings for a specific category id of a specific app
+
+the example used here is the notification settings for Tasker's
+"Pleaceholder - Please Disable" notification
+
+ie - replace net.dinglisch.android.taskerm in "Extra" input field with package name of other apps
+and
+query the category id using AutoNotification and insert findings into the "Extra" field and replace the category id "quick"</label>
+			<on>false</on>
+			<Str sr="arg0" ve="3">android.settings.CHANNEL_NOTIFICATION_SETTINGS</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">android.provider.extra.APP_PACKAGE:com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg5" ve="3">android.provider.extra.CHANNEL_ID:quick</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>877</code>
+			<label>open modify system settings permission granting settings for specific app</label>
+			<Str sr="arg0" ve="3">android.settings.action.MANAGE_WRITE_SETTINGS</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">package:com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+</TaskerData>

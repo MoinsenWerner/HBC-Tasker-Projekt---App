@@ -1,0 +1,2130 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<dmetric>1080.0,2167.0</dmetric>
+	<Scene sr="sceneHBC Erweiterte Einstellungen2">
+		<cdate>1781005392390</cdate>
+		<edate>1788955207387</edate>
+		<heightLand>-1</heightLand>
+		<heightPort>2167</heightPort>
+		<nme>HBC Erweiterte Einstellungen2</nme>
+		<widthLand>-1</widthLand>
+		<widthPort>1080</widthPort>
+		<ButtonElement sr="elements0" ve="3">
+			<clickTask>55</clickTask>
+			<flags>4</flags>
+			<geom>552,130,525,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Update App Version</Str>
+			<Str sr="arg1" ve="3">update In-App Version</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<ButtonElement sr="elements1" ve="3">
+			<clickTask>56</clickTask>
+			<flags>4</flags>
+			<geom>354,1863,341,151,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Back</Str>
+			<Str sr="arg1" ve="3">Back</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<TextElement sr="elements10" ve="3">
+			<flags>4</flags>
+			<geom>502,699,470,174,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Beschriftung11</Str>
+			<Str sr="arg1" ve="3">&lt;-- Uhrzeitfilter</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FFFFFFFF</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<PickerElement sr="elements11">
+			<flags>4</flags>
+			<geom>0,699,254,174,-1,-1,-1,40</geom>
+			<Str sr="arg0" ve="3">Stunde</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="23"/>
+			<Int sr="arg3" val="12"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</PickerElement>
+		<PickerElement sr="elements12">
+			<flags>4</flags>
+			<geom>255,699,247,174,-1,-1,-1,40</geom>
+			<Str sr="arg0" ve="3">Minute</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="59"/>
+			<Int sr="arg3" val="30"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</PickerElement>
+		<CheckBoxElement sr="elements13">
+			<flags>4</flags>
+			<geom>973,551,123,124,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Datumsfilter</Str>
+			<Int sr="arg1" val="0"/>
+		</CheckBoxElement>
+		<CheckBoxElement sr="elements14">
+			<flags>4</flags>
+			<geom>973,724,106,124,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Uhrzeitfilter</Str>
+			<Int sr="arg1" val="0"/>
+		</CheckBoxElement>
+		<ButtonElement sr="elements15" ve="3">
+			<clickTask>58</clickTask>
+			<flags>4</flags>
+			<geom>527,873,525,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Get User Sessions</Str>
+			<Str sr="arg1" ve="3">Get User sessions</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<SwitchElement sr="elements16">
+			<checkchangeTask>59</checkchangeTask>
+			<flags>4</flags>
+			<geom>750,328,148,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Session Action Switch</Str>
+			<Int sr="arg1" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</SwitchElement>
+		<TextElement sr="elements17" ve="3">
+			<flags>4</flags>
+			<geom>898,328,180,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Beschriftung12</Str>
+			<Str sr="arg1" ve="3">Get Position Data</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FFFFFFFF</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<TextElement sr="elements18" ve="3">
+			<flags>4</flags>
+			<geom>552,328,198,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Beschriftung121</Str>
+			<Str sr="arg1" ve="3">Get Action Data</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FFFFFFFF</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<SwitchElement sr="elements19">
+			<checkchangeTask>60</checkchangeTask>
+			<flags>4</flags>
+			<geom>923,1071,148,124,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Send Userdaten Benachrichtigung Switch</Str>
+			<Int sr="arg1" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</SwitchElement>
+		<EditTextElement sr="elements2" ve="3">
+			<flags>4</flags>
+			<geom>0,130,551,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">New App Version</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1000"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3">#FFFFFFFF</Str>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="4"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="10"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</EditTextElement>
+		<TextElement sr="elements20" ve="3">
+			<flags>4</flags>
+			<geom>0,1071,922,124,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Sent Userdaten Beschriftung</Str>
+			<Str sr="arg1" ve="3">zeige Benachrichtigung über gesendete Positionsdaten</Str>
+			<Int sr="arg2" val="13"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FFFFFFFF</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<EditTextElement sr="elements21" ve="3">
+			<flags>4</flags>
+			<focuschangeTask>61</focuschangeTask>
+			<geom>0,1417,551,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Loading_Spinner_Waiting_Time</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1000"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3">#FFFFFFFF</Str>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="4"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="10"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</EditTextElement>
+		<ButtonElement sr="elements22" ve="3">
+			<clickTask>62</clickTask>
+			<flags>4</flags>
+			<geom>552,1417,525,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Loading_Spinner_Waiting_Time_Button</Str>
+			<Str sr="arg1" ve="3">Set Spinner Framerate (FPS)</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<ButtonElement sr="elements23" ve="3">
+			<clickTask>63</clickTask>
+			<flags>4</flags>
+			<geom>0,1615,551,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Forced Ressource Download</Str>
+			<Str sr="arg1" ve="3">Forced Ressource Download</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<ButtonElement sr="elements24" ve="3">
+			<clickTask>64</clickTask>
+			<flags>4</flags>
+			<geom>552,1615,525,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Start Test Loading Anmiantion</Str>
+			<Str sr="arg1" ve="3">Test Loading Anmiantion</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<ButtonElement sr="elements25" ve="3">
+			<clickTask>65</clickTask>
+			<flags>4</flags>
+			<geom>552,1219,525,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Core-Data-Abfrage Starten</Str>
+			<Str sr="arg1" ve="3">Core-Data-Abfrage Starten</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<ButtonElement sr="elements26" ve="3">
+			<clickTask>66</clickTask>
+			<geom>948,1888,130,130,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Advanced Settings2</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2">
+				<nme>mw_action_settings</nme>
+				<tint>-1</tint>
+			</Img>
+		</ButtonElement>
+		<EditTextElement sr="elements3" ve="3">
+			<flags>4</flags>
+			<geom>0,328,551,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Username Input</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1000"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3">#FFFFFFFF</Str>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="4"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="10"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</EditTextElement>
+		<TextElement sr="elements4" ve="3">
+			<flags>4</flags>
+			<geom>651,526,321,174,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Beschriftung1</Str>
+			<Str sr="arg1" ve="3">&lt;-- Datumsfilter</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FFFFFFFF</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</TextElement>
+		<TextElement sr="elements5" ve="3">
+			<flags>4</flags>
+			<geom>0,0,501,130,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Aktuelle App Version</Str>
+			<Str sr="arg1" ve="3">Aktuelle App Version: %app_versionsname</Str>
+			<Int sr="arg2" val="12"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<ButtonElement sr="elements6" ve="3">
+			<clickTask>57</clickTask>
+			<flags>4</flags>
+			<geom>0,873,525,199,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Get User Actions</Str>
+			<Str sr="arg1" ve="3">Get User Actions/Positionsdaten</Str>
+			<Int sr="arg2" val="16"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FF000000</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Img sr="arg7" ve="2"/>
+		</ButtonElement>
+		<PickerElement sr="elements7">
+			<flags>4</flags>
+			<geom>0,526,204,174,-1,-1,-1,40</geom>
+			<Str sr="arg0" ve="3">Tag</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="31"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</PickerElement>
+		<PickerElement sr="elements8">
+			<flags>4</flags>
+			<geom>205,526,198,174,-1,-1,-1,40</geom>
+			<Str sr="arg0" ve="3">Monat</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="12"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</PickerElement>
+		<PickerElement sr="elements9">
+			<flags>4</flags>
+			<geom>403,526,247,174,-1,-1,-1,40</geom>
+			<Str sr="arg0" ve="3">Jahr</Str>
+			<Int sr="arg1" val="2026"/>
+			<Int sr="arg2" val="2030"/>
+			<Int sr="arg3" val="2026"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<RectElement sr="background">
+				<flags>4</flags>
+				<geom>-1,-1,-1,-1,-1,-1,-1,-1</geom>
+				<Str sr="arg0" ve="3"/>
+				<Int sr="arg1" val="0"/>
+				<Str sr="arg2" ve="3"/>
+				<Str sr="arg3" ve="3"/>
+				<Int sr="arg4" val="0"/>
+				<Str sr="arg5" ve="3">#FF000000</Str>
+				<Int sr="arg6" val="0"/>
+				<Int sr="arg7" val="0"/>
+			</RectElement>
+		</PickerElement>
+		<PropertiesElement sr="props">
+			<iconclickTask>67</iconclickTask>
+			<Int sr="arg0" val="2"/>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">#FF000000</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">HBC Einstellungen</Str>
+			<Str sr="arg5" ve="3"/>
+			<Img sr="arg6" ve="2">
+				<fle>/storage/emulated/0/Tasker/HBC/.img/appicon.png</fle>
+			</Img>
+			<Str sr="arg7" ve="3">Erweiterte Einstellungen</Str>
+		</PropertiesElement>
+	</Scene>
+	<Task sr="task55">
+		<cdate>1781005866244</cdate>
+		<edate>1781005866244</edate>
+		<id>55</id>
+		<pri>56</pri>
+		<Action sr="act0" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">New App Version</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%version</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%app_versionsname</Str>
+			<Str sr="arg1" ve="3">%version</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Neue App Version: %version</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task56">
+		<cdate>1781005746124</cdate>
+		<edate>1781005746124</edate>
+		<id>56</id>
+		<pri>106</pri>
+		<Action sr="act0" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Bitte warte kurz...</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>46</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Loading_Spinner_Waiting_Time</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_Loading_Spinner_FPS</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>47</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Int sr="arg1" val="9"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>48</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen2</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>49</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen2</Str>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>37</code>
+			<on>false</on>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%hbc_client_id</lhs>
+					<op>0</op>
+					<rhs>felix</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">HBC Einstellungen</Str>
+			<Str sr="arg1" ve="3">Manueller Update-Check</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>65</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">HBC Einstellungen</Str>
+			<Str sr="arg1" ve="3">Manueller Update Reminder</Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="400"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>50</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Send Userdaten Benachrichtigung Switch</Str>
+			<Int sr="arg2">
+				<var>%HBC_UserPosDaten_Benachrichtigung_onoff</var>
+			</Int>
+		</Action>
+	</Task>
+	<Task sr="task57">
+		<cdate>1781005866244</cdate>
+		<edate>1788954355321</edate>
+		<id>57</id>
+		<pri>106</pri>
+		<Action sr="act0" ve="7">
+			<code>195</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Username Input</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%username</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>195</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Username Input</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%username</Str>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%path</Str>
+			<Str sr="arg1" ve="3">Tasker/HBC/admin/userpositions/%username</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%path</Str>
+			<Str sr="arg1" ve="3">.txt</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">%hbc_api_url/app/admin/action</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>off</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">%hbc_api_url/app/get/pos</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">/%username</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>37</code>
+			<coll>false</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">?admin=%hbc_client_id</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">&amp;passwd=FelixHertel</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>off</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%timefilter</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%username</Str>
+			<Str sr="arg1" ve="3">felix</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Stunde</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%hour</Str>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Minute</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%minute</Str>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%time</Str>
+			<Str sr="arg1" ve="3">%hour-%minute</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">/%time</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act24" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act25" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%datefilter</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act26" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Tag</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%day</Str>
+		</Action>
+		<Action sr="act27" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Monat</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%month</Str>
+		</Action>
+		<Action sr="act28" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Jahr</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%year</Str>
+		</Action>
+		<Action sr="act29" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%today</Str>
+			<Str sr="arg1" ve="3">%day-%month-%year</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>195</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Uhrzeitfilter</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%timefilter</Str>
+		</Action>
+		<Action sr="act30" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">/%today</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act31" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act32" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act33" ve="7">
+			<code>547</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">/%action_name</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act34" ve="7">
+			<code>548</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%hbc_api_url/app/get/pos/felix?admin=felix&amp;passwd=FelixHertel</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act35" ve="7">
+			<code>105</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act36" ve="7">
+			<code>339</code>
+			<label>Post User online times</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">%link2</Str>
+			<Str sr="arg3" ve="3">user:%hbc_client_id</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%path</Str>
+			<Int sr="arg8" val="60"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>off</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act37" ve="7">
+			<code>339</code>
+			<label>Get Userposition data</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">%link2</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%path</Str>
+			<Int sr="arg8" val="60"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act38" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Daten abgerufen...</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act39" ve="7">
+			<code>30</code>
+			<Int sr="arg0" val="0"/>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>195</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Datumsfilter</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%datefilter</Str>
+		</Action>
+		<Action sr="act40" ve="7">
+			<code>46</code>
+			<Str sr="arg0" ve="3">HBC Map</Str>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act41" ve="7">
+			<code>47</code>
+			<Str sr="arg0" ve="3">HBC Map</Str>
+			<Int sr="arg1" val="10"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act42" ve="7">
+			<code>48</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Int sr="arg1" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act43" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act44" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Userdaten To Map</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%username</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>300</code>
+			<label>POST /app/user/online/&lt;variabler Wert0&gt;/&lt;variabler Wert1&gt;/&lt;variabler Wert2&gt;/&lt;variabler Wert3&gt;
+• wert0: datum, dd-mm-jjjj
+• wert1: startzeit, hh-mm
+• wert2: endzeit, hh-mm
+• wert3: username
+
+GET /app/admin/online/&lt;variabler Wert1&gt;/&lt;optional variabler Wert0&gt;/&lt;optionaler variabler Wert2&gt; (Header muss bei "user" adminuser enthalten)
+• wert0: datum ab, dd-mm-jj
+• wert1: username
+• wert2: uhrzeit ab, hh-mm
+
+POST /app/user/action/&lt;variabler Wert0&gt;/&lt;variabler Wert1&gt;/&lt;variabler Wert2&gt;/&lt;variabler Wert3&gt;
+• wert0: datum, dd-mm-jj
+• wert1: uhrzeit, hh-mm-ss
+• wert2: aktionsname(play/pause/next/previous/etc.)
+• wert3: username
+
+GET /app/admin/action/&lt;variabler Wert0&gt;/&lt;optionaler variabler Wert1&gt;/&lt;optionaler variabler Wert2&gt;/&lt;optionaler variabler Wert3&gt; (Header muss bei "user" adminuser enthalten)
+• wert0: username
+• wert1/wert2/wert3: datum, dd-mm-jj/uhrzeit hh-mm/aktionsname, lehrzeichen durch _ ersetzt</label>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>409</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/admin</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>409</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/admin/useractions</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>409</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/admin/userpositions</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%path</Str>
+			<Str sr="arg1" ve="3">Tasker/HBC/admin/useractions/%username</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_AdminGet_ActionOrPosition</lhs>
+					<op>0</op>
+					<rhs>off</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+	</Task>
+	<Task sr="task58">
+		<cdate>1781005866244</cdate>
+		<edate>1788954371006</edate>
+		<id>58</id>
+		<pri>56</pri>
+		<Action sr="act0" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Username Input</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%username</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Uhrzeitfilter</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%timefilter</Str>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%datefilter</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Tag</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%day</Str>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Monat</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%month</Str>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Jahr</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%year</Str>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%today</Str>
+			<Str sr="arg1" ve="3">%day-%month-%year</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">/%today</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%timefilter</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Stunde</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%hour</Str>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Minute</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%minute</Str>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Datumsfilter</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%datefilter</Str>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%time</Str>
+			<Str sr="arg1" ve="3">%hour-%minute</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">/%time</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>547</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">/%action_name</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act24" ve="7">
+			<code>548</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%today %time %action_name %hbc_client_id</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act25" ve="7">
+			<code>339</code>
+			<label>Post User online times</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">%link2</Str>
+			<Str sr="arg3" ve="3">user:%hbc_client_id</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%path</Str>
+			<Int sr="arg8" val="60"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>300</code>
+			<label>POST /app/user/online/&lt;variabler Wert0&gt;/&lt;variabler Wert1&gt;/&lt;variabler Wert2&gt;/&lt;variabler Wert3&gt;
+• wert0: datum, dd-mm-jjjj
+• wert1: startzeit, hh-mm
+• wert2: endzeit, hh-mm
+• wert3: username
+
+GET /app/admin/online/&lt;variabler Wert1&gt;/&lt;optional variabler Wert0&gt;/&lt;optionaler variabler Wert2&gt; (Header muss bei "user" adminuser enthalten)
+• wert0: datum ab, dd-mm-jj
+• wert1: username
+• wert2: uhrzeit ab, hh-mm
+
+POST /app/user/action/&lt;variabler Wert0&gt;/&lt;variabler Wert1&gt;/&lt;variabler Wert2&gt;/&lt;variabler Wert3&gt;
+• wert0: datum, dd-mm-jj
+• wert1: uhrzeit, hh-mm-ss
+• wert2: aktionsname(play/pause/next/previous/etc.)
+• wert3: username
+
+GET /app/admin/action/&lt;variabler Wert0&gt;/&lt;optionaler variabler Wert1&gt;/&lt;optionaler variabler Wert2&gt;/&lt;optionaler variabler Wert3&gt; (Header muss bei "user" adminuser enthalten)
+• wert0: username
+• wert1/wert2/wert3: datum, dd-mm-jj/uhrzeit hh-mm/aktionsname, lehrzeichen durch _ ersetzt</label>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>409</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/admin</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>409</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">Tasker/HBC/admin/usersessions</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%path</Str>
+			<Str sr="arg1" ve="3">Tasker/HBC/admin/usersessions/%username</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%path</Str>
+			<Str sr="arg1" ve="3">.txt</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">%hbc_api_url/app/admin/online</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%link2</Str>
+			<Str sr="arg1" ve="3">/%username</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task59">
+		<cdate>1783592168624</cdate>
+		<edate>1783592168624</edate>
+		<id>59</id>
+		<pri>106</pri>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_AdminGet_ActionOrPosition</Str>
+			<Str sr="arg1" ve="3">%new_val</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%new_val</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task60">
+		<cdate>1783578997160</cdate>
+		<edate>1783578997160</edate>
+		<id>60</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>195</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Sent Userdaten Benachrichtigung On/Off</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%HBC_UserPosDaten_Benachrichtigung_onoff_State</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_UserPosDaten_Benachrichtigung_onoff_State</Str>
+			<Str sr="arg1" ve="3">%new_val</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>548</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%new_val</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<on>false</on>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%new_val</lhs>
+					<op>0</op>
+					<rhs>on</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>159</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">HBC Update Reminder</Str>
+			<Int sr="arg1" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>43</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>159</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">HBC Update Reminder</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>2046367074</code>
+			<on>false</on>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<App>&lt;null&gt;</App>
+					<App-type>java.lang.String</App-type>
+					<CancelAll>false</CancelAll>
+					<CancelAll-type>java.lang.Boolean</CancelAll-type>
+					<CancelPersistent>false</CancelPersistent>
+					<CancelPersistent-type>java.lang.Boolean</CancelPersistent-type>
+					<CaseinsensitiveApp>false</CaseinsensitiveApp>
+					<CaseinsensitiveApp-type>java.lang.Boolean</CaseinsensitiveApp-type>
+					<CaseinsensitivePackage>false</CaseinsensitivePackage>
+					<CaseinsensitivePackage-type>java.lang.Boolean</CaseinsensitivePackage-type>
+					<CaseinsensitiveText>false</CaseinsensitiveText>
+					<CaseinsensitiveText-type>java.lang.Boolean</CaseinsensitiveText-type>
+					<CaseinsensitiveTitle>false</CaseinsensitiveTitle>
+					<CaseinsensitiveTitle-type>java.lang.Boolean</CaseinsensitiveTitle-type>
+					<ExactApp>false</ExactApp>
+					<ExactApp-type>java.lang.Boolean</ExactApp-type>
+					<ExactPackage>false</ExactPackage>
+					<ExactPackage-type>java.lang.Boolean</ExactPackage-type>
+					<ExactText>false</ExactText>
+					<ExactText-type>java.lang.Boolean</ExactText-type>
+					<ExactTitle>false</ExactTitle>
+					<ExactTitle-type>java.lang.Boolean</ExactTitle-type>
+					<InterceptApps>&lt;StringArray sr=""/&gt;</InterceptApps>
+					<InterceptApps-type>[Ljava.lang.String;</InterceptApps-type>
+					<InvertApp>false</InvertApp>
+					<InvertApp-type>java.lang.Boolean</InvertApp-type>
+					<InvertPackage>false</InvertPackage>
+					<InvertPackage-type>java.lang.Boolean</InvertPackage-type>
+					<InvertText>false</InvertText>
+					<InvertText-type>java.lang.Boolean</InvertText-type>
+					<InvertTitle>false</InvertTitle>
+					<InvertTitle-type>java.lang.Boolean</InvertTitle-type>
+					<OtherId>&lt;null&gt;</OtherId>
+					<OtherId-type>java.lang.String</OtherId-type>
+					<OtherPackage>&lt;null&gt;</OtherPackage>
+					<OtherPackage-type>java.lang.String</OtherPackage-type>
+					<OtherTag>&lt;null&gt;</OtherTag>
+					<OtherTag-type>java.lang.String</OtherTag-type>
+					<PackageName>&lt;null&gt;</PackageName>
+					<PackageName-type>java.lang.String</PackageName-type>
+					<RegexApp>false</RegexApp>
+					<RegexApp-type>java.lang.Boolean</RegexApp-type>
+					<RegexPackage>false</RegexPackage>
+					<RegexPackage-type>java.lang.Boolean</RegexPackage-type>
+					<RegexText>false</RegexText>
+					<RegexText-type>java.lang.Boolean</RegexText-type>
+					<RegexTitle>false</RegexTitle>
+					<RegexTitle-type>java.lang.Boolean</RegexTitle-type>
+					<Text>&lt;null&gt;</Text>
+					<Text-type>java.lang.String</Text-type>
+					<Title>&lt;null&gt;</Title>
+					<Title-type>java.lang.String</Title-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Id: com.plsreloadtasker.hbcclient.update.reminder</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>notificaitionid plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<notificaitionid>com.plsreloadtasker.hbcclient.update.reminder</notificaitionid>
+					<notificaitionid-type>java.lang.String</notificaitionid-type>
+					<plugininstanceid>4b6c1cd2-a565-4f73-a301-17c8e35de563</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autonotification.intent.IntentCancelNotification</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autonotification</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autonotification.activity.ActivityConfigCancelNotification</Str>
+			<Int sr="arg3" val="20"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>2046367074</code>
+			<on>false</on>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<App>&lt;null&gt;</App>
+					<App-type>java.lang.String</App-type>
+					<CancelAll>false</CancelAll>
+					<CancelAll-type>java.lang.Boolean</CancelAll-type>
+					<CancelPersistent>false</CancelPersistent>
+					<CancelPersistent-type>java.lang.Boolean</CancelPersistent-type>
+					<CaseinsensitiveApp>false</CaseinsensitiveApp>
+					<CaseinsensitiveApp-type>java.lang.Boolean</CaseinsensitiveApp-type>
+					<CaseinsensitivePackage>false</CaseinsensitivePackage>
+					<CaseinsensitivePackage-type>java.lang.Boolean</CaseinsensitivePackage-type>
+					<CaseinsensitiveText>false</CaseinsensitiveText>
+					<CaseinsensitiveText-type>java.lang.Boolean</CaseinsensitiveText-type>
+					<CaseinsensitiveTitle>false</CaseinsensitiveTitle>
+					<CaseinsensitiveTitle-type>java.lang.Boolean</CaseinsensitiveTitle-type>
+					<ExactApp>false</ExactApp>
+					<ExactApp-type>java.lang.Boolean</ExactApp-type>
+					<ExactPackage>false</ExactPackage>
+					<ExactPackage-type>java.lang.Boolean</ExactPackage-type>
+					<ExactText>false</ExactText>
+					<ExactText-type>java.lang.Boolean</ExactText-type>
+					<ExactTitle>false</ExactTitle>
+					<ExactTitle-type>java.lang.Boolean</ExactTitle-type>
+					<InterceptApps>&lt;StringArray sr=""/&gt;</InterceptApps>
+					<InterceptApps-type>[Ljava.lang.String;</InterceptApps-type>
+					<InvertApp>false</InvertApp>
+					<InvertApp-type>java.lang.Boolean</InvertApp-type>
+					<InvertPackage>false</InvertPackage>
+					<InvertPackage-type>java.lang.Boolean</InvertPackage-type>
+					<InvertText>false</InvertText>
+					<InvertText-type>java.lang.Boolean</InvertText-type>
+					<InvertTitle>false</InvertTitle>
+					<InvertTitle-type>java.lang.Boolean</InvertTitle-type>
+					<OtherId>&lt;null&gt;</OtherId>
+					<OtherId-type>java.lang.String</OtherId-type>
+					<OtherPackage>&lt;null&gt;</OtherPackage>
+					<OtherPackage-type>java.lang.String</OtherPackage-type>
+					<OtherTag>&lt;null&gt;</OtherTag>
+					<OtherTag-type>java.lang.String</OtherTag-type>
+					<PackageName>&lt;null&gt;</PackageName>
+					<PackageName-type>java.lang.String</PackageName-type>
+					<RegexApp>false</RegexApp>
+					<RegexApp-type>java.lang.Boolean</RegexApp-type>
+					<RegexPackage>false</RegexPackage>
+					<RegexPackage-type>java.lang.Boolean</RegexPackage-type>
+					<RegexText>false</RegexText>
+					<RegexText-type>java.lang.Boolean</RegexText-type>
+					<RegexTitle>false</RegexTitle>
+					<RegexTitle-type>java.lang.Boolean</RegexTitle-type>
+					<Text>&lt;null&gt;</Text>
+					<Text-type>java.lang.String</Text-type>
+					<Title>&lt;null&gt;</Title>
+					<Title-type>java.lang.String</Title-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Id: com.plsreloadtasker.hbcclient.autoupdater.new.update.available</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>notificaitionid plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<notificaitionid>com.plsreloadtasker.hbcclient.autoupdater.new.update.available</notificaitionid>
+					<notificaitionid-type>java.lang.String</notificaitionid-type>
+					<plugininstanceid>4b6c1cd2-a565-4f73-a301-17c8e35de563</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autonotification.intent.IntentCancelNotification</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autonotification</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autonotification.activity.ActivityConfigCancelNotification</Str>
+			<Int sr="arg3" val="20"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>2046367074</code>
+			<on>false</on>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<App>&lt;null&gt;</App>
+					<App-type>java.lang.String</App-type>
+					<CancelAll>false</CancelAll>
+					<CancelAll-type>java.lang.Boolean</CancelAll-type>
+					<CancelPersistent>true</CancelPersistent>
+					<CancelPersistent-type>java.lang.Boolean</CancelPersistent-type>
+					<CaseinsensitiveApp>false</CaseinsensitiveApp>
+					<CaseinsensitiveApp-type>java.lang.Boolean</CaseinsensitiveApp-type>
+					<CaseinsensitivePackage>false</CaseinsensitivePackage>
+					<CaseinsensitivePackage-type>java.lang.Boolean</CaseinsensitivePackage-type>
+					<CaseinsensitiveText>false</CaseinsensitiveText>
+					<CaseinsensitiveText-type>java.lang.Boolean</CaseinsensitiveText-type>
+					<CaseinsensitiveTitle>false</CaseinsensitiveTitle>
+					<CaseinsensitiveTitle-type>java.lang.Boolean</CaseinsensitiveTitle-type>
+					<ExactApp>false</ExactApp>
+					<ExactApp-type>java.lang.Boolean</ExactApp-type>
+					<ExactPackage>false</ExactPackage>
+					<ExactPackage-type>java.lang.Boolean</ExactPackage-type>
+					<ExactText>false</ExactText>
+					<ExactText-type>java.lang.Boolean</ExactText-type>
+					<ExactTitle>false</ExactTitle>
+					<ExactTitle-type>java.lang.Boolean</ExactTitle-type>
+					<InterceptApps>&lt;StringArray sr=""/&gt;</InterceptApps>
+					<InterceptApps-type>[Ljava.lang.String;</InterceptApps-type>
+					<InvertApp>false</InvertApp>
+					<InvertApp-type>java.lang.Boolean</InvertApp-type>
+					<InvertPackage>false</InvertPackage>
+					<InvertPackage-type>java.lang.Boolean</InvertPackage-type>
+					<InvertText>false</InvertText>
+					<InvertText-type>java.lang.Boolean</InvertText-type>
+					<InvertTitle>false</InvertTitle>
+					<InvertTitle-type>java.lang.Boolean</InvertTitle-type>
+					<OtherId>&lt;null&gt;</OtherId>
+					<OtherId-type>java.lang.String</OtherId-type>
+					<OtherPackage>&lt;null&gt;</OtherPackage>
+					<OtherPackage-type>java.lang.String</OtherPackage-type>
+					<OtherTag>&lt;null&gt;</OtherTag>
+					<OtherTag-type>java.lang.String</OtherTag-type>
+					<PackageName>&lt;null&gt;</PackageName>
+					<PackageName-type>java.lang.String</PackageName-type>
+					<RegexApp>false</RegexApp>
+					<RegexApp-type>java.lang.Boolean</RegexApp-type>
+					<RegexPackage>false</RegexPackage>
+					<RegexPackage-type>java.lang.Boolean</RegexPackage-type>
+					<RegexText>false</RegexText>
+					<RegexText-type>java.lang.Boolean</RegexText-type>
+					<RegexTitle>false</RegexTitle>
+					<RegexTitle-type>java.lang.Boolean</RegexTitle-type>
+					<Text>&lt;null&gt;</Text>
+					<Text-type>java.lang.String</Text-type>
+					<Title>&lt;null&gt;</Title>
+					<Title-type>java.lang.String</Title-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Id: com.plsreloadtasker.hbcclient.update.reminder.critical
+Cancel Persistent: true</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>notificaitionid plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<notificaitionid>com.plsreloadtasker.hbcclient.update.reminder.critical</notificaitionid>
+					<notificaitionid-type>java.lang.String</notificaitionid-type>
+					<plugininstanceid>4b6c1cd2-a565-4f73-a301-17c8e35de563</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autonotification.intent.IntentCancelNotification</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autonotification</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autonotification.activity.ActivityConfigCancelNotification</Str>
+			<Int sr="arg3" val="20"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+	</Task>
+	<Task sr="task61">
+		<cdate>1784379711984</cdate>
+		<edate>1784379711984</edate>
+		<id>61</id>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%focused</lhs>
+					<op>0</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Loading_Spinner_Waiting_Time</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">%HBC_Loading_Spinner_FPS</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>43</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%focused</lhs>
+					<op>0</op>
+					<rhs>false</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>51</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Loading_Spinner_Waiting_Time</Str>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3">FPS der Loading Spinner Animation</Str>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>38</code>
+		</Action>
+	</Task>
+	<Task sr="task62">
+		<cdate>1781005866244</cdate>
+		<edate>1781005866244</edate>
+		<id>62</id>
+		<pri>56</pri>
+		<Action sr="act0" ve="7">
+			<code>195</code>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Str sr="arg1" ve="3">Loading_Spinner_Waiting_Time</Str>
+			<Int sr="arg2" val="2"/>
+			<Str sr="arg3" ve="3">%framerate</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%framerate</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Loading_Spinner_Waiting_Time</Str>
+			<Str sr="arg1" ve="3">1000/15</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Loading_Spinner_Waiting_Time</Str>
+			<Str sr="arg1" ve="3">1000/%framerate</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%HBC_Loading_Spinner_FPS</Str>
+			<Str sr="arg1" ve="3">%framerate</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">FPS: %framerate | MS:%HBC_Loading_Spinner_Waiting_Time</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task63">
+		<cdate>1781005866244</cdate>
+		<edate>1781005866244</edate>
+		<id>63</id>
+		<pri>56</pri>
+		<Action sr="act0" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Get External Resources</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">priority=1</Str>
+			<Str sr="arg3" ve="3">forced</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task64">
+		<cdate>1781005866244</cdate>
+		<edate>1781005866244</edate>
+		<id>64</id>
+		<pri>56</pri>
+		<Action sr="act0" ve="7">
+			<code>46</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Objekt Test Screen</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>47</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Objekt Test Screen</Str>
+			<Int sr="arg1" val="10"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Loading Spinner Frames</Str>
+			<Int sr="arg1">
+				<var>20</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">HBC Objekt Test Screen</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task65">
+		<cdate>1781005866244</cdate>
+		<edate>1781005866244</edate>
+		<id>65</id>
+		<pri>56</pri>
+		<Action sr="act0" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">HBC Get Core Datas</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task66">
+		<cdate>1781005955180</cdate>
+		<edate>1781005955180</edate>
+		<id>66</id>
+		<pri>104</pri>
+		<Action sr="act0" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Bitte warte kurz...</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>46</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen2</Str>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>47</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen2</Str>
+			<Int sr="arg1" val="9"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>48</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>49</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">HBC Erweiterte Einstellungen</Str>
+		</Action>
+	</Task>
+	<Task sr="task67">
+		<cdate>1781279304888</cdate>
+		<edate>1781279304888</edate>
+		<id>67</id>
+		<Action sr="act0" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">HBC Duration</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>18</code>
+			<App sr="arg0">
+				<appClass>net.dinglisch.android.taskerm.Kid</appClass>
+				<appPkg>com.plsreloadtasker.hbcclient</appPkg>
+				<label>Musik Client</label>
+			</App>
+			<Int sr="arg1" val="0"/>
+		</Action>
+	</Task>
+</TaskerData>

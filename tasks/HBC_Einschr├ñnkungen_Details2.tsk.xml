@@ -1,0 +1,29 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<Task sr="task343">
+		<cdate>1787658849729</cdate>
+		<edate>1787658937024</edate>
+		<id>343</id>
+		<nme>HBC Einschränkungen Details2</nme>
+		<Action sr="act0" ve="7">
+			<code>377</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Taste
+Die Beschriftung der angeklickten Schaltfläche&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Volle Funktionalität wieder Hergestellt</Str>
+			<Str sr="arg2" ve="3">Die Domain ist wieder erreichbar, es sind wieder alle Funktionen der App nutzbar</Str>
+			<Str sr="arg3" ve="3">Ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+	</Task>
+</TaskerData>

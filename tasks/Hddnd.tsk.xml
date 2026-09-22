@@ -1,0 +1,246 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<Task sr="task277">
+		<cdate>1786843166517</cdate>
+		<edate>1786887828038</edate>
+		<id>277</id>
+		<nme>Hddnd</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>351</code>
+			<on>false</on>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_auth_headers
+Header
+Verwenden Sie dies in der Aktion HTTP-Anfrage im Feld 'Header', um die Anfrage zu authentifizieren&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg2" ve="3">b8f9f76a43e942dc8501097e12663dd5</Str>
+			<Str sr="arg3" ve="3">6df87f22ec934c94b95a53949ad65a6e</Str>
+			<Str sr="arg4" ve="3">https://accounts.spotify.com/authorize</Str>
+			<Str sr="arg5" ve="3">https://accounts.spotify.com/api/token</Str>
+			<Str sr="arg6" ve="3">user-read-currently-playing
+user-read-playback-state
+playlist-read-private
+playlist-read-collaborative
+user-modify-playback-state
+user-read-private
+user-read-email</Str>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="30"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%hbc_spotify_auth_header</Str>
+			<Str sr="arg1" ve="3">%http_auth_headers</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>337</code>
+			<Str sr="arg0" ve="3">com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg1" ve="3">M</Str>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>337</code>
+			<Str sr="arg0" ve="3">com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg1" ve="3">running_tasks</Str>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>337</code>
+			<Str sr="arg0" ve="3">com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg1" ve="3">quick</Str>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>337</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3"/>
+			<Str sr="arg1" ve="3">M</Str>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>337</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3"/>
+			<Str sr="arg1" ve="3">M</Str>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>339</code>
+			<on>false</on>
+			<Bundle sr="arg0">
+				<pref>0</pref>
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_response_code
+Antwortcode
+Der HTTP-Code, den der Server zurückgegeben hat&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_headers()
+Antwortheader
+Die HTTP-Header, die der Server in der Antwort gesendet hat. Jeder Header hat das Format 'Schlüssel:Wert'&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_length
+Antwortlänge
+Die Größe der Antwort in Bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_cookies
+Cookies
+Die Cookies, die der Server in der Antwort im Format Cookie:COOKIE_WERT gesendet hat. Sie können dies direkt im Feld 'Header' der Aktion HTTP-Anfrage verwenden&amp;gt;&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_file_output
+Dateiausgabe
+Enthält immer den vollständigen Pfad der Datei, auch wenn Sie ein Verzeichnis als zu speichernde Datei angegeben haben.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">https://api.spotify.com/v1/me/playlists</Str>
+			<Str sr="arg3" ve="3">%hbc_spotify_auth_header</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">Tasker/Playlists.txt</Str>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>338</code>
+			<on>false</on>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%nc_enabled
+An
+true, wenn die Kategorie aktiviert ist, false, wenn sie nicht aktiviert ist.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%nc_description
+Beschreibung
+true, wenn die Kategorie aktiviert ist, false, wenn sie nicht aktiviert ist.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%nc_group_enabled
+Gruppe aktiviert
+true, wenn die Kategoriegruppe aktiviert ist, false, wenn sie nicht aktiviert ist.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%nc_group_id
+Gruppen-ID
+Eindeutige ID für die Gruppe, in der die Benachrichtigungskategorie enthalten ist&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%nc_group_name
+Gruppenname
+Gruppenname der Benachrichtigungskategorie&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%nc_id
+ID
+Eindeutige ID für die Benachrichtigungskategorie&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;%nc_name
+Name
+Eindeutige ID für die Benachrichtigungskategorie&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES7&gt;%nc_importance
+Wichtigkeit
+Wert zwischen 0-5, wobei 0 keine (deaktiviert) und 5 max ist.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES7&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">running_tasks</Str>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>105</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%nc_id</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>877</code>
+			<Str sr="arg0" ve="3">android.settings.CHANNEL_NOTIFICATION_SETTINGS</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">android.provider.settings.extra.APP_PACKAGE:com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg5" ve="3">android.provider.settings.extra.CHANNEL_ID:M</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>1291811855</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.balda.intenttask.extra.ACTION>android.settings.CHANNEL_NOTIFICATION_SETTINGS</com.balda.intenttask.extra.ACTION>
+					<com.balda.intenttask.extra.ACTION-type>java.lang.String</com.balda.intenttask.extra.ACTION-type>
+					<com.balda.intenttask.extra.CHOOSER>false</com.balda.intenttask.extra.CHOOSER>
+					<com.balda.intenttask.extra.CHOOSER-type>java.lang.Boolean</com.balda.intenttask.extra.CHOOSER-type>
+					<com.balda.intenttask.extra.CLASS>com.android.settings.notification.app.ChannelPanelActivity</com.balda.intenttask.extra.CLASS>
+					<com.balda.intenttask.extra.CLASS-type>java.lang.String</com.balda.intenttask.extra.CLASS-type>
+					<com.balda.intenttask.extra.EXTRAS>&lt;StringArrayList sr=""&gt;&lt;_arrlst_com.balda.intenttask.extra.EXTRAS0&gt;STRING||android.provider.settings.extra.APP_PACKAGE||com.plsreloadtasker.hbcclient&lt;/_arrlst_com.balda.intenttask.extra.EXTRAS0&gt;&lt;/StringArrayList&gt;</com.balda.intenttask.extra.EXTRAS>
+					<com.balda.intenttask.extra.EXTRAS-type>java.util.ArrayList</com.balda.intenttask.extra.EXTRAS-type>
+					<com.balda.intenttask.extra.INT_VERSION_CODE>50</com.balda.intenttask.extra.INT_VERSION_CODE>
+					<com.balda.intenttask.extra.INT_VERSION_CODE-type>java.lang.Integer</com.balda.intenttask.extra.INT_VERSION_CODE-type>
+					<com.balda.intenttask.extra.OPERATION>0</com.balda.intenttask.extra.OPERATION>
+					<com.balda.intenttask.extra.OPERATION-type>java.lang.Integer</com.balda.intenttask.extra.OPERATION-type>
+					<com.balda.intenttask.extra.OUTPUT>false</com.balda.intenttask.extra.OUTPUT>
+					<com.balda.intenttask.extra.OUTPUT-type>java.lang.Boolean</com.balda.intenttask.extra.OUTPUT-type>
+					<com.balda.intenttask.extra.PACKAGE>com.android.settings</com.balda.intenttask.extra.PACKAGE>
+					<com.balda.intenttask.extra.PACKAGE-type>java.lang.String</com.balda.intenttask.extra.PACKAGE-type>
+					<com.balda.intenttask.extra.TARGET>0</com.balda.intenttask.extra.TARGET>
+					<com.balda.intenttask.extra.TARGET-type>java.lang.Integer</com.balda.intenttask.extra.TARGET-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Send android.settings.CHANNEL_NOTIFICATION_SETTINGS to Activ</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>com.balda.intenttask.extra.ACTION com.balda.intenttask.extra.PACKAGE com.balda.intenttask.extra.CLASS com.balda.intenttask.extra.EXTRAS</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.balda.intenttask</Str>
+			<Str sr="arg2" ve="3">com.balda.intenttask.ui.FireSendIntent</Str>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>1291811855</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.balda.intenttask.extra.ACTION>android.settings.CHANNEL_NOTIFICATION_SETTINGS</com.balda.intenttask.extra.ACTION>
+					<com.balda.intenttask.extra.ACTION-type>java.lang.String</com.balda.intenttask.extra.ACTION-type>
+					<com.balda.intenttask.extra.CHOOSER>false</com.balda.intenttask.extra.CHOOSER>
+					<com.balda.intenttask.extra.CHOOSER-type>java.lang.Boolean</com.balda.intenttask.extra.CHOOSER-type>
+					<com.balda.intenttask.extra.CLASS>com.android.settings.notification.app.ChannelPanelActivity</com.balda.intenttask.extra.CLASS>
+					<com.balda.intenttask.extra.CLASS-type>java.lang.String</com.balda.intenttask.extra.CLASS-type>
+					<com.balda.intenttask.extra.EXTRAS>&lt;StringArrayList sr=""&gt;&lt;_arrlst_com.balda.intenttask.extra.EXTRAS0&gt;STRING||android.provider.settings.extra.APP_PACKAGE||net.dinglisch.android.taskerm&lt;/_arrlst_com.balda.intenttask.extra.EXTRAS0&gt;&lt;_arrlst_com.balda.intenttask.extra.EXTRAS1&gt;STRING||android.provider.settings.extra.CHANNEL_ID||M&lt;/_arrlst_com.balda.intenttask.extra.EXTRAS1&gt;&lt;/StringArrayList&gt;</com.balda.intenttask.extra.EXTRAS>
+					<com.balda.intenttask.extra.EXTRAS-type>java.util.ArrayList</com.balda.intenttask.extra.EXTRAS-type>
+					<com.balda.intenttask.extra.FLAGS>2097184</com.balda.intenttask.extra.FLAGS>
+					<com.balda.intenttask.extra.FLAGS-type>java.lang.String</com.balda.intenttask.extra.FLAGS-type>
+					<com.balda.intenttask.extra.INT_VERSION_CODE>50</com.balda.intenttask.extra.INT_VERSION_CODE>
+					<com.balda.intenttask.extra.INT_VERSION_CODE-type>java.lang.Integer</com.balda.intenttask.extra.INT_VERSION_CODE-type>
+					<com.balda.intenttask.extra.OPERATION>0</com.balda.intenttask.extra.OPERATION>
+					<com.balda.intenttask.extra.OPERATION-type>java.lang.Integer</com.balda.intenttask.extra.OPERATION-type>
+					<com.balda.intenttask.extra.OUTPUT>true</com.balda.intenttask.extra.OUTPUT>
+					<com.balda.intenttask.extra.OUTPUT-type>java.lang.Boolean</com.balda.intenttask.extra.OUTPUT-type>
+					<com.balda.intenttask.extra.PACKAGE>com.android.settings</com.balda.intenttask.extra.PACKAGE>
+					<com.balda.intenttask.extra.PACKAGE-type>java.lang.String</com.balda.intenttask.extra.PACKAGE-type>
+					<com.balda.intenttask.extra.TARGET>0</com.balda.intenttask.extra.TARGET>
+					<com.balda.intenttask.extra.TARGET-type>java.lang.Integer</com.balda.intenttask.extra.TARGET-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Send android.settings.CHANNEL_NOTIFICATION_SETTINGS to Activ</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>com.balda.intenttask.extra.ACTION com.balda.intenttask.extra.PACKAGE com.balda.intenttask.extra.CLASS com.balda.intenttask.extra.EXTRAS</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.balda.intenttask</Str>
+			<Str sr="arg2" ve="3">com.balda.intenttask.ui.FireSendIntent</Str>
+			<Int sr="arg3" val="30"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>877</code>
+			<Str sr="arg0" ve="3">android.settings.CHANNEL_NOTIFICATION_SETTINGS</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">android.provider.extra.APP_PACKAGE:com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg5" ve="3">android.provider.extra.CHANNEL_ID:running_tasks</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>337</code>
+			<Str sr="arg0" ve="3">com.plsreloadtasker.hbcclient</Str>
+			<Str sr="arg1" ve="3">Mno</Str>
+		</Action>
+	</Task>
+</TaskerData>

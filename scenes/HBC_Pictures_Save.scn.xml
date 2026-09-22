@@ -1,0 +1,211 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<dmetric>1080.0,2167.0</dmetric>
+	<Scene sr="sceneHBC Pictures Save">
+		<cdate>1785826357822</cdate>
+		<edate>1785826862237</edate>
+		<heightLand>-1</heightLand>
+		<heightPort>2167</heightPort>
+		<nme>HBC Pictures Save</nme>
+		<widthLand>-1</widthLand>
+		<widthPort>1080</widthPort>
+		<ImageElement sr="elements0" ve="2">
+			<flags>4</flags>
+			<geom>0,0,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame1</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_001.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements1" ve="2">
+			<flags>4</flags>
+			<geom>131,0,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame2</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_002.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements10" ve="2">
+			<flags>4</flags>
+			<geom>255,254,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame11</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_011.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements11" ve="2">
+			<flags>4</flags>
+			<geom>378,254,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame12</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_012.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements12" ve="2">
+			<flags>4</flags>
+			<geom>502,254,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame13</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_013.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements13" ve="2">
+			<flags>4</flags>
+			<geom>626,254,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame14</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_014.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements14" ve="2">
+			<flags>4</flags>
+			<geom>725,254,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame15</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_015.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements15" ve="2">
+			<flags>4</flags>
+			<geom>824,254,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame16</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_016.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements16" ve="2">
+			<flags>4</flags>
+			<geom>0,501,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame17</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_017.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements17" ve="2">
+			<flags>4</flags>
+			<geom>131,501,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame18</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_018.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements18" ve="2">
+			<flags>4</flags>
+			<geom>255,501,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame19</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_019.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements19" ve="2">
+			<flags>4</flags>
+			<geom>378,501,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame20</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_020.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements2" ve="2">
+			<flags>4</flags>
+			<geom>255,0,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame3</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_003.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements20" ve="2">
+			<flags>4</flags>
+			<geom>502,501,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame21</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_021.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements3" ve="2">
+			<flags>4</flags>
+			<geom>378,0,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame4</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_004.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements4" ve="2">
+			<flags>4</flags>
+			<geom>502,0,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame5</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_005.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements5" ve="2">
+			<flags>4</flags>
+			<geom>626,0,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame6</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_006.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements6" ve="2">
+			<flags>4</flags>
+			<geom>725,0,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame7</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_007.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements7" ve="2">
+			<flags>4</flags>
+			<geom>824,0,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame8</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_008.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements8" ve="2">
+			<flags>4</flags>
+			<geom>0,254,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame9</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_009.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<ImageElement sr="elements9" ve="2">
+			<flags>4</flags>
+			<geom>131,254,256,256,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Spinner Frame10</Str>
+			<Img sr="arg1" ve="2">
+				<var>file:///storage/emulated/0/Tasker/HBC/.img/round_loading_spinner_frames/frame_010.jpg</var>
+			</Img>
+			<Int sr="arg2" val="255"/>
+		</ImageElement>
+		<PropertiesElement sr="props">
+			<Int sr="arg0" val="2"/>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">#FFFFFFFF</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">HBC Pictures Save</Str>
+			<Str sr="arg5" ve="3"/>
+			<Img sr="arg6" ve="2"/>
+			<Str sr="arg7" ve="3"/>
+		</PropertiesElement>
+	</Scene>
+</TaskerData>

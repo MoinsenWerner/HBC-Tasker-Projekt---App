@@ -1,0 +1,156 @@
+<TaskerData sr="" dvi="1" tv="6.7.6-beta">
+	<Task sr="task71">
+		<cdate>1785845735397</cdate>
+		<edate>1787209807435</edate>
+		<id>71</id>
+		<nme>HBC Stopp All</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>347</code>
+			<on>false</on>
+			<Int sr="arg0" val="7"/>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3">%all_tasks</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%HBC_Task_Names1</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>43</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>355</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%HBC_Task_Names</Str>
+			<Int sr="arg1" val="999999"/>
+			<Str sr="arg2" ve="3">%task</Str>
+			<Int sr="arg3" val="1"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>137</code>
+			<on>false</on>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%task</Str>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>135</code>
+			<on>false</on>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Tasks filtern</Str>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>38</code>
+			<on>false</on>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">%HBC_Task_Names()</Str>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>547</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%hbc_tasks</Str>
+			<Str sr="arg1" ve="3">%HBC_Task_Names()</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>354</code>
+			<Str sr="arg0" ve="3">%HBC_Task_Names</Str>
+			<Str sr="arg1" ve="3">%hbc_tasks</Str>
+			<Str sr="arg2" ve="3">,</Str>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>37</code>
+			<coll>true</coll>
+			<label>Tasks filtern</label>
+			<on>false</on>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%all_tasks1</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>356</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%all_tasks</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">%task</Str>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>369</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%all_tasks</Str>
+			<Int sr="arg1" val="13"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>37</code>
+			<on>false</on>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%task</lhs>
+					<op>4</op>
+					<rhs>HBC</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%task</lhs>
+					<op>4</op>
+					<rhs>hbc</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>37</code>
+			<on>false</on>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%task</lhs>
+					<op>0</op>
+					<rhs>HBC Ext. Notify Listener</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%task</lhs>
+					<op>0</op>
+					<rhs>HBC Starttask</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>355</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%HBC_Task_Names</Str>
+			<Int sr="arg1" val="999999"/>
+			<Str sr="arg2" ve="3">%task</Str>
+			<Int sr="arg3" val="1"/>
+		</Action>
+	</Task>
+</TaskerData>
