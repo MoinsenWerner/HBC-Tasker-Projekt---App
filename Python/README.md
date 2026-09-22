@@ -14,9 +14,11 @@ Python-Installationen unter Windows, bei denen `init.tcl` fehlt.
 Der Client übernimmt Player, Playlists, Server-Playlists, Webchat, Einstellungen
 und die beiden Anmeldewege. Für Passkeys öffnet er die WebAuthn-Seite des Servers;
 dadurch bleiben privater Schlüssel und Biometrie im Credential Manager des
-Betriebssystems. Erwartet werden die Endpunkte unter `/passkeys/authenticate` und
-`/passkeys/register`. Das vom Authentifizierungs-Flow gelieferte kurzlebige Token
-wird nur im Arbeitsspeicher gehalten. Die Konfigurationsdatei enthält kein Secret.
+Betriebssystems. Der Browser-Flow verwendet `/register` und `/get`; die native
+API verwendet `/api/register/options`, `/api/register/verify`,
+`/api/authenticate/options` und `/api/authenticate/verify`. Session-Cookies
+bleiben zwischen Options- und Verify-Request erhalten. Zugangsdaten und Token
+werden nur im Arbeitsspeicher gehalten. Die Konfigurationsdatei enthält kein Secret.
 
 Windows-Ersatzimplementierungen und die unvermeidbaren Grenzen gegenüber der
 Android-/Tasker-Laufzeit sind in

@@ -20,8 +20,9 @@ class ApiTests(unittest.TestCase):
         session = module.Session(token="Bearer test")
         response = Mock(content=b"{}")
         response.json.return_value = {"item": {"name": "Song"}}
-        with patch.object(module.requests, "request", return_value=response) as request:
-            result = module.HbcApi(session).player()
+        api = module.HbcApi(session)
+        with patch.object(api.http, "request", return_value=response) as request:
+            result = api.player()
         self.assertEqual(result["item"]["name"], "Song")
         self.assertEqual(request.call_args.kwargs["headers"]["Authorization"], "Bearer test")
 
@@ -44,9 +45,9 @@ class ApiTests(unittest.TestCase):
 
     def test_missing_passkey_route_has_clear_error(self):
         api = module.HbcApi(module.Session())
-        with patch.object(api, "_request", return_value="/player;/token"):
-            with self.assertRaisesRegex(module.ApiError, "keine Passkey-API"):
-                api.passkey_options("felix")
+        with patch.object(api, "_request", return_value={"challenge": "abc"}) as request:
+            self.assertEqual(api.passkey_options("felix"), {"challenge": "abc"})
+        request.assert_called_once_with("POST", "/api/authenticate/options", json={"username": "felix"})
 
 
 class UiTests(unittest.TestCase):

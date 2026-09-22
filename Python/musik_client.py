@@ -63,13 +63,14 @@ class HbcApi:
     def __init__(self, session: Session, timeout: int = 15) -> None:
         self.session = session
         self.timeout = timeout
+        self.http = requests.Session()
 
     def _request(self, method: str, path: str, **kwargs: Any) -> Any:
         headers = dict(kwargs.pop("headers", {}))
         if self.session.token:
             headers["Authorization"] = self.session.token
         try:
-            response = requests.request(
+            response = self.http.request(
                 method, f"{self.session.api_url.rstrip('/')}/{path.lstrip('/')}",
                 headers=headers, timeout=self.timeout, **kwargs,
             )
@@ -98,20 +99,13 @@ class HbcApi:
         return token if " " in token else f"Bearer {token}"
 
     def passkey_options(self, user_id: str) -> dict[str, Any]:
-        self._require_passkey_route("/passkeys/authentication/options")
-        return self._request("POST", "/passkeys/authentication/options", json={"user_id": user_id})
+        return self._request("POST", "/api/authenticate/options", json={"username": user_id})
 
     def verify_passkey(self, credential: dict[str, Any]) -> str:
-        data = self._request("POST", "/passkeys/authentication/verify", json=credential)
-        token = data.get("token") or data.get("access_token", "")
-        if not token:
-            raise ApiError("Die Passkey-Antwort wurde nicht bestätigt.")
-        return token if " " in token else f"Bearer {token}"
-
-    def _require_passkey_route(self, route: str) -> None:
-        routes = self._request("GET", "/routes?format=text")
-        if not isinstance(routes, str) or route not in routes.split(";"):
-            raise ApiError("Der HBC-Server bietet aktuell noch keine Passkey-API an. Die Anmeldung per User-Secret ist verfügbar.")
+        data = self._request("POST", "/api/authenticate/verify", json=credential)
+        if not isinstance(data, dict) or not data.get("username") or not data.get("password"):
+            raise ApiError("Die Passkey-Antwort enthielt keine Zugangsdaten.")
+        return self.login_secret(str(data["username"]), str(data["password"]))
 
     def player(self) -> dict[str, Any]:
         data = self._request("GET", "/player")
@@ -146,10 +140,8 @@ class BrowserCredentialManager:
         self.api_url = api_url.rstrip("/")
 
     def launch(self, operation: str, user_id: str, token: str = "") -> None:
-        query = f"user_id={quote(user_id)}&client=python"
-        if token:
-            query += f"&session={quote(token)}"
-        webbrowser.open(f"{self.api_url}/passkeys/{operation}?{query}")
+        path = "get" if operation == "authenticate" else "register"
+        webbrowser.open(f"{self.api_url}/{path}?username={quote(user_id)}")
 
 
 class MusikClient(QMainWindow):
@@ -244,15 +236,10 @@ class MusikClient(QMainWindow):
         if not self.user_id.text().strip():
             QMessageBox.warning(self, "Anmeldung", "Bitte zuerst die User-ID eingeben.")
             return
-        try:
-            self.api._require_passkey_route("/passkeys/authentication/options")
-        except ApiError as exc:
-            QMessageBox.information(self, "Passkey", str(exc))
-            return
         self.cm.launch("authenticate", self.user_id.text().strip())
-        token, accepted = QInputDialog.getText(self, "Passkey", "Nach erfolgreicher Passkey-Anmeldung das Session-Token einfügen:", QLineEdit.EchoMode.Password)
-        if accepted and token:
-            self._logged_in(token)
+        secret, accepted = QInputDialog.getText(self, "Passkey", "Nach erfolgreicher Passkey-Prüfung das vom Vault ausgegebene Passwort einfügen:", QLineEdit.EchoMode.Password)
+        if accepted and secret:
+            self._execute(lambda: self.api.login_secret(self.user_id.text().strip(), secret), self._logged_in)
 
     def _logged_in(self, token: str) -> None:
         self.session.user_id, self.session.token = self.user_id.text().strip(), token
@@ -316,11 +303,6 @@ class MusikClient(QMainWindow):
         self.status.setText("API-Adresse gespeichert")
 
     def register_passkey(self) -> None:
-        try:
-            self.api._require_passkey_route("/passkeys/registration/options")
-        except ApiError as exc:
-            QMessageBox.information(self, "Passkey", str(exc))
-            return
         self.cm.launch("register", self.session.user_id, self.session.token)
 
     def show_tasker_archive(self) -> None:

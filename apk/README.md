@@ -19,10 +19,10 @@ Die App nutzt Android Credential Manager. Dafür muss `api.plsreload.de` die
 Digital-Asset-Links für das endgültige Signing-Zertifikat bereitstellen. Der
 Server muss WebAuthn-JSON an folgenden Endpunkten liefern/verifizieren:
 
-* `POST /passkeys/authentication/options`
-* `POST /passkeys/authentication/verify`
-* `POST /passkeys/registration/options` (authentifiziert)
-* `POST /passkeys/registration/verify` (authentifiziert)
+* `POST /api/authenticate/options`
+* `POST /api/authenticate/verify`
+* `POST /api/register/options`
+* `POST /api/register/verify`
 
 Challenge und User-ID müssen serverseitig geprüft, Challenges einmalig gemacht
 und Signaturzähler gespeichert werden. Die App speichert weder private Schlüssel

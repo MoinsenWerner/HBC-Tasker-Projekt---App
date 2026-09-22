@@ -15,11 +15,14 @@ class HbcApi {
   String baseUrl;
   String token;
   String userId = '';
+  String recoveredSecret = '';
   final http.Client client;
+  String? _cookie;
 
   Future<dynamic> request(String method, String path, {Object? body, bool form = false}) async {
     final headers = <String, String>{'Accept': 'application/json'};
     if (token.isNotEmpty) headers['Authorization'] = token;
+    if (_cookie != null) headers['Cookie'] = _cookie!;
     if (body != null && !form) headers['Content-Type'] = 'application/json';
     final uri = Uri.parse('${baseUrl.replaceFirst(RegExp(r'/$'), '')}/${path.replaceFirst(RegExp(r'^/'), '')}');
     late http.Response response;
@@ -34,6 +37,8 @@ class HbcApi {
     if (response.statusCode < 200 || response.statusCode >= 300) {
       throw ApiException(response.body.isEmpty ? 'HTTP ${response.statusCode}' : response.body);
     }
+    final setCookie = response.headers['set-cookie'];
+    if (setCookie != null) _cookie = setCookie.split(';').first;
     if (response.body.isEmpty) return <String, dynamic>{};
     try {
       return jsonDecode(response.body);
@@ -54,32 +59,27 @@ class HbcApi {
     return value.toString().contains(' ') ? value.toString() : 'Bearer $value';
   }
 
-  Future<void> requirePasskeyRoute(String route) async {
-    final routes = await request('GET', '/routes?format=text');
-    if (routes is! String || !routes.split(';').contains(route)) {
-      throw const ApiException('Der HBC-Server bietet aktuell noch keine Passkey-API an. Bitte User-ID und User-Secret verwenden.');
-    }
-  }
-
   Future<Map<String, dynamic>> passkeyLoginOptions(String userId) async {
-    await requirePasskeyRoute('/passkeys/authentication/options');
-    return Map<String, dynamic>.from(await request('POST', '/passkeys/authentication/options', body: {'user_id': userId}) as Map);
+    final data = Map<String, dynamic>.from(await request('POST', '/api/authenticate/options', body: {'username': userId}) as Map);
+    return Map<String, dynamic>.from((data['publicKey'] ?? data) as Map);
   }
 
-  Future<Map<String, dynamic>> passkeyRegistrationOptions(String userId) async {
-    await requirePasskeyRoute('/passkeys/registration/options');
-    return Map<String, dynamic>.from(await request('POST', '/passkeys/registration/options', body: {'user_id': userId}) as Map);
+  Future<Map<String, dynamic>> passkeyRegistrationOptions(String userId, String secret) async {
+    final data = Map<String, dynamic>.from(await request('POST', '/api/register/options', body: {'username': userId, 'password': secret, 'type': 'fingerprint'}) as Map);
+    return Map<String, dynamic>.from((data['publicKey'] ?? data) as Map);
   }
 
   Future<String> verifyPasskey(Map<String, dynamic> credential) async {
-    final data = await request('POST', '/passkeys/authentication/verify', body: credential) as Map;
-    final value = data['token'] ?? data['access_token'];
-    if (value == null) throw const ApiException('Passkey konnte nicht bestätigt werden.');
-    return value.toString().contains(' ') ? value.toString() : 'Bearer $value';
+    final data = await request('POST', '/api/authenticate/verify', body: credential) as Map;
+    final username = data['username'];
+    final password = data['password'];
+    if (username == null || password == null) throw const ApiException('Der Passkey-Vault hat keine Zugangsdaten geliefert.');
+    recoveredSecret = password.toString();
+    return login(username.toString(), password.toString());
   }
 
   Future<void> finishRegistration(Map<String, dynamic> credential) =>
-      request('POST', '/passkeys/registration/verify', body: credential);
+      request('POST', '/api/register/verify', body: credential);
 
   Future<Map<String, dynamic>> player() async => Map<String, dynamic>.from(await request('GET', '/player') as Map);
   Future<void> playerAction(String action, {String? value}) {

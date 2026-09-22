@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
       api
         ..token = token
         ..userId = userController.text.trim();
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomePage(api: api, userId: userController.text.trim())));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomePage(api: api, userId: userController.text.trim(), userSecret: secretController.text.isNotEmpty ? secretController.text : api.recoveredSecret)));
     } catch (error) {
       showError(error.toString());
     } finally {
@@ -123,9 +123,10 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.api, required this.userId});
+  const HomePage({super.key, required this.api, required this.userId, required this.userSecret});
   final HbcApi api;
   final String userId;
+  final String userSecret;
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -186,7 +187,7 @@ class _HomePageState extends State<HomePage> {
   ]);
 
   Future<void> registerPasskey() async => run(() async {
-    final options = await widget.api.passkeyRegistrationOptions(widget.userId);
+    final options = await widget.api.passkeyRegistrationOptions(widget.userId, widget.userSecret);
     final credential = await credentialManager.savePasskeyCredentials(request: CredentialCreationOptions.fromJson(options));
     await widget.api.finishRegistration(credential.toJson());
     if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Passkey wurde erstellt.')));

@@ -41,9 +41,29 @@ void main() {
     expect(methods, ['PUT /player/play', 'POST /player/next', 'PUT /player/repeat/context']);
   });
 
-  test('missing passkey endpoint is reported before posting', () async {
-    final api = HbcApi(client: MockClient((request) async => http.Response('/player;/token', 200)));
-    await expectLater(api.passkeyLoginOptions('felix'), throwsA(isA<ApiException>()));
+  test('passkey options use the documented vault endpoint', () async {
+    late http.Request captured;
+    final api = HbcApi(client: MockClient((request) async {
+      captured = request;
+      return http.Response('{"publicKey":{"challenge":"abc"}}', 200);
+    }));
+    expect(await api.passkeyLoginOptions('felix'), containsPair('challenge', 'abc'));
+    expect(captured.url.path, '/api/authenticate/options');
+    expect(captured.body, contains('"username":"felix"'));
+  });
+
+  test('passkey challenge session cookie is retained for verification', () async {
+    final requests = <http.Request>[];
+    final api = HbcApi(client: MockClient((request) async {
+      requests.add(request);
+      if (requests.length == 1) {
+        return http.Response('{"challenge":"abc"}', 200, headers: {'set-cookie': 'session=vault123; Secure; HttpOnly'});
+      }
+      return http.Response('{"username":"felix","password":"secret"}', 200);
+    }));
+    await api.passkeyLoginOptions('felix');
+    await expectLater(api.verifyPasskey({'id': 'credential'}), throwsA(isA<ApiException>()));
+    expect(requests[1].headers['Cookie'], 'session=vault123');
   });
 
   test('archive contains all exported Tasker scenes', () async {
