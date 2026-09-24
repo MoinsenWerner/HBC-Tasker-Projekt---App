@@ -16,7 +16,15 @@ import requests
 
 CALLBACK_URL = "http://127.0.0.1:60105/spotify/callback"
 DEFAULT_CLIENT_ID = "b8f9f76a43e942dc8501097e12663dd5"
-SCOPES = "playlist-read-private playlist-read-collaborative user-read-playback-state user-modify-playback-state"
+SCOPES = " ".join((
+    "playlist-read-private",
+    "playlist-read-collaborative",
+    "playlist-modify-private",
+    "playlist-modify-public",
+    "user-read-private",
+    "user-read-playback-state",
+    "user-modify-playback-state",
+))
 
 
 class SpotifyOAuth:
@@ -91,21 +99,27 @@ class SpotifyOAuth:
         return items
 
     def playlist_tracks(self, playlist_id: str) -> list[dict[str, Any]]:
-        fields = "items(track(id,uri,name,artists(name),album(images))),next"
-        url: str | None = f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks?limit=50&fields={urllib.parse.quote(fields)}"
+        # Spotify replaced the playlist /tracks routes with /items in February
+        # 2026.  The response wrapper was renamed from `track` to `item` too.
+        fields = "items(item(id,uri,name,artists(name),album(images))),next"
+        url: str | None = f"https://api.spotify.com/v1/playlists/{playlist_id}/items?limit=50&fields={urllib.parse.quote(fields)}"
         tracks: list[dict[str, Any]] = []
         while url:
             data = self._spotify_request("GET", url).json()
-            tracks.extend(item["track"] for item in data.get("items", []) if item.get("track"))
+            tracks.extend(
+                entry.get("item") or entry.get("track")
+                for entry in data.get("items", [])
+                if entry.get("item") or entry.get("track")
+            )
             url = data.get("next")
         return tracks
 
     def hydrate_tracks(self, tracks: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """Fetch track details individually (Spotify removed batch fetches in 2026)."""
         hydrated: list[dict[str, Any]] = []
         ids = [track["id"] for track in tracks if track.get("id")]
-        for offset in range(0, len(ids), 50):
-            url = f"https://api.spotify.com/v1/tracks?ids={','.join(ids[offset:offset + 50])}"
-            hydrated.extend(track for track in self._spotify_request("GET", url).json().get("tracks", []) if track)
+        for track_id in ids:
+            hydrated.append(self._spotify_request("GET", f"https://api.spotify.com/v1/tracks/{track_id}").json())
         return hydrated
 
     def queue_tracks(self, tracks: list[dict[str, Any]]) -> None:
@@ -120,12 +134,11 @@ class SpotifyOAuth:
         uris = [track.get("uri") or f"spotify:track:{track['id']}" for track in tracks]
         for playlist_id in playlist_ids:
             for offset in range(0, len(uris), 100):
-                self._spotify_request("POST", f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks", json={"uris": uris[offset:offset + 100]})
+                self._spotify_request("POST", f"https://api.spotify.com/v1/playlists/{playlist_id}/items", json={"uris": uris[offset:offset + 100]})
 
     def save_server_playlist(self, name: str, tracks: list[dict[str, Any]]) -> str:
-        profile = self._spotify_request("GET", "https://api.spotify.com/v1/me").json()
         created = self._spotify_request(
-            "POST", f"https://api.spotify.com/v1/users/{profile['id']}/playlists", json={"name": name, "public": False},
+            "POST", "https://api.spotify.com/v1/me/playlists", json={"name": name, "public": False},
         ).json()
         self.add_tracks([created["id"]], tracks)
         return created["id"]

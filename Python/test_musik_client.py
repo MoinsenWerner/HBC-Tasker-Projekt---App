@@ -186,7 +186,45 @@ class SpotifyTests(unittest.TestCase):
         self.assertEqual(calls[0][0], "POST")
         self.assertIn("/me/player/queue", calls[0][1])
         self.assertEqual(calls[1], ("PUT", "https://api.spotify.com/v1/me/player/play"))
-        self.assertIn(("POST", "https://api.spotify.com/v1/playlists/playlist2/tracks"), calls)
+        self.assertIn(("POST", "https://api.spotify.com/v1/playlists/playlist2/items"), calls)
+
+    def test_playlist_items_uses_2026_endpoint_and_response_shape(self):
+        from spotify_oauth import SpotifyOAuth
+
+        spotify = SpotifyOAuth()
+        spotify.tokens = {"access_token": "token", "expires_at": 9999999999}
+        response = Mock()
+        response.json.return_value = {
+            "items": [{"item": {"id": "track1", "name": "Song"}}],
+            "next": None,
+        }
+        response.raise_for_status.return_value = None
+        with patch("spotify_oauth.requests.request", return_value=response) as request:
+            tracks = spotify.playlist_tracks("playlist1")
+        self.assertEqual(tracks, [{"id": "track1", "name": "Song"}])
+        self.assertIn("/playlists/playlist1/items?", request.call_args.args[1])
+        self.assertNotIn("/tracks?", request.call_args.args[1])
+
+    def test_hydration_uses_individual_track_endpoint(self):
+        from spotify_oauth import SpotifyOAuth
+
+        spotify = SpotifyOAuth()
+        spotify.tokens = {"access_token": "token", "expires_at": 9999999999}
+        response = Mock()
+        response.json.return_value = {"id": "track1", "name": "Song"}
+        response.raise_for_status.return_value = None
+        with patch("spotify_oauth.requests.request", return_value=response) as request:
+            tracks = spotify.hydrate_tracks([{"id": "track1"}])
+        self.assertEqual(tracks[0]["name"], "Song")
+        self.assertEqual(request.call_args.args[1], "https://api.spotify.com/v1/tracks/track1")
+
+    def test_spotify_403_has_specific_explanation(self):
+        from error_logging import ErrorLogger
+
+        response = Mock(status_code=403, url="https://api.spotify.com/v1/playlists/id/items")
+        error = module.requests.HTTPError("Forbidden", response=response)
+        self.assertIn("Spotify", ErrorLogger.explain(error))
+        self.assertIn("Februar 2026", ErrorLogger.explain(error))
 
 
 if __name__ == "__main__":

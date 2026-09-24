@@ -87,6 +87,14 @@ class ErrorLogger:
             return ErrorLogger.explain(error.__cause__)
         if isinstance(error, requests.HTTPError):
             status = error.response.status_code if error.response is not None else None
+            url = error.response.url if error.response is not None else ""
+            if status == 403 and "api.spotify.com" in url:
+                return (
+                    "Spotify hat diese Funktion abgelehnt. Bei Spotify-Apps im Entwicklungsmodus "
+                    "muss der angemeldete Benutzer freigeschaltet sein und Premium besitzen; außerdem "
+                    "dürfen seit Februar 2026 nur noch eigene oder gemeinsam bearbeitete Playlists "
+                    "ausgelesen werden. Spotify neu verbinden, falls Berechtigungen ergänzt wurden."
+                )
             if status in {401, 403}:
                 return "Die Anmeldung wurde abgelehnt. User-ID, Secret oder Sitzung sind ungültig beziehungsweise abgelaufen."
             if status == 404:
