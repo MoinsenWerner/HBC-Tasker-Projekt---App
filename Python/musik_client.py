@@ -21,6 +21,7 @@ from urllib.parse import quote
 
 import requests
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QIcon, QPixmap
 from PySide6.QtWidgets import (
     QApplication,
     QCheckBox,
@@ -31,11 +32,14 @@ from PySide6.QtWidgets import (
     QLabel,
     QLineEdit,
     QListWidget,
+    QListWidgetItem,
     QMainWindow,
     QMessageBox,
     QPushButton,
     QScrollArea,
     QSlider,
+    QDialog,
+    QDialogButtonBox,
     QTabWidget,
     QVBoxLayout,
     QWidget,
@@ -134,6 +138,32 @@ class HbcApi:
         if isinstance(data, str):
             return [x for x in data.split("°|°") if x]
         return data.get("items", []) if isinstance(data, dict) else []
+
+    def server_playlist_tracks(self, name: str, playlist_id: str) -> list[dict[str, Any]]:
+        data = self._request("GET", f"/playlistcontent/get/{quote(name, safe='')}?id={quote(playlist_id, safe='')}")
+        if not isinstance(data, str):
+            return []
+        parts = data.split("\n___\n")
+        names = parts[0].split(",") if parts else []
+        ids = parts[1].split(",") if len(parts) > 1 else []
+        images = parts[2].split(",") if len(parts) > 2 else []
+        return [
+            {"id": track_id, "uri": f"spotify:track:{track_id}", "name": title, "artists": [],
+             "album": {"images": [{"url": images[index]}] if index < len(images) else []}}
+            for index, (title, track_id) in enumerate(zip(names, ids))
+        ]
+
+    def play_server_playlist(self, name: str, playlist_id: str) -> Any:
+        return self._request("POST", f"/playlist/play/{quote(name, safe='')}?id={quote(playlist_id, safe='')}")
+
+    def upload_playlist(self, playlist: dict[str, Any], tracks: list[dict[str, Any]]) -> Any:
+        images = [((track.get("album") or {}).get("images") or [{}])[0].get("url", "") for track in tracks]
+        params = {
+            "name": playlist.get("name", ""), "content": ",".join(track.get("name", "") for track in tracks),
+            "ids": ",".join(track.get("id", "") for track in tracks), "bilder": ",".join(images),
+            "pl-id": playlist.get("id", ""), "ersteller": self.session.user_id,
+        }
+        return self._request("POST", "/playlistcontent/list", params=params)
 
 
 class BrowserCredentialManager:
@@ -309,12 +339,20 @@ class MusikClient(QMainWindow):
         home_layout.addWidget(self._button("Aktualisieren", self.refresh_player))
         home.setLayout(home_layout)
         self.playlist_box = QListWidget()
+        self.playlist_box.setSelectionMode(QListWidget.SelectionMode.SingleSelection)
         playlist_layout.addWidget(self.playlist_box)
         playlist_layout.addWidget(self._button("Spotify-Playlists laden", self.load_spotify_playlists))
+        playlist_layout.addWidget(self._button("Ausgewählte Playlist öffnen", lambda: self.open_playlist(False)))
+        playlist_layout.addWidget(self._button("Ausgewählte Playlist abspielen", lambda: self.play_selected_playlist(False)))
+        playlist_layout.addWidget(self._button("Ausgewählte Playlist auf Server hochladen", self.upload_selected_playlist))
         playlists.setLayout(playlist_layout)
         self.server_box = QListWidget()
+        self.server_box.setSelectionMode(QListWidget.SelectionMode.SingleSelection)
         server_layout.addWidget(self.server_box)
         server_layout.addWidget(self._button("Server-Playlists laden", lambda: self._execute(self.api.server_playlists, self._render_server)))
+        server_layout.addWidget(self._button("Ausgewählte Server-Playlist öffnen", lambda: self.open_playlist(True)))
+        server_layout.addWidget(self._button("Ausgewählte Server-Playlist abspielen", lambda: self.play_selected_playlist(True)))
+        server_layout.addWidget(self._button("Im eigenen Spotify-Konto speichern", self.save_server_playlist))
         server.setLayout(server_layout)
         api_field = QLineEdit(self.session.api_url)
         settings_layout.addWidget(QLabel(f"Angemeldet als {self.session.user_id}"))
@@ -498,12 +536,129 @@ class MusikClient(QMainWindow):
     def _render_playlists(self, items: list[dict[str, Any]]) -> None:
         self.playlist_box.clear()
         for item in items:
-            self.playlist_box.addItem(item.get("name", str(item)))
+            row = QListWidgetItem(item.get("name", str(item)))
+            row.setData(Qt.ItemDataRole.UserRole, item)
+            self.playlist_box.addItem(row)
 
     def _render_server(self, items: list[Any]) -> None:
         self.server_box.clear()
         for item in items:
-            self.server_box.addItem(item.get("name", str(item)) if isinstance(item, dict) else str(item))
+            if isinstance(item, dict):
+                playlist = item
+            else:
+                fields = str(item).split("•|•")
+                playlist = {"name": fields[0], "db_id": fields[1] if len(fields) > 1 else "", "id": fields[2] if len(fields) > 2 else "", "creator": fields[3] if len(fields) > 3 else ""}
+            row = QListWidgetItem(playlist.get("name", str(item)))
+            row.setData(Qt.ItemDataRole.UserRole, playlist)
+            self.server_box.addItem(row)
+
+    def _selected_playlist(self, server: bool) -> dict[str, Any]:
+        box = self.server_box if server else self.playlist_box
+        item = box.currentItem()
+        if item is None:
+            raise ValueError("Bitte zuerst eine Playlist auswählen.")
+        return dict(item.data(Qt.ItemDataRole.UserRole))
+
+    def _playlist_tracks(self, playlist: dict[str, Any], server: bool) -> list[dict[str, Any]]:
+        if server:
+            tracks = self.api.server_playlist_tracks(playlist["name"], playlist.get("id", ""))
+            return self.spotify.hydrate_tracks(tracks) if self.spotify.connected else tracks
+        return self.spotify.playlist_tracks(playlist["id"])
+
+    def open_playlist(self, server: bool) -> None:
+        playlist = self._selected_playlist(server)
+        self._execute(
+            lambda: self._playlist_tracks(playlist, server),
+            lambda tracks: self._show_playlist_dialog(playlist, tracks, server),
+            f'Playlist „{playlist.get("name", "") }“ geöffnet',
+        )
+
+    def _show_playlist_dialog(self, playlist: dict[str, Any], tracks: list[dict[str, Any]], server: bool) -> None:
+        dialog, layout = QDialog(self), QVBoxLayout()
+        dialog.setWindowTitle(playlist.get("name", "Playlist"))
+        dialog.resize(650, 650)
+        songs = QListWidget()
+        songs.setSelectionMode(QListWidget.SelectionMode.ExtendedSelection)
+        songs.setIconSize(QPixmap(56, 56).size())
+        for track in tracks:
+            artists = ", ".join(artist.get("name", "") for artist in track.get("artists", [])) or "Künstler über Server-Export nicht verfügbar"
+            row = QListWidgetItem(f'{track.get("name", "Unbekannter Song")} — {artists}')
+            row.setData(Qt.ItemDataRole.UserRole, track)
+            images = (track.get("album") or {}).get("images") or []
+            if images and images[0].get("url"):
+                try:
+                    image = requests.get(images[0]["url"], timeout=10)
+                    image.raise_for_status()
+                    pixmap = QPixmap()
+                    pixmap.loadFromData(image.content)
+                    row.setIcon(QIcon(pixmap))
+                except requests.RequestException:
+                    pass
+            songs.addItem(row)
+        layout.addWidget(songs)
+        layout.addWidget(self._button("Ausgewählte Songs zur Warteschlange hinzufügen", lambda: self._queue_dialog_tracks(songs)))
+        layout.addWidget(self._button("Ausgewählte Songs zu Spotify-Playlists hinzufügen", lambda: self._add_dialog_tracks_to_playlists(songs)))
+        layout.addWidget(self._button("Diese Playlist abspielen", lambda: self._play_playlist(playlist, server)))
+        if server:
+            layout.addWidget(self._button("Diese Playlist im Spotify-Konto speichern", lambda: self._save_playlist(playlist, tracks)))
+        else:
+            layout.addWidget(self._button("Diese Playlist auf den Server hochladen", lambda: self._execute(lambda: self.api.upload_playlist(playlist, tracks))))
+        close = QDialogButtonBox(QDialogButtonBox.StandardButton.Close)
+        close.rejected.connect(dialog.reject)
+        layout.addWidget(close)
+        dialog.setLayout(layout)
+        dialog.exec()
+
+    @staticmethod
+    def _selected_tracks(songs: QListWidget) -> list[dict[str, Any]]:
+        selected = songs.selectedItems()
+        if not selected:
+            raise ValueError("Bitte mindestens einen Song auswählen.")
+        return [dict(item.data(Qt.ItemDataRole.UserRole)) for item in selected]
+
+    def _queue_dialog_tracks(self, songs: QListWidget) -> None:
+        tracks = self._selected_tracks(songs)
+        self._execute(lambda: self.spotify.queue_tracks(tracks), user_action=f"{len(tracks)} Songs zur Warteschlange hinzugefügt")
+
+    def _add_dialog_tracks_to_playlists(self, songs: QListWidget) -> None:
+        tracks = self._selected_tracks(songs)
+        destinations = self.spotify.playlists()
+        dialog, layout, choices = QDialog(self), QVBoxLayout(), QListWidget()
+        choices.setSelectionMode(QListWidget.SelectionMode.ExtendedSelection)
+        for playlist in destinations:
+            row = QListWidgetItem(playlist["name"])
+            row.setData(Qt.ItemDataRole.UserRole, playlist["id"])
+            choices.addItem(row)
+        layout.addWidget(QLabel("Eine oder mehrere Ziel-Playlists auswählen:"))
+        layout.addWidget(choices)
+        buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        dialog.setLayout(layout)
+        if dialog.exec() == QDialog.DialogCode.Accepted:
+            ids = [item.data(Qt.ItemDataRole.UserRole) for item in choices.selectedItems()]
+            if not ids:
+                raise ValueError("Bitte mindestens eine Ziel-Playlist auswählen.")
+            self._execute(lambda: self.spotify.add_tracks(ids, tracks), user_action=f"{len(tracks)} Songs zu {len(ids)} Spotify-Playlists hinzugefügt")
+
+    def _play_playlist(self, playlist: dict[str, Any], server: bool) -> None:
+        work = (lambda: self.api.play_server_playlist(playlist["name"], playlist.get("id", ""))) if server else (lambda: self.spotify.play_playlist(playlist["id"]))
+        self._execute(work, user_action=f'Playlist „{playlist["name"]}“ abgespielt')
+
+    def play_selected_playlist(self, server: bool) -> None:
+        self._play_playlist(self._selected_playlist(server), server)
+
+    def upload_selected_playlist(self) -> None:
+        playlist = self._selected_playlist(False)
+        self._execute(lambda: self.spotify.playlist_tracks(playlist["id"]), lambda tracks: self._execute(lambda: self.api.upload_playlist(playlist, tracks)), f'Playlist „{playlist["name"]}“ zum Upload geladen')
+
+    def _save_playlist(self, playlist: dict[str, Any], tracks: list[dict[str, Any]]) -> None:
+        self._execute(lambda: self.spotify.save_server_playlist(playlist["name"], tracks), user_action=f'Server-Playlist „{playlist["name"]}“ in Spotify gespeichert')
+
+    def save_server_playlist(self) -> None:
+        playlist = self._selected_playlist(True)
+        self._execute(lambda: self._playlist_tracks(playlist, True), lambda tracks: self._save_playlist(playlist, tracks), f'Server-Playlist „{playlist["name"]}“ geladen')
 
     def logout(self) -> None:
         self.session.token = ""

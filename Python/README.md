@@ -39,3 +39,10 @@ Spotify-App-Konfiguration muss exakt
 `http://127.0.0.1:60105/spotify/callback` als Redirect-URI eingetragen sein.
 Tokens bleiben ausschließlich im Arbeitsspeicher. Danach lädt der Playlist-Tab
 alle Seiten von Spotifys `/v1/me/playlists`-API.
+
+Spotify- und Server-Playlists lassen sich öffnen und zeigen Songbild, Songname
+und Künstler. Mehrfach ausgewählte Songs können in die Warteschlange oder in
+mehrere eigene Spotify-Playlists übernommen werden. Playlists werden über ihren
+Spotify-Kontext direkt abgespielt. Spotify-Playlists können auf den HBC-Server
+hochgeladen und Server-Playlists als neue private Spotify-Playlist gespeichert
+werden.

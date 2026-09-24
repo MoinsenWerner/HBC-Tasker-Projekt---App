@@ -50,6 +50,14 @@ class ApiTests(unittest.TestCase):
             self.assertEqual(api.passkey_options("felix"), {"challenge": "abc"})
         request.assert_called_once_with("POST", "/api/authenticate/options", json={"username": "felix"})
 
+    def test_server_playlist_content_is_decoded(self):
+        api = module.HbcApi(module.Session())
+        exported = "Song One,Song Two\n___\nid1,id2\n___\nhttps://img/1,https://img/2\n___\nPlaylist\n___\nspotify-id"
+        with patch.object(api, "_request", return_value=exported):
+            tracks = api.server_playlist_tracks("Playlist", "spotify-id")
+        self.assertEqual([track["name"] for track in tracks], ["Song One", "Song Two"])
+        self.assertEqual(tracks[1]["uri"], "spotify:track:id2")
+
 
 class UiTests(unittest.TestCase):
     @classmethod
@@ -162,6 +170,23 @@ class SpotifyTests(unittest.TestCase):
             playlists = spotify.playlists()
         self.assertEqual([item["name"] for item in playlists], ["One", "Two"])
         self.assertEqual(request.call_count, 2)
+
+    def test_queue_play_and_multi_playlist_add_use_spotify_endpoints(self):
+        from spotify_oauth import SpotifyOAuth
+
+        spotify = SpotifyOAuth()
+        spotify.tokens = {"access_token": "token", "expires_at": 9999999999}
+        response = Mock()
+        response.raise_for_status.return_value = None
+        with patch("spotify_oauth.requests.request", return_value=response) as request:
+            spotify.queue_tracks([{"id": "track1", "uri": "spotify:track:track1"}])
+            spotify.play_playlist("playlist1")
+            spotify.add_tracks(["playlist1", "playlist2"], [{"id": "track1"}])
+        calls = [(call.args[0], call.args[1]) for call in request.call_args_list]
+        self.assertEqual(calls[0][0], "POST")
+        self.assertIn("/me/player/queue", calls[0][1])
+        self.assertEqual(calls[1], ("PUT", "https://api.spotify.com/v1/me/player/play"))
+        self.assertIn(("POST", "https://api.spotify.com/v1/playlists/playlist2/tracks"), calls)
 
 
 if __name__ == "__main__":
