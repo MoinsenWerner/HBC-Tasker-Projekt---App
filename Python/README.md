@@ -24,3 +24,18 @@ Windows-Ersatzimplementierungen und die unvermeidbaren Grenzen gegenüber der
 Android-/Tasker-Laufzeit sind in
 [`TASKER_WINDOWS_COMPATIBILITY.md`](TASKER_WINDOWS_COMPATIBILITY.md) vollständig
 aufgeführt.
+
+## Fehlerberichte
+
+Jeder abgefangene UI-, Netzwerk-, Tasker- oder Startfehler wird verständlich in
+`%LOCALAPPDATA%\HBC Musik Client\error-log.md` protokolliert. Der Bericht enthält
+Benutzeraktion, Zeitpunkt, einfache Erklärung, genaue Fehlerstelle, Zeile in
+`musik_client.py`, ausgeführten Quelltext und die vollständige Aufrufkette.
+
+## Spotify
+
+„Connect your Spotify“ verwendet OAuth Authorization Code mit PKCE. In der
+Spotify-App-Konfiguration muss exakt
+`http://127.0.0.1:60105/spotify/callback` als Redirect-URI eingetragen sein.
+Tokens bleiben ausschließlich im Arbeitsspeicher. Danach lädt der Playlist-Tab
+alle Seiten von Spotifys `/v1/me/playlists`-API.

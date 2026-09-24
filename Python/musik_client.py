@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import json
 import os
+import sys
+import threading
 import webbrowser
 from dataclasses import dataclass
 from pathlib import Path
@@ -40,6 +42,8 @@ from PySide6.QtWidgets import (
 )
 
 from windows_tasker import WindowsTaskerRuntime
+from error_logging import ErrorLogger
+from spotify_oauth import SpotifyOAuth
 
 APP_VERSION = "4.0.7-python"
 DEFAULT_API_URL = "https://api.plsreload.de"
@@ -155,6 +159,10 @@ class MusikClient(QMainWindow):
         self.setMinimumSize(380, 620)
         self.session = Session(api_url=self._load().get("api_url", DEFAULT_API_URL))
         self.api = HbcApi(self.session)
+        self.error_logger = ErrorLogger()
+        self.spotify = SpotifyOAuth()
+        sys.excepthook = self._unhandled_exception
+        threading.excepthook = lambda args: self._unhandled_exception(args.exc_type, args.exc_value, args.exc_traceback)
         self.cm = BrowserCredentialManager(self.session.api_url)
         self.tasker_project = json.loads(MANIFEST_FILE.read_text(encoding="utf-8"))
         self.tasker = WindowsTaskerRuntime(
@@ -189,14 +197,29 @@ class MusikClient(QMainWindow):
         CONFIG_FILE.write_text(json.dumps({"user_id": self.user_id.text(), "api_url": self.session.api_url}), encoding="utf-8")
 
     @staticmethod
-    def _button(text: str, callback: Callable[[], None], accent: bool = False) -> QPushButton:
+    def _plain_button(text: str, callback: Callable[[], None], accent: bool = False) -> QPushButton:
         button = QPushButton(text)
         button.clicked.connect(lambda _checked=False: callback())
         if accent:
             button.setObjectName("accent")
         return button
 
-    def _execute(self, work: Callable[[], Any], done: Callable[[Any], None] | None = None) -> None:
+    def _button(self, text: str, callback: Callable[[], None], accent: bool = False) -> QPushButton:
+        def guarded() -> None:
+            try:
+                callback()
+            except Exception as exc:
+                self._report_error(exc, f'Button „{text}“ angeklickt', callback)
+
+        return self._plain_button(text, guarded, accent)
+
+    def _execute(
+        self,
+        work: Callable[[], Any],
+        done: Callable[[Any], None] | None = None,
+        user_action: str = "Eine Funktion der Oberfläche ausgeführt",
+        executed_code: str | None = None,
+    ) -> None:
         self.status.setText("Lädt …")
         QApplication.processEvents()
         try:
@@ -206,7 +229,21 @@ class MusikClient(QMainWindow):
                 done(result)
         except Exception as exc:
             self.status.setText("Fehler")
-            QMessageBox.critical(self, "HBC Musik Client", str(exc))
+            self._report_error(exc, user_action, work, executed_code)
+
+    def _report_error(
+        self,
+        error: BaseException,
+        user_action: str,
+        executed: Callable[..., Any] | None = None,
+        executed_code: str | None = None,
+    ) -> None:
+        path = self.error_logger.log(error, user_action, executed, executed_code)
+        QMessageBox.critical(self, "HBC Musik Client", f"{error}\n\nEin verständlicher Fehlerbericht wurde gespeichert:\n{path}")
+
+    def _unhandled_exception(self, error_type, error, tb) -> None:
+        error.__traceback__ = tb
+        self._report_error(error, "Unbehandelter Hintergrund- oder UI-Fehler")
 
     def show_login(self) -> None:
         page, layout = QWidget(), QVBoxLayout()
@@ -273,7 +310,7 @@ class MusikClient(QMainWindow):
         home.setLayout(home_layout)
         self.playlist_box = QListWidget()
         playlist_layout.addWidget(self.playlist_box)
-        playlist_layout.addWidget(self._button("Playlists laden", lambda: self._execute(self.api.playlists, self._render_playlists)))
+        playlist_layout.addWidget(self._button("Spotify-Playlists laden", self.load_spotify_playlists))
         playlists.setLayout(playlist_layout)
         self.server_box = QListWidget()
         server_layout.addWidget(self.server_box)
@@ -285,6 +322,7 @@ class MusikClient(QMainWindow):
         settings_layout.addWidget(api_field)
         settings_layout.addWidget(self._button("API-Adresse speichern", lambda: self._set_api(api_field.text())))
         settings_layout.addWidget(self._button("🔑 Passkey erstellen", self.register_passkey, True))
+        settings_layout.addWidget(self._button("Connect your Spotify", self.connect_spotify))
         settings_layout.addWidget(self._button("Webchat öffnen", lambda: webbrowser.open(f"{self.session.api_url}/webchat?caller=python&client-id={quote(self.session.user_id)}")))
         settings_layout.addWidget(self._button("Abmelden", self.logout))
         settings_layout.addStretch()
@@ -401,11 +439,17 @@ class MusikClient(QMainWindow):
             webbrowser.open(f"{self.session.api_url}/webchat?caller=python&client-id={quote(self.session.user_id)}")
         elif "update manuell herunterladen" in lowered or lowered == "install update":
             webbrowser.open(f"{self.session.api_url}/apk/latest")
+        elif lowered == "connect spotify":
+            self.connect_spotify()
         else:
             handlers = element.get("handlers", {})
             actions = handlers.get("clickTask") or handlers.get("itemselectedTask") or handlers.get("valueTask")
             if actions:
-                self._execute(lambda: self.tasker.run_actions(actions))
+                self._execute(
+                    lambda: self.tasker.run_actions(actions),
+                    user_action=f'Tasker-Element „{scene} / {name}“ aktiviert',
+                    executed_code=json.dumps(actions, ensure_ascii=False, indent=2),
+                )
             else:
                 QMessageBox.information(self, f"{scene} / {name}", "Für dieses Element ist im Tasker-Export keine Aktion hinterlegt.")
 
@@ -437,6 +481,20 @@ class MusikClient(QMainWindow):
             self.song.setText(f"{item.get('name', 'Keine Wiedergabe')}\n{artists}".strip())
         self._execute(self.api.player, show)
 
+    def connect_spotify(self) -> None:
+        self._execute(
+            self.spotify.connect,
+            lambda _: QMessageBox.information(self, "Spotify", "Spotify wurde erfolgreich verbunden."),
+            "„Connect your Spotify“ angeklickt",
+        )
+
+    def load_spotify_playlists(self) -> None:
+        self._execute(
+            self.spotify.playlists,
+            self._render_playlists,
+            "Im Tab Playlists auf „Spotify-Playlists laden“ geklickt",
+        )
+
     def _render_playlists(self, items: list[dict[str, Any]]) -> None:
         self.playlist_box.clear()
         for item in items:
@@ -453,7 +511,14 @@ class MusikClient(QMainWindow):
 
 
 if __name__ == "__main__":
-    app = QApplication([])
-    window = MusikClient()
-    window.show()
-    raise SystemExit(app.exec())
+    try:
+        app = QApplication([])
+        window = MusikClient()
+        window.show()
+        raise SystemExit(app.exec())
+    except SystemExit:
+        raise
+    except Exception as exc:
+        log_path = ErrorLogger().log(exc, "Anwendung gestartet")
+        print(f"HBC Musik Client konnte nicht starten. Fehlerbericht: {log_path}", file=sys.stderr)
+        raise

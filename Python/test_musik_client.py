@@ -2,6 +2,7 @@ import importlib.util
 import os
 import pathlib
 import sys
+import tempfile
 import unittest
 from unittest.mock import Mock, patch
 
@@ -104,6 +105,63 @@ class WindowsRuntimeTests(unittest.TestCase):
         with patch("windows_tasker.webbrowser.open") as opened:
             runtime.open_android_intent_replacement("spotify:track:123")
         opened.assert_called_once_with("spotify:track:123")
+
+
+class ErrorLoggingTests(unittest.TestCase):
+    def test_log_contains_human_and_technical_error_details(self):
+        from error_logging import ErrorLogger
+
+        with tempfile.TemporaryDirectory() as directory:
+            logger = ErrorLogger(pathlib.Path(directory) / "error-log.md")
+
+            def failing_action():
+                raise PermissionError("Zugriff verweigert")
+
+            try:
+                failing_action()
+            except PermissionError as error:
+                path = logger.log(error, "Benutzer klickte auf Speichern", failing_action)
+            report = path.read_text(encoding="utf-8")
+        self.assertIn("Benutzer klickte auf Speichern", report)
+        self.assertIn("PermissionError: Zugriff verweigert", report)
+        self.assertIn("Windows hat den Zugriff", report)
+        self.assertIn("def failing_action", report)
+        self.assertIn("Technische Aufrufkette", report)
+
+    def test_nested_dns_error_gets_plain_language_explanation(self):
+        from error_logging import ErrorLogger
+
+        try:
+            try:
+                raise module.requests.ConnectionError("DNS name could not resolve")
+            except module.requests.ConnectionError as cause:
+                raise module.ApiError("Request failed") from cause
+        except module.ApiError as error:
+            explanation = ErrorLogger.explain(error)
+        self.assertIn("DNS-Name nicht gefunden", explanation)
+
+
+class SpotifyTests(unittest.TestCase):
+    def test_callback_url_is_the_requested_loopback_url(self):
+        import spotify_oauth
+
+        self.assertEqual(spotify_oauth.CALLBACK_URL, "http://127.0.0.1:60105/spotify/callback")
+
+    def test_playlists_follow_spotify_pagination(self):
+        from spotify_oauth import SpotifyOAuth
+
+        spotify = SpotifyOAuth()
+        spotify.tokens = {"access_token": "token", "expires_at": 9999999999}
+        first = Mock()
+        first.json.return_value = {"items": [{"name": "One"}], "next": "https://api.spotify.com/page2"}
+        first.raise_for_status.return_value = None
+        second = Mock()
+        second.json.return_value = {"items": [{"name": "Two"}], "next": None}
+        second.raise_for_status.return_value = None
+        with patch("spotify_oauth.requests.get", side_effect=[first, second]) as request:
+            playlists = spotify.playlists()
+        self.assertEqual([item["name"] for item in playlists], ["One", "Two"])
+        self.assertEqual(request.call_count, 2)
 
 
 if __name__ == "__main__":
